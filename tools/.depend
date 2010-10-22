@@ -1,0 +1,576 @@
+env_embedded.o: \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/common/env_embedded.c \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/configs/mini2440.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config_cmd_default.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/config.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/environment.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h /usr/include/stdint.h \
+ /usr/include/features.h /usr/include/bits/predefs.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-32.h \
+ /usr/include/bits/wchar.h /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/string.h /usr/include/xlocale.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h /usr/include/bits/string3.h \
+ /usr/include/sys/mman.h /usr/include/bits/mman.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl2.h \
+ /usr/include/byteswap.h
+image.o: /home/bamboo/work/ok2440/u-boot_for_ok2440/common/image.c \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/mkimage.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/os_support.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h /usr/include/stdint.h \
+ /usr/include/features.h /usr/include/bits/predefs.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-32.h \
+ /usr/include/bits/wchar.h /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/string.h /usr/include/xlocale.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h /usr/include/bits/string3.h \
+ /usr/include/sys/mman.h /usr/include/bits/mman.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl2.h \
+ /usr/include/byteswap.h /usr/include/sys/stat.h /usr/include/bits/stat.h \
+ /usr/include/unistd.h /usr/include/bits/posix_opt.h \
+ /usr/include/bits/confname.h /usr/include/getopt.h \
+ /usr/include/bits/unistd.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/sha1.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/fdt_host.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/libfdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt_env.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt_support.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/u-boot/md5.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/image.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/command.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/configs/mini2440.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config_cmd_default.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/config.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/fdt_support.h
+crc32.o: /home/bamboo/work/ok2440/u-boot_for_ok2440/lib_generic/crc32.c \
+ /usr/include/stdint.h /usr/include/features.h \
+ /usr/include/bits/predefs.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-32.h /usr/include/bits/wchar.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/u-boot/zlib.h
+md5.o: /home/bamboo/work/ok2440/u-boot_for_ok2440/lib_generic/md5.c \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h /usr/include/stdint.h \
+ /usr/include/features.h /usr/include/bits/predefs.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-32.h \
+ /usr/include/bits/wchar.h /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/string.h /usr/include/xlocale.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h /usr/include/bits/string3.h \
+ /usr/include/sys/mman.h /usr/include/bits/mman.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl2.h \
+ /usr/include/byteswap.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/u-boot/md5.h
+sha1.o: /home/bamboo/work/ok2440/u-boot_for_ok2440/lib_generic/sha1.c \
+ /usr/include/string.h /usr/include/features.h \
+ /usr/include/bits/predefs.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-32.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+ /usr/include/stdlib.h /usr/include/bits/string3.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/watchdog.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/sha1.h
+bmp_logo.o: /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/bmp_logo.c \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h /usr/include/stdint.h \
+ /usr/include/features.h /usr/include/bits/predefs.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-32.h \
+ /usr/include/bits/wchar.h /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/string.h /usr/include/xlocale.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h /usr/include/bits/string3.h \
+ /usr/include/sys/mman.h /usr/include/bits/mman.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl2.h \
+ /usr/include/byteswap.h
+default_image.o: \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/default_image.c \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/mkimage.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/os_support.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h /usr/include/stdint.h \
+ /usr/include/features.h /usr/include/bits/predefs.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-32.h \
+ /usr/include/bits/wchar.h /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/string.h /usr/include/xlocale.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h /usr/include/bits/string3.h \
+ /usr/include/sys/mman.h /usr/include/bits/mman.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl2.h \
+ /usr/include/byteswap.h /usr/include/sys/stat.h /usr/include/bits/stat.h \
+ /usr/include/unistd.h /usr/include/bits/posix_opt.h \
+ /usr/include/bits/confname.h /usr/include/getopt.h \
+ /usr/include/bits/unistd.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/sha1.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/fdt_host.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/libfdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt_env.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt_support.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/image.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/command.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/configs/mini2440.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config_cmd_default.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/config.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/fdt_support.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/u-boot/crc.h
+fit_image.o: /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/fit_image.c \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/mkimage.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/os_support.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h /usr/include/stdint.h \
+ /usr/include/features.h /usr/include/bits/predefs.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-32.h \
+ /usr/include/bits/wchar.h /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/string.h /usr/include/xlocale.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h /usr/include/bits/string3.h \
+ /usr/include/sys/mman.h /usr/include/bits/mman.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl2.h \
+ /usr/include/byteswap.h /usr/include/sys/stat.h /usr/include/bits/stat.h \
+ /usr/include/unistd.h /usr/include/bits/posix_opt.h \
+ /usr/include/bits/confname.h /usr/include/getopt.h \
+ /usr/include/bits/unistd.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/sha1.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/fdt_host.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/libfdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt_env.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt_support.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/image.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/command.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/configs/mini2440.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config_cmd_default.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/config.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/fdt_support.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/u-boot/crc.h
+gen_eth_addr.o: \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/gen_eth_addr.c \
+ /usr/include/stdio.h /usr/include/features.h /usr/include/bits/predefs.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-32.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h \
+ /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/sys/select.h \
+ /usr/include/bits/select.h /usr/include/bits/sigset.h \
+ /usr/include/bits/time.h /usr/include/sys/sysmacros.h \
+ /usr/include/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/bits/stdlib.h /usr/include/unistd.h \
+ /usr/include/bits/posix_opt.h /usr/include/bits/confname.h \
+ /usr/include/getopt.h /usr/include/bits/unistd.h /usr/include/xlocale.h
+img2srec.o: /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/img2srec.c \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/os_support.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h /usr/include/stdint.h \
+ /usr/include/features.h /usr/include/bits/predefs.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-32.h \
+ /usr/include/bits/wchar.h /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/string.h /usr/include/xlocale.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h /usr/include/bits/string3.h \
+ /usr/include/sys/mman.h /usr/include/bits/mman.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl2.h \
+ /usr/include/byteswap.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdbool.h /usr/include/ctype.h \
+ /usr/include/elf.h /usr/include/unistd.h /usr/include/bits/posix_opt.h \
+ /usr/include/bits/confname.h /usr/include/getopt.h \
+ /usr/include/bits/unistd.h
+kwbimage.o: /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/kwbimage.c \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/mkimage.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/os_support.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h /usr/include/stdint.h \
+ /usr/include/features.h /usr/include/bits/predefs.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-32.h \
+ /usr/include/bits/wchar.h /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/bits/waitflags.h \
+ /usr/include/bits/waitstatus.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h \
+ /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+ /usr/include/time.h /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/string.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h /usr/include/bits/string3.h \
+ /usr/include/sys/mman.h /usr/include/bits/mman.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/uio.h \
+ /usr/include/sys/stat.h /usr/include/bits/stat.h \
+ /usr/include/bits/fcntl2.h /usr/include/byteswap.h /usr/include/unistd.h \
+ /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
+ /usr/include/bits/confname.h /usr/include/getopt.h \
+ /usr/include/bits/unistd.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/sha1.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/fdt_host.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/libfdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt_env.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt_support.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/image.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/command.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/configs/mini2440.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config_cmd_default.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/config.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/fdt_support.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/kwbimage.h
+mkimage.o: /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/mkimage.c \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/mkimage.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/os_support.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h /usr/include/stdint.h \
+ /usr/include/features.h /usr/include/bits/predefs.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-32.h \
+ /usr/include/bits/wchar.h /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/string.h /usr/include/xlocale.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h /usr/include/bits/string3.h \
+ /usr/include/sys/mman.h /usr/include/bits/mman.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl2.h \
+ /usr/include/byteswap.h /usr/include/sys/stat.h /usr/include/bits/stat.h \
+ /usr/include/unistd.h /usr/include/bits/posix_opt.h \
+ /usr/include/bits/confname.h /usr/include/getopt.h \
+ /usr/include/bits/unistd.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/sha1.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/fdt_host.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/libfdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt_env.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt_support.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/image.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/command.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/configs/mini2440.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config_cmd_default.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/config.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/fdt_support.h
+os_support.o: \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/os_support.c \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h /usr/include/stdint.h \
+ /usr/include/features.h /usr/include/bits/predefs.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-32.h \
+ /usr/include/bits/wchar.h /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/string.h /usr/include/xlocale.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h /usr/include/bits/string3.h \
+ /usr/include/sys/mman.h /usr/include/bits/mman.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl2.h \
+ /usr/include/byteswap.h
+fdt.o: /home/bamboo/work/ok2440/u-boot_for_ok2440/libfdt/fdt.c \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt_env.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h /usr/include/stdint.h \
+ /usr/include/features.h /usr/include/bits/predefs.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-32.h \
+ /usr/include/bits/wchar.h /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/string.h /usr/include/xlocale.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h /usr/include/bits/string3.h \
+ /usr/include/sys/mman.h /usr/include/bits/mman.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl2.h \
+ /usr/include/byteswap.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/fdt_host.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/libfdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt_support.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/libfdt/libfdt_internal.h
+fdt_ro.o: /home/bamboo/work/ok2440/u-boot_for_ok2440/libfdt/fdt_ro.c \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt_env.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h /usr/include/stdint.h \
+ /usr/include/features.h /usr/include/bits/predefs.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-32.h \
+ /usr/include/bits/wchar.h /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/string.h /usr/include/xlocale.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h /usr/include/bits/string3.h \
+ /usr/include/sys/mman.h /usr/include/bits/mman.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl2.h \
+ /usr/include/byteswap.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/fdt_host.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/libfdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt_support.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/libfdt/libfdt_internal.h
+fdt_rw.o: /home/bamboo/work/ok2440/u-boot_for_ok2440/libfdt/fdt_rw.c \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt_env.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h /usr/include/stdint.h \
+ /usr/include/features.h /usr/include/bits/predefs.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-32.h \
+ /usr/include/bits/wchar.h /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/string.h /usr/include/xlocale.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h /usr/include/bits/string3.h \
+ /usr/include/sys/mman.h /usr/include/bits/mman.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl2.h \
+ /usr/include/byteswap.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/fdt_host.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/libfdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt_support.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/libfdt/libfdt_internal.h
+fdt_strerror.o: \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/libfdt/fdt_strerror.c \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt_env.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h /usr/include/stdint.h \
+ /usr/include/features.h /usr/include/bits/predefs.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-32.h \
+ /usr/include/bits/wchar.h /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/string.h /usr/include/xlocale.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h /usr/include/bits/string3.h \
+ /usr/include/sys/mman.h /usr/include/bits/mman.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl2.h \
+ /usr/include/byteswap.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/fdt_host.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/libfdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt_support.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/libfdt/libfdt_internal.h
+fdt_wip.o: /home/bamboo/work/ok2440/u-boot_for_ok2440/libfdt/fdt_wip.c \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt_env.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h /usr/include/stdint.h \
+ /usr/include/features.h /usr/include/bits/predefs.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-32.h \
+ /usr/include/bits/wchar.h /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/string.h /usr/include/xlocale.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h /usr/include/bits/string3.h \
+ /usr/include/sys/mman.h /usr/include/bits/mman.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl2.h \
+ /usr/include/byteswap.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/fdt_host.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/libfdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/fdt.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/../include/fdt_support.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/libfdt/libfdt_internal.h
