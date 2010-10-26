@@ -157,7 +157,6 @@ sinclude $(obj)include/autoconf.mk
 # load ARCH, BOARD, and CPU configuration
 include $(obj)include/config.mk
 export	ARCH CPU BOARD VENDOR SOC
-#CROSS_COMPILE =  arm-9tdmi-linux-gnu-
 CROSS_COMPILE =  arm-linux-
 # set default to nothing for native builds
 ifeq ($(HOSTARCH),$(ARCH))

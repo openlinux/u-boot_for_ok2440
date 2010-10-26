@@ -444,11 +444,7 @@ cmd_flash.o: cmd_flash.c \
   /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/mach-types.h \
   /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/setup.h \
   /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/u-boot-arm.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/u-boot/crc.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/jffs2/jffs2.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/jffs2/load_kernel.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/list.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/poison.h
+  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/u-boot/crc.h
 cmd_i2c.o: cmd_i2c.c \
   /home/bamboo/work/ok2440/u-boot_for_ok2440/include/common.h \
   /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config.h \
@@ -748,59 +744,6 @@ cmd_mmc.o: cmd_mmc.c \
   /home/bamboo/work/ok2440/u-boot_for_ok2440/include/mmc.h \
   /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/list.h \
   /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/poison.h
-cmd_mtdparts.o: cmd_mtdparts.c \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/common.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/configs/mini2440.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config_cmd_default.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/config.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/bitops.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/types.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/bitops.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/proc/system.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/config.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/types.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/posix_types.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/stddef.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/posix_types.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/string.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/string.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/ptrace.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/proc/ptrace.h \
-  /home/bamboo/work/ok2440/cross_tools/4.3.2/bin/../lib/gcc/arm-none-linux-gnueabi/4.3.2/include/stdarg.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/part.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/ide.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/flash.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/image.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/compiler.h \
-  /home/bamboo/work/ok2440/cross_tools/4.3.2/bin/../lib/gcc/arm-none-linux-gnueabi/4.3.2/include/stddef.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/byteorder.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/byteorder/little_endian.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/byteorder/swab.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/byteorder/generic.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/lmb.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/u-boot.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/command.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/global_data.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/mach-types.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/setup.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/u-boot-arm.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/u-boot/crc.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/malloc.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/jffs2/load_kernel.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/list.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/poison.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/ctype.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/err.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/mtd/compat.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/errno.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm-generic/errno.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/mtd/mtd.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/div64.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/mtd/mtd-abi.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/mtd/nand.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/linux/mtd/bbm.h \
-  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/nand.h
 cmd_nand.o: cmd_nand.c \
   /home/bamboo/work/ok2440/u-boot_for_ok2440/include/common.h \
   /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config.h \

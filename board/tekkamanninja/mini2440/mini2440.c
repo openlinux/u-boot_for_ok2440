@@ -119,7 +119,7 @@ int board_init (void)
 	gpio->GPACON = 0x007FFFFF;
 
 #if defined(CONFIG_MINI2440) 
-	gpio->GPBCON = 0x00044555;
+	gpio->GPBCON = 0x00295551;
 #else
 	gpio->GPBCON = 0x00044556;
 #endif
@@ -127,22 +127,22 @@ int board_init (void)
 	gpio->GPBUP = 0x000007FF;
 
 #if defined(CONFIG_MINI2440) 
-	gpio->GPCCON = 0xAAAA02A9;
-
+	gpio->GPCCON = 0xAAAAA6AA;
+	gpio->GPCDAT &= ~(1<<5);
 #else
 	gpio->GPCCON = 0xAAAAAAAA;
 #endif
-	gpio->GPCUP = 0x00000000;
+	gpio->GPCUP = 0xFFFFFFFF;
 	gpio->GPDCON = 0xAAAAAAAA;
-	gpio->GPDUP = 0x00000000;
+	gpio->GPDUP = 0xFFFFFFFF;
 
     gpio->GPECON = 0xAAAAAAAA;
 	gpio->GPEUP = 0x0000FFFF;
-	gpio->GPFCON = 0x0000a6aa;
-	gpio->GPFUP = 0x000000DF;
-	gpio->GPGCON = 0xFF95FFBA;
+	gpio->GPFCON = 0x000055AA;
+	gpio->GPFUP = 0x000000FF;
+	gpio->GPGCON = 0xFF95FF3A;
 	gpio->GPGUP = 0x0000FFFF;
-	gpio->GPHCON = 0x002AFAAA;
+	gpio->GPHCON = 0x0016FAAA;
 	gpio->GPHUP = 0x000007FF;
 
 	gpio->EXTINT0=0x22222222;
@@ -156,7 +156,7 @@ int board_init (void)
 
 #if defined(CONFIG_S3C2440)
 /* arch number of S3C2440-Board */
-	gd->bd->bi_arch_number = MACH_TYPE_MINI2440 ;//MACH_TYPE_MINI2440
+	gd->bd->bi_arch_number = MACH_TYPE_MINI2440 ;
 #endif
 
 
@@ -209,9 +209,9 @@ void board_video_init(GraphicDevice *pGD)
     /* FIXME: select LCM type by env variable */ 
 	 
 	/* Configuration for GTA01 LCM on QT2410 */ 
-	lcd->LCDCON1 = (4<<8) | (0<<7) | (3<<5) | (12<<1) | 0  ; /* CLKVAL=4, BPPMODE=16bpp, TFT, ENVID=0 */ 
+	lcd->LCDCON1 = 0x00000378; /* CLKVAL=4, BPPMODE=16bpp, TFT, ENVID=0 */ 
 	lcd->LCDCON2 = (VBPD_240320<<24)|(LINEVAL_TFT_240320<<14)|(VFPD_240320<<6)|(VSPW_240320); 
-	lcd->LCDCON3 = (HBPD_240320<<19)|(HOZVAL_TFT_240320<<8)|(HFPD_240320);
+	lcd->LCDCON3 = (HBPD_240320<<19)|(HOZVAL_TFT_240320<<8)|(HFPD_240320); 
 
 	if ( (nand->NFCONF) & 0x08 )	{ 
 	lcd->LCDCON4 = (MVAL<<8)|(HSPW_240320_TD);
@@ -220,7 +220,7 @@ void board_video_init(GraphicDevice *pGD)
 	  lcd->LCDCON4 = (MVAL<<8)|(HSPW_240320_NEC);
 	}
 	
-	lcd->LCDCON5 = (1<<11) | (1<<10) | (1<<9) | (1<<8) | (0<<7) | (0<<6) | (1<<3) | (0<<1) | 1; 
+	lcd->LCDCON5 = 0x00000f09; 
 	lcd->LPCSEL  = 0x00000000; 
 } 
 

@@ -76,7 +76,7 @@
 #define CONFIG_CS8900_BASE	0x19000300
 #define CONFIG_CS8900_BUS16	/* the Linux driver does accesses as shorts */
 #endif
-#define CONFIG_NET_MULTI		1	
+#define CONFIG_NET_MULTI		1
 #define CONFIG_NET_RETRY_COUNT		20
 #define CONFIG_DRIVER_DM9000		1
 #define CONFIG_DM9000_BASE		0x20000300
@@ -121,8 +121,8 @@
 #define CONFIG_CMD_DATE
 #define CONFIG_CMD_DHCP
 #define CONFIG_CMD_ELF
-#define CONFIG_MTD_DEVICE
-#define CONFIG_CMD_MTDPARTS
+//#define CONFIG_MTD_DEVICE
+//#define CONFIG_CMD_MTDPARTS
 #define CONFIG_CMD_PING
 #define CONFIG_CMD_NAND
 #define CONFIG_CMD_REGINFO
@@ -135,17 +135,17 @@
 #define CONFIG_CMD_USB
 /* USB Support*/
 
-#define CONFIG_BOOTDELAY	3
-#define CONFIG_BOOTARGS		"noinitrd root=/dev/nfs rw nfsroot=192.168.1.100:/home/bamboo/work/ok2440/rootbox ip=192.168.1.111:192.168.1.100::255.255.255.0 console=ttySAC0,115200 init=/linuxrc mem=64M"
+#define CONFIG_BOOTDELAY	1
+#define CONFIG_BOOTARGS		"noinitrd root=/dev/nfs rw nfsroot=192.168.1.101:/home/bamboo/work/ok2440/rootbox  ip=192.168.1.111:192.168.1.101::255.255.255.0 console=ttySAC0,115200 init=/linuxrc mem=64M"
 #define CONFIG_ETHADDR	        08:08:11:18:12:27
 #define CONFIG_NETMASK          255.255.255.0
 #define CONFIG_IPADDR		192.168.1.111
-#define CONFIG_SERVERIP		192.168.1.100
+#define CONFIG_SERVERIP		192.168.1.101
 #define CONFIG_GATEWAYIP	192.168.1.1
 #define CONFIG_OVERWRITE_ETHADDR_ONCE
 
 /*#define CONFIG_BOOTFILE	"elinos-lart" */
-#define CONFIG_BOOTCOMMAND	"nfs 0x30008000 192.168.1.100:/home/bamboo/work/ok2440/uImage.img;bootm 0x30008000"
+#define CONFIG_BOOTCOMMAND	"nfs 0x30008000 192.168.1.101:/home/bamboo/work/ok2440/uImage.img;bootm"
 #define	CONFIG_EXTRA_ENV_SETTINGS					\
 	"tekkaman=bmp d 70000\0 "				\
 	"stdin=serial\0"					\
@@ -163,7 +163,7 @@
  * Miscellaneous configurable options
  */
 #define	CONFIG_SYS_LONGHELP				/* undef to save memory		*/
-#define	CONFIG_SYS_PROMPT		"[ok2440#]# "	/* Monitor Command Prompt	*/
+#define	CONFIG_SYS_PROMPT		"[u-boot@MINI2440]# "	/* Monitor Command Prompt	*/
 #define	CONFIG_SYS_CBSIZE		256		/* Console I/O Buffer Size	*/
 #define	CONFIG_SYS_PBSIZE (CONFIG_SYS_CBSIZE+sizeof(CONFIG_SYS_PROMPT)+16) /* Print Buffer Size */
 #define	CONFIG_SYS_MAXARGS		16		/* max number of command args	*/
@@ -225,8 +225,8 @@
 #endif
 
 /* timeout values are in ticks */
-#define CONFIG_SYS_FLASH_ERASE_TOUT	(10*CONFIG_SYS_HZ) /* Timeout for Flash Erase */
-#define CONFIG_SYS_FLASH_WRITE_TOUT	(10*CONFIG_SYS_HZ) /* Timeout for Flash Write */
+#define CONFIG_SYS_FLASH_ERASE_TOUT	(5*CONFIG_SYS_HZ) /* Timeout for Flash Erase */
+#define CONFIG_SYS_FLASH_WRITE_TOUT	(5*CONFIG_SYS_HZ) /* Timeout for Flash Write */
 
 
 //#if 0
@@ -286,9 +286,9 @@
 #define CONFIG_SYS_64BIT_VSPRINTF		/* needed for nand_util.c */
 #endif	/* CONFIG_CMD_NAND */
 
-#define CONFIG_SETUP_MEMORY_TAGS   1
-#define CONFIG_INITRD_TAG	   1
-#define CONFIG_CMDLINE_TAG	   1
+#define CONFIG_SETUP_MEMORY_TAGS
+#define CONFIG_INITRD_TAG
+#define CONFIG_CMDLINE_TAG
 
 #define CONFIG_SYS_HUSH_PARSER
 #define CONFIG_SYS_PROMPT_HUSH_PS2   "> "
