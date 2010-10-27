@@ -89,7 +89,7 @@
  * select serial console configuration
  */
 #define CONFIG_S3C24X0_SERIAL
-#define CONFIG_SERIAL1          1	/* we use SERIAL 1 on SBC2410X */
+#define CONFIG_SERIAL2          1	/* we use SERIAL 1 on SBC2410X */
 
 /************************************************************
  * RTC
@@ -136,7 +136,7 @@
 /* USB Support*/
 
 #define CONFIG_BOOTDELAY	1
-#define CONFIG_BOOTARGS		"noinitrd root=/dev/nfs rw nfsroot=192.168.1.101:/home/bamboo/work/ok2440/rootbox  ip=192.168.1.111:192.168.1.101::255.255.255.0 console=ttySAC0,115200 init=/linuxrc mem=64M"
+#define CONFIG_BOOTARGS		"noinitrd root=/dev/nfs rw nfsroot=192.168.1.101:/home/bamboo/work/ok2440/rootbox  ip=192.168.1.111:192.168.1.101::255.255.255.0 console=ttySAC1,115200 init=/linuxrc mem=64M"
 #define CONFIG_ETHADDR	        08:08:11:18:12:27
 #define CONFIG_NETMASK          255.255.255.0
 #define CONFIG_IPADDR		192.168.1.111
