@@ -1,0 +1,318 @@
+From 6058942748d957071ae871674eaee03eace6486e Mon Sep 17 00:00:00 2001
+From: DaoGuang Wu <wdgvip@gmail.com>
+Date: Thu, 28 Oct 2010 09:19:30 +0800
+Subject: [PATCH] Added  yaffs2 support ,now we can use nand write.yaffs to write yaffs2 images.
+ Modified by DaoGuang Wu
+
+---
+ board/tekkamanninja/mini2440/libmini2440.a |  Bin 25438 -> 25438 bytes
+ common/libcommon.a                         |  Bin 593790 -> 593790 bytes
+ cpu/arm920t/libarm920t.a                   |  Bin 4722 -> 4722 bytes
+ cpu/arm920t/s3c24x0/libs3c24x0.a           |  Bin 69680 -> 69680 bytes
+ disk/libdisk.a                             |  Bin 19238 -> 19238 bytes
+ drivers/i2c/libi2c.a                       |  Bin 11242 -> 11242 bytes
+ drivers/mtd/nand/libnand.a                 |  Bin 161598 -> 161598 bytes
+ drivers/net/libnet.a                       |  Bin 14278 -> 14278 bytes
+ drivers/pcmcia/libpcmcia.a                 |  Bin 3500 -> 3500 bytes
+ drivers/rtc/librtc.a                       |  Bin 12592 -> 12592 bytes
+ drivers/serial/libserial.a                 |  Bin 8224 -> 8224 bytes
+ drivers/usb/gadget/libusb_gadget.a         |  Bin 37336 -> 37336 bytes
+ drivers/usb/slave/libusb_slave.a           |  Bin 66952 -> 66952 bytes
+ drivers/video/libvideo.a                   |  Bin 58784 -> 58784 bytes
+ examples/standalone/libstubs.a             |  Bin 5188 -> 5188 bytes
+ fs/fat/libfat.a                            |  Bin 33186 -> 33186 bytes
+ fs/jffs2/libjffs2.a                        |  Bin 64426 -> 64426 bytes
+ include/configs/mini2440.h                 |    7 ++++++-
+ lib_arm/board.o                            |  Bin 10372 -> 10372 bytes
+ lib_arm/libarm.a                           |  Bin 41186 -> 41186 bytes
+ lib_generic/libgeneric.a                   |  Bin 129522 -> 129522 bytes
+ net/libnet.a                               |  Bin 101620 -> 101620 bytes
+ u-boot                                     |  Bin 920939 -> 920939 bytes
+ u-boot.bin                                 |  Bin 255556 -> 255556 bytes
+ u-boot.srec                                |    2 +-
+ 25 files changed, 7 insertions(+), 2 deletions(-)
+
+diff --git a/board/tekkamanninja/mini2440/libmini2440.a b/board/tekkamanninja/mini2440/libmini2440.a
+index fcdb1658c4e3711d047019fe784a863fb06fa9b4..cd6bb761331f03563b9f237a6a72fdfa658d1fd1 100644
+GIT binary patch
+delta 73
+zcmcb2jPc$v#tE{lW~L@a1{0OOf*6LDlQ&q3Z8l;Q6@_ypH>ZlZDMOTP-e8#wWr7vz
+I#Tu{y09Rub!~g&Q
+
+delta 73
+zcmcb2jPc$v#tE{lCMJd!CKHvuf*Hn>H&}{oHewVNg>xl0r;52LLzHdaV3`bMf)(n;
+H8n6KXR_7JQ
+
+diff --git a/common/libcommon.a b/common/libcommon.a
+index 3c4494f4b43ea6fd42765fa113afe4671985b94d..284553128d45de75514c349b61cbe18b608f1334 100644
+GIT binary patch
+delta 698
+zcmex2Pvze{l?k$}W~L^FrW=(Gf>_3u=F?8Hh;RNc+ab;Z;!dC6z$CtTktw4BSk?k8
+zyFc`XFqmsOeE~>%b7n~qgb$W>zLO$`#6A3JiwKZwVqgGLEw+6UJL5%=X>fr$4aS>b
+zXTVexxiLCwgH;$pw45ts3{^oEu$#u%=?oSyf~a_OlQGdASs+f5iBld~pvi(s(gQ4D
+zydCI{>v0e^NW1v<$@iJ21c3!irY|_aF23E_h<S|wLO^0Wk27<-5Lm!;dO!t-#P$uL
+z%-1uZ0$_hF+Q)nq;%ZZfn<l+tz6i0=3?fix%+kvS)?&6@z>4KNFN6(|RPtcylmQEv
+zZ{Lu@;++CvZ#&8IUlhWGsFS+Sa#jWyHzo$4xRF@S{D&n3&K2J-7r?sE8mt~1Ig;D&
+zcC-G1_!TT5w*Av9*0qWt6^76V*~P>5(f}d=iofmqZP^6CR>Bm#3Sv_PJI&B=yFfl$
+zcrREnIOHX^xBOvy9FGtX-`*U<9up1~0QypV`|r){3wXc+z>q({{u~^PhQ<)@EV|4d
+k2u=-#Cey*H`M<E+w18EcYzGFka~hZp4bpY@I4&3f0G;>TQvd(}
+
+delta 698
+zcmex2Pvze{l?k$}CMJgFmK&80f>~z9(@wI8Z~iaaA<hDnFq=NVfk}MxB2z{MkUBFH
+zu<ZWO8^RFo^aUX4&6y=dNYc)CQpCVqQ?Tm8pSFlVxFFSH+b6LzUWAxt3K6K&V7v*j
+z+zcX6<i_Zz4b}n`I9JFRs)8(FH;u8=87yE9(emgfW1>B>K%68Kr#x7|0-~bHf=SW?
+zBCs9kj_Yw?wk1eXeEa14OjCkj0teW|w>uj#uMt29NNneEW^NY(378v952)af*uEi@
+z`FaLa0PL?t`<SnST@6$L@#rh&i(nhg4Iu(`#w@*TU@eB*1*}-U^Fr7VNhJ@KP8qO(
+z(e@1~EZ!*)_O_EO|3x88h&rkJEN5jvabpgO8;Rx2e^^4`T=DI40jvwH!Rk#w>Ls_|
+z?PmQ2_NzHqKy3S`SFCFl5h}#C@8V&5X#f@gN7(lLwrm0rE1?neDu_)H;xx1E0{Lv=
+zy<o-QxRKc2@`vqlJXio672?~QW7uQDp#nf(if{kDnSB8dL}2@Z1MJTs!3d3(MVHwF
+j!KuOAVmeqg{}*<f7O-l|?ZAL`PJ^%^o?my5<AMPIRMp&F
+
+diff --git a/cpu/arm920t/libarm920t.a b/cpu/arm920t/libarm920t.a
+index 0b59c5ced71f089d1b2b01ab22dde8366c99b443..bdce2465a113024ad8e606e81d7ec01f22abd8da 100644
+GIT binary patch
+delta 39
+qcmeyQ@=0ZaEUTHRv9akyrBE=#Wby-Uv5k{FxmiHMo9}Z^W&;5E0}L$y
+
+delta 38
+pcmeyQ@=0ZaEUSr$p@G>%rBD_SWAc4&@r{!_xxt*x_qivt0RZiw3*i6&
+
+diff --git a/cpu/arm920t/s3c24x0/libs3c24x0.a b/cpu/arm920t/s3c24x0/libs3c24x0.a
+index 8b0b37ea3e25fdc772347a015d34ac9622afeafa..1fc20effcbaec33265f94e67cdab78e920596d9b 100644
+GIT binary patch
+delta 97
+zcmdn6fMvr1mI<;fW~Ro*8x_wmff<`WGJW9%vnGFJ65k}4D+K3k?odvIsGeM?EWVk=
+cv6l@Z2jZ=9Z*61+nPf5forCyh-;<Bs0NHvUegFUf
+
+delta 94
+zcmdn6fMvr1mI<;fCMJdk8x_wmff<`WGJW9%vnIcF5Z@%2D+K3k?odvIsNVe6VF?>6
+ZNT0>zcMf8k*SNPf!nxv`eNR4i0|2>uAWZ-O
+
+diff --git a/disk/libdisk.a b/disk/libdisk.a
+index df90a095f5f8839418945fd4af7b64fd548312a9..454152b05af19be137f9d3dbb870d1fe4cdaba81 100644
+GIT binary patch
+delta 41
+ocmZ2Bjd9sD#tE{lW~Rob<`b1pLKquA=&M47K1gh~QG2BV02GW3f&c&j
+
+delta 41
+pcmZ2Bjd9sD#tE{lCMJePW)qc8f*Gb8Kj^DMg+54Zwo!Yf0ss<A4Q2oU
+
+diff --git a/drivers/i2c/libi2c.a b/drivers/i2c/libi2c.a
+index 07831591954928497638b06254342585458c453a..60e1b55abd226ca0173eb9b3287b8fde3c1b9d66 100644
+GIT binary patch
+delta 25
+ccmaDA{wjQeEUTHRv6;z4r9uc}<BT9}0Cgz{Gynhq
+
+delta 25
+ccmaDA{wjQeEUSr$p|R0Kr9uc}<BT9}0CYzPAOHXW
+
+diff --git a/drivers/mtd/nand/libnand.a b/drivers/mtd/nand/libnand.a
+index f568feff14173f3f85141ea639dfc9567d949eb9..a433f0ad499fc78366ed2b47d03d51598bba32e8 100644
+GIT binary patch
+delta 128
+zcmdn@j&t8T&Iz)tW~RpG#v7F$GJ;rUmeV)5F-dGzU|MXz0+N}2{|BRZ^F5>O_ly{)
+zvVs*GPJi%&QEYpk1!HSFvVh(J#+52y0V9ZtPfr+M3PS|81GSv?g|dM*^cesEWkD_X
+
+delta 129
+zcmdn@j&t8T&Iz)tCMJd^1{;+gGJ;sf=F>O0F-dGzU|MVd=37jE@PkpT`JU1Cdq#{?
+uS;1nKV6p9e7L2X!$O3u?7+0zw3w(OQ_)-`oU}CTxXv}F}C>v-+p8)`N!Y%p$
+
+diff --git a/drivers/net/libnet.a b/drivers/net/libnet.a
+index f38c1f9a90e57eb6a77194601eeda71fc16ed8d2..ad71c7b032c1433347e190b54d58a2db02214cd8 100644
+GIT binary patch
+delta 25
+ccmX?>e=L83EUTHRvAOv~r9cQ{V}+kN0C7tP>;M1&
+
+delta 25
+ccmX?>e=L83EUSr$p^3>vr9cQ{V}+kN0B}|Z)&Kwi
+
+diff --git a/drivers/pcmcia/libpcmcia.a b/drivers/pcmcia/libpcmcia.a
+index 566efd2a73cf777589eecb3462b6fcaa2751e9e6..bdac9ddc5b13aa0051fac183b417244581779acf 100644
+GIT binary patch
+delta 36
+jcmZ1@y+(S1EUTHRv4!D8C2I&{W729i2y3$t`z$s9w;2h3
+
+delta 36
+kcmZ1@y+(S1EUSr$p^3#rC2KIld}GpTHi*z>A@*5p0Jd@ocK`qY
+
+diff --git a/drivers/rtc/librtc.a b/drivers/rtc/librtc.a
+index 9ffad902bd5211905cdcf58d50bad0cdd900cefe..16acc4d804d0ef0880b00f4f9beecba382990032 100644
+GIT binary patch
+delta 39
+lcmdmxv>|DNEUTHRv4zP*rFIBo<2rv)sL(pG%@Se~(g5~q3uOQR
+
+delta 39
+lcmdmxv>|DNEUSr$p{e0SrFIBo<2rv)sL(pG%@Se~(g5?!3q$|_
+
+diff --git a/drivers/serial/libserial.a b/drivers/serial/libserial.a
+index aa82ac25dccb744c046b0dff17fbf57a75dc6027..1b9c680f7608ca15578d0f8faa0fbf778bf3fc50 100644
+GIT binary patch
+delta 27
+fcmZ4Bu)tx0EUTHRv4z=2C1*x3%XD)V<2E?}Znp=R
+
+delta 27
+ecmZ4Bu)tx0EUSr$p{dbEC1*wmYjYOkHaP%okq3bQ
+
+diff --git a/drivers/usb/gadget/libusb_gadget.a b/drivers/usb/gadget/libusb_gadget.a
+index 35fac0d4c00c98b0d20bb243a3d06269398bf211..dee2abb36ad8e64c53ea1c1a99c03778b88fad9a 100644
+GIT binary patch
+delta 40
+mcmcbynCZr1rU|mFW~Rm#78{k4nIWvrUCiRqQ0B5YBVzyr9}DOJ
+
+delta 40
+mcmcbynCZr1rU|mFCMJfaCL5KKnIWvrUCiRqQ0B5YBVzyokqg8C
+
+diff --git a/drivers/usb/slave/libusb_slave.a b/drivers/usb/slave/libusb_slave.a
+index 1d57212ec112351b4fd32510a6602526f19a7200..9f5d57758e07004a912d02f6567e1a2ebc71f467 100644
+GIT binary patch
+delta 110
+zcmeC^X6fi=nIOw*W@>C{yisX7E0|@tc^|8|7=$@_AFJ5r57M1VV6M^TIy-YI2oo%G
+iA>t%VW?pr?4Oqr_^1N#C&5}FLXhXR`BQ`zhPy_%B1R{0-
+
+delta 110
+zcmeC^X6fi=nIOw*Vq$1&xlw64E0|@zc^|8|7=$@_AFJ5r57M1VV6MgHIy-YI2oo%G
+iA>t%VW?pr?4Oqr<^1N#C&5}FLXhXR`BQ`zhPy_%5M<QMT
+
+diff --git a/drivers/video/libvideo.a b/drivers/video/libvideo.a
+index 3aad4a6eed4630a80345ff22e482383341c401e4..43b3b5a79a8b4f195f35dde6599b1bd40f786fff 100644
+GIT binary patch
+delta 51
+vcmZ2*nt8!#<_WT_W~RoLW*e2f8Nn>m%|(p%YoN?+YxyDarkhWlx+Vnxn<Wr<
+
+delta 51
+tcmZ2*nt8!#<_WT_CMJevh8vZ<86m9AMU3`qpv-M+`JwWgPo26Z1pt<d5Jvz2
+
+diff --git a/examples/standalone/libstubs.a b/examples/standalone/libstubs.a
+index dc8615ca4c0495de34fadd7c8ce8a1c9130a4d89..4fd9f47c5a4e80130929deaf5676f2a91c5b7210 100644
+GIT binary patch
+delta 27
+ecmX@2aYSQ+EUTHRv61mcrSpss*5+@FenJ3v`v^k-
+
+delta 27
+ecmX@2aYSQ+EUSr$fu-q2rSpss*5+@FenJ3wDF{gb
+
+diff --git a/fs/fat/libfat.a b/fs/fat/libfat.a
+index c4f485917ba48d4fec888a7b98e6ce8e212efbce..7e939d3046a8f5f32f97f6daa222c1d44db355e8 100644
+GIT binary patch
+delta 42
+scmZ3~%(SSPX@V?^nW?eKMnx}1Fk^E*<Ca8LkdVpb0!FdTcF8Gn00u1!_y7O^
+
+delta 42
+scmZ3~%(SSPX@V?^iHV`%Mnx}1Fk^E*<Ca8LkdVpb0!FdTcF8Gn00bWk-~a#s
+
+diff --git a/fs/jffs2/libjffs2.a b/fs/jffs2/libjffs2.a
+index 653e6bf71266104171e0430f0eb292358ca96059..ce2ca62334f3a87595d05b9027ccd024cba5b088 100644
+GIT binary patch
+delta 69
+zcmZ4Woq5%F<_WT_W~Rm_78{j98CgKA&DD%Pd=S=YejQ;5>$lPxZU}3&-jjI{9h;||
+H71IL%@f8)<
+
+delta 69
+zcmZ4Woq5%F<_WT_CMJf4<{Onl8CgKA&DD%Pd=S=YejQ;5>$lPxZU}3&-jjI{9h;||
+H71IL%>YEj%
+
+diff --git a/include/configs/mini2440.h b/include/configs/mini2440.h
+index e404dc4..2b49e9f 100644
+--- a/include/configs/mini2440.h
++++ b/include/configs/mini2440.h
+@@ -53,7 +53,6 @@
+ /* input clock of PLL */
+ #define CONFIG_SYS_CLK_FREQ	12000000/* the SBC2410X has 12MHz input clock */
+ 
+-
+ #define USE_920T_MMU		1
+ 
+ //#undef CONFIG_USE_IRQ			/* we don't need IRQ/FIQ stuff */
+@@ -132,6 +131,12 @@
+ 
+ #define CONFIG_CMD_JFFS2
+ /* JFFS2 Support*/
++//#undef CONFIG_JFFS2_CMDLINE
++#define CONFIG_JFFS2_NAND 1
++#define CONFIG_JFFS2_DEV "nand0"
++//#define CONFIG_PART_SIZE 0x4c0000
++//#define CONFIG_PART_OFFSET 0x40000 
++
+ #define CONFIG_CMD_USB
+ /* USB Support*/
+ 
+diff --git a/lib_arm/board.o b/lib_arm/board.o
+index 3b70c7ab56a9381700733e63e40f712790590049..94ab9934c4f42880ca7414e74585f0925c32d85a 100644
+GIT binary patch
+delta 21
+ccmZn(Yzf?uz{g=|YGq<*WoooJgHJ{Z07&lz)&Kwi
+
+delta 21
+ccmZn(Yzf?uz{g==X=P$zWnj8FgHJ{Z07*av-T(jq
+
+diff --git a/lib_arm/libarm.a b/lib_arm/libarm.a
+index 838f1161ec0f277547878be7b38fb02c5617aa1c..9e195a9a788a2f5b25882817b39058a0bfca266e 100644
+GIT binary patch
+delta 111
+zcmaEKkm=DurU|kvW~Rm_8x`4@Sb+><%Sn^PHajup@NpQLTA3JHnHp{0CSWLqkYmz*
+jss`ej7=TnV1@&?wc&nmWg%P|{d4?)r!#Dq*^q3a_5OpDk
+
+delta 111
+zcmaEKkm=DurU|kvCMJf48x`4@Sb+=!%Sn^PHajup@NpPeTA5f_8JKR~CSWK9k~1^_
+n$uVg^RYT$h^>QM3tD;$j!NyJgKS_M^sXRj!FmLn!NsoB}6k8%5
+
+diff --git a/lib_generic/libgeneric.a b/lib_generic/libgeneric.a
+index e68f56aafea6cf0b2f2acd71a171a6d1cd8a9467..b46e0cfa7eb2f17f05c35542aa0581657a9f9b51 100644
+GIT binary patch
+delta 197
+zcmezLnf=pe_6f4AW~Ro*h8vYSSwJi!v&|b=n)$#?^T``n#5Vg0i;6?IlfH;=uGgBu
+zjwEShBq#>wif@khSi;K!GG+357V*t;VTO`mNeht9?ED5j2ygR;x!bwGOiPf&;T0C%
+w5Z<OQ{RSZI#*^RAmDs*oh4BbCNW$0vsBC+;0i%dBm}>}hm-zPG#f;`{0ITIbga7~l
+
+delta 199
+zcmezLnf=pe_6f4ACMJdkMjMqnS%549ON-4LSep4D%*h*A#5Vg0i;6?IlfH;=uGgBu
+z4(3^cC5?;(#o%1=&G8;fc;Q^J&2nLek}M!YC;$H}u{k@xK@TWtXkf7U!`$s$5GKgX
+y!z(Pj!92rFU-}IotjQndif>=7!gz!m!Uw9`-fh4r;tb{*0WBBbzPp&wybS<Ss6TrE
+
+diff --git a/net/libnet.a b/net/libnet.a
+index 89d5e7070f9459f599114709348da06c5d2b9cf3..31d08e2219ca103f77fe1e08cc3fe16b0f21054f 100644
+GIT binary patch
+delta 96
+zcmew|lkLk)wh6MVW~RobW*e32*;qiV$%*yioA<DNv;*^|JH|6gY(D8a#S$VJ_)~my
+hMg7%EuqM;ZK|f#nLzvs0JQ;tBLd@Fk6wkOx7XU*WAff;O
+
+delta 95
+zcmew|lkLk)wh6MVCMJePCL5LN*}yEL&CA%>?V-#~uB$D<OykW-^{*>gKuRZXbQRy6
+Z@$;%boVPu~lkur2j4QD{GM;g^E&$4pA9DZz
+
+diff --git a/u-boot b/u-boot
+index 85c962040077dcb8267bf85666fbbac0ffbacfea..29cfc6423bb52c73a030ad9a1eb7f7a1740c6d75 100755
+GIT binary patch
+delta 70
+zcmaDo%i{Gci-s1)7N#xCMkO4ErdB3~R;EVnRwc|p%mT!$K+Fcj>_E%`#GF9P1;pGy
+M%(LC9gx7E;07cdossI20
+
+delta 70
+zcmaDo%i{Gci-s1)7N#xCMkO2umR2SfRtBc+Rwc|p%mT!$K+Fcj>_E%`#GF9P1;pGy
+M%(LC9gx7E;07q{YvH$=8
+
+diff --git a/u-boot.bin b/u-boot.bin
+index 8d652a3dff1d8c96dde95c1c3869d7dfc3c55aa4..c5776d06ed8dfe984c5ab3306439a01227e5860f 100755
+GIT binary patch
+delta 28
+kcmX?dhX2SJ{)QIDElfsVI1Ej#Obo3|jka5TVdDA(0H!($u>b%7
+
+delta 28
+kcmX?dhX2SJ{)QIDElfsVI1DVUOf0MnOt)KoVdDA(0H%`)xc~qF
+
+diff --git a/u-boot.srec b/u-boot.srec
+index 50c845b..f70e9b0 100755
+--- a/u-boot.srec
++++ b/u-boot.srec
+@@ -12098,7 +12098,7 @@ S31533FAF3F05DCF7CDF9BAFBABFD98FF89F176E367E58
+ S31533FAF400554E745E932EB23ED10EF01E552D426F83
+ S31533FAF4106F7420323030392E31312D646972747902
+ S31533FAF42020283130E69C882032372032303130206A
+-S31533FAF4302D2030393A34383A303529000000000075
++S31533FAF4302D2031353A34313A35322900000000007D
+ S31533FAF440000000000000000000006E616E64006E7A
+ S31533FAF450616E645F6765745F666C6173685F7479EE
+ S31533FAF4607065006E616E645F7363616E5F74616952
+-- 
+1.7.0.4
+

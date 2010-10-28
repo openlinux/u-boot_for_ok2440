@@ -168,7 +168,7 @@
  * Miscellaneous configurable options
  */
 #define	CONFIG_SYS_LONGHELP				/* undef to save memory		*/
-#define	CONFIG_SYS_PROMPT		"[u-boot@MINI2440]# "	/* Monitor Command Prompt	*/
+#define	CONFIG_SYS_PROMPT		"[u-boot@OK2440]# "	/* Monitor Command Prompt	*/
 #define	CONFIG_SYS_CBSIZE		256		/* Console I/O Buffer Size	*/
 #define	CONFIG_SYS_PBSIZE (CONFIG_SYS_CBSIZE+sizeof(CONFIG_SYS_PROMPT)+16) /* Print Buffer Size */
 #define	CONFIG_SYS_MAXARGS		16		/* max number of command args	*/
@@ -326,9 +326,14 @@
 
 #define CONFIG_JFFS2_CMDLINE 1
 #define MTDIDS_DEFAULT "nand0=nandflash0"
-#define MTDPARTS_DEFAULT "mtdparts=nandflash0:1m(bootloader)," \
-					      "3m(kernel)," \
-					      "-(root)"
+#define MTDPARTS_DEFAULT "mtdparts=nandflash0:1m(u-boot)," \
+					      "1m(App)," \
+					      "4m(Kernel)," \
+					      "16m(Ramdisk)," \
+					      "42m(Yaffs2)," \
+					      "32m(Jffs2)," \
+					      "32m(Ubifs)," \
+					      "-(nand)"
 
 
 #define ENABLE_CMD_LOADB_X	1
