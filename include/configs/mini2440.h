@@ -53,7 +53,6 @@
 /* input clock of PLL */
 #define CONFIG_SYS_CLK_FREQ	12000000/* the SBC2410X has 12MHz input clock */
 
-
 #define USE_920T_MMU		1
 
 //#undef CONFIG_USE_IRQ			/* we don't need IRQ/FIQ stuff */
@@ -132,6 +131,12 @@
 
 #define CONFIG_CMD_JFFS2
 /* JFFS2 Support*/
+//#undef CONFIG_JFFS2_CMDLINE
+#define CONFIG_JFFS2_NAND 1
+#define CONFIG_JFFS2_DEV "nand0"
+//#define CONFIG_PART_SIZE 0x4c0000
+//#define CONFIG_PART_OFFSET 0x40000 
+
 #define CONFIG_CMD_USB
 /* USB Support*/
 
