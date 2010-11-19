@@ -327,10 +327,10 @@
 #define CONFIG_JFFS2_CMDLINE 1
 #define MTDIDS_DEFAULT "nand0=nandflash0"
 #define MTDPARTS_DEFAULT "mtdparts=nandflash0:1m(u-boot)," \
-					      "1m(App)," \
+					      "2m(App)," \
 					      "4m(Kernel)," \
 					      "16m(Ramdisk)," \
-					      "42m(Yaffs2)," \
+					      "41m(Yaffs2)," \
 					      "32m(Jffs2)," \
 					      "32m(Ubifs)," \
 					      "-(nand)"
