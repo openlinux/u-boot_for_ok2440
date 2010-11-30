@@ -3051,6 +3051,9 @@ smdk2400_config	:	unconfig
 
 smdk2410_config	:	unconfig
 	@$(MKCONFIG) $(@:_config=) arm arm920t smdk2410 samsung s3c24x0
+
+ok2440_config:		unconfig
+	@$(MKCONFIG) $(@:_config=) arm arm920t ok2440   Embedded  s3c24x0
  
 mini2440_config	:	unconfig
 	@$(MKCONFIG) $(@:_config=) arm arm920t mini2440 tekkamanninja s3c24x0

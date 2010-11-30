@@ -1,7 +1,7 @@
 env_embedded.o: \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/common/env_embedded.c \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config.h \
- /home/bamboo/work/ok2440/u-boot_for_ok2440/include/configs/mini2440.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/configs/ok2440.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config_cmd_default.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/config.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/environment.h \
@@ -71,7 +71,7 @@ image.o: /home/bamboo/work/ok2440/u-boot_for_ok2440/common/image.c \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/image.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/command.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config.h \
- /home/bamboo/work/ok2440/u-boot_for_ok2440/include/configs/mini2440.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/configs/ok2440.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config_cmd_default.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/config.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt.h \
@@ -188,7 +188,7 @@ default_image.o: \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/image.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/command.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config.h \
- /home/bamboo/work/ok2440/u-boot_for_ok2440/include/configs/mini2440.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/configs/ok2440.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config_cmd_default.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/config.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt.h \
@@ -235,7 +235,7 @@ fit_image.o: /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/fit_image.c \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/image.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/command.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config.h \
- /home/bamboo/work/ok2440/u-boot_for_ok2440/include/configs/mini2440.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/configs/ok2440.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config_cmd_default.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/config.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt.h \
@@ -335,7 +335,7 @@ kwbimage.o: /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/kwbimage.c \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/image.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/command.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config.h \
- /home/bamboo/work/ok2440/u-boot_for_ok2440/include/configs/mini2440.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/configs/ok2440.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config_cmd_default.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/config.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt.h \
@@ -382,7 +382,7 @@ mkimage.o: /home/bamboo/work/ok2440/u-boot_for_ok2440/tools/mkimage.c \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/image.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/command.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config.h \
- /home/bamboo/work/ok2440/u-boot_for_ok2440/include/configs/mini2440.h \
+ /home/bamboo/work/ok2440/u-boot_for_ok2440/include/configs/ok2440.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/config_cmd_default.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/asm/config.h \
  /home/bamboo/work/ok2440/u-boot_for_ok2440/include/libfdt.h \
