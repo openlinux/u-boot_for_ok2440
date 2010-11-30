@@ -118,8 +118,8 @@ int board_init (void)
 	/* set up the I/O ports */
 	gpio->GPACON = 0x007FFFFF;
 
-#if defined(CONFIG_MINI2440) 
-	gpio->GPBCON = 0x00295551;
+#if defined(CONFIG_OK2440) 
+	gpio->GPBCON = 0x00151;
 #else
 	gpio->GPBCON = 0x00044556;
 #endif
@@ -138,10 +138,24 @@ int board_init (void)
 
     gpio->GPECON = 0xAAAAAAAA;
 	gpio->GPEUP = 0x0000FFFF;
+
+#if defined(CONFIG_OK2440)
+	gpio->GPFCON = 0x0000555A;
+	gpio->GPFUP = 0x000000FF;
+#else
 	gpio->GPFCON = 0x000055AA;
 	gpio->GPFUP = 0x000000FF;
+#endif
+
+#if defined(CONFIG_OK2440)
 	gpio->GPGCON = 0xFF95FF3A;
 	gpio->GPGUP = 0x0000FFFF;
+	gpio->GPGDAT &= ~(1<<9);
+#else
+	gpio->GPGCON = 0xFF95FF3A;
+	gpio->GPGUP = 0x0000FFFF;
+	
+#endif
 	gpio->GPHCON = 0x0016FAAA;
 	gpio->GPHUP = 0x000007FF;
 
@@ -165,8 +179,10 @@ int board_init (void)
 
 	icache_enable();
 	dcache_enable();
-#if	defined(CONFIG_MINI2440_LED)
+#if	defined(CONFIG_OK2440_LED)
 	gpio->GPBDAT = 0x00000181;
+	gpio->GPFDAT &=(0<<3);
+	gpio->GPFDAT |=(1<<4) | (1<<5) | (1<<6);
 #endif
 	return 0;
 }

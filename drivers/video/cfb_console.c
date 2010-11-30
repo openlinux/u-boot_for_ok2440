@@ -270,7 +270,7 @@ void	console_cursor (int state);
 #define VIDEO_LOGO_COLORS	BMP_LOGO_COLORS
 
 #else	/* CONFIG_VIDEO_BMP_LOGO */
-#define LINUX_LOGO_WIDTH	80
+#define LINUX_LOGO_WIDTH	320
 #define LINUX_LOGO_HEIGHT	80
 #define LINUX_LOGO_COLORS	214
 #define LINUX_LOGO_LUT_OFFSET	0x20

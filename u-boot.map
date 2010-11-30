@@ -205,7 +205,7 @@ Linker script and memory map
                 0x00000000                . = 0x0
                 0x00000000                . = ALIGN (0x4)
 
-.text           0x33f80000    0x2e818
+.text           0x33f80000    0x2e860
  cpu/arm920t/start.o(.text)
  .text          0x33f80000      0x4e0 cpu/arm920t/start.o
                 0x33f80000                _start
@@ -221,1462 +221,1462 @@ Linker script and memory map
  .text          0x33f80550      0x2f0 board/Embedded/ok2440/nand_read.o
                 0x33f80620                nand_read_ll
  *(.text)
- .text          0x33f80840      0x2c8 lib_arm/libarm.a(board.o)
+ .text          0x33f80840      0x2f0 lib_arm/libarm.a(board.o)
                 0x33f80840                hang
-                0x33f80958                start_armboot
- .text          0x33f80b08      0x294 lib_arm/libarm.a(interrupts.o)
-                0x33f80b08                enable_interrupts
-                0x33f80b18                disable_interrupts
-                0x33f80b34                show_regs
-                0x33f80c74                bad_mode
-                0x33f80c90                do_fiq
-                0x33f80cb4                do_not_used
-                0x33f80cd8                do_data_abort
-                0x33f80cfc                do_prefetch_abort
-                0x33f80d20                do_software_interrupt
-                0x33f80d44                do_undefined_instruction
-                0x33f80d68                interrupt_init
- .text          0x33f80d9c      0x75c net/libnet.a(eth.o)
-                0x33f80d9c                cpu_eth_init
-                0x33f80da4                eth_get_dev
-                0x33f80db4                eth_get_dev_by_index
-                0x33f80df8                eth_get_dev_index
-                0x33f80e44                eth_halt
-                0x33f80e78                eth_send
-                0x33f80eac                eth_rx
-                0x33f80ed8                eth_get_name
-                0x33f80ef8                eth_get_dev_by_name
-                0x33f80f48                eth_set_current
-                0x33f80fe8                eth_try_another
-                0x33f81098                eth_register
-                0x33f81124                eth_setenv_enetaddr
-                0x33f8115c                eth_parse_enetaddr
-                0x33f811bc                eth_getenv_enetaddr
-                0x33f81214                eth_getenv_enetaddr_by_index
-                0x33f81260                eth_init
-                0x33f81320                eth_initialize
- .text          0x33f814f8     0x14f8 net/libnet.a(net.o)
-                0x33f81510                NetSetHandler
-                0x33f81520                NetCksumOk
-                0x33f81578                NetCksum
-                0x33f815c0                copy_filename
-                0x33f81618                string_to_VLAN
-                0x33f8166c                getenv_VLAN
-                0x33f8167c                string_to_ip
-                0x33f816f8                getenv_IPaddr
-                0x33f81708                NetEthHdrSize
-                0x33f8174c                VLAN_to_string
-                0x33f81798                ip_to_string
-                0x33f817e8                random_port
-                0x33f81804                NetSetTimeout
-                0x33f8183c                NetSetIP
-                0x33f8195c                NetSetEther
-                0x33f81a44                NetSendPacket
-                0x33f81a48                NetReceive
-                0x33f8205c                ArpRequest
-                0x33f82160                PingSend
-                0x33f82310                NetSendUDPPacket
-                0x33f8246c                NetStartAgain
-                0x33f82574                ArpTimeoutCheck
-                0x33f825e8                NetLoop
- .text          0x33f829f0      0xfd4 net/libnet.a(nfs.o)
-                0x33f832c4                NfsStart
- .text          0x33f839c4      0x1a0 net/libnet.a(rarp.o)
-                0x33f839c4                RarpRequest
- .text          0x33f83b64      0x744 net/libnet.a(tftp.o)
-                0x33f83cf8                TftpStart
- .text          0x33f842a8      0x9cc net/libnet.a(bootp.o)
-                0x33f84a5c                BootpRequest
-                0x33f84c28                DhcpRequest
- .text          0x33f84c74      0x610 drivers/i2c/libi2c.a(s3c24x0_i2c.o)
-                0x33f84f90                i2c_write
-                0x33f85030                i2c_read
-                0x33f850d8                i2c_probe
-                0x33f85114                i2c_init
- .text          0x33f85284       0xb8 drivers/mtd/nand/libnand.a(nand.o)
-                0x33f85284                nand_init
- .text          0x33f8533c     0x39f8 drivers/mtd/nand/libnand.a(nand_base.o)
-                0x33f864a4                nand_release
-                0x33f864ec                nand_scan_tail
-                0x33f86c88                nand_scan_ident
-                0x33f871f8                nand_scan
-                0x33f87ce8                nand_erase_nand
-                0x33f8815c                nand_wait_ready
- .text          0x33f88d34     0x1820 drivers/mtd/nand/libnand.a(nand_bbt.o)
-                0x33f88d7c                nand_isbad_bbt
-                0x33f89d54                nand_update_bbt
-                0x33f8a028                nand_scan_bbt
-                0x33f8a490                nand_default_bbt
- .text          0x33f8a554      0x214 drivers/mtd/nand/libnand.a(nand_ecc.o)
-                0x33f8a554                nand_calculate_ecc
-                0x33f8a648                nand_correct_data
- .text          0x33f8a768        0x0 drivers/mtd/nand/libnand.a(nand_ids.o)
- .text          0x33f8a768       0xec drivers/mtd/nand/libnand.a(s3c2410_nand.o)
-                0x33f8a7e8                board_nand_init
- .text          0x33f8a854      0x130 drivers/serial/libserial.a(serial_s3c24x0.o)
-                0x33f8a854                _serial_getc
-                0x33f8a870                serial_getc
-                0x33f8a88c                serial_putc
-                0x33f8a894                _serial_putc
-                0x33f8a8bc                _serial_tstc
-                0x33f8a8d0                serial_tstc
-                0x33f8a8e0                _serial_puts
-                0x33f8a910                serial_puts
-                0x33f8a918                _serial_setbrg
-                0x33f8a940                serial_init
-                0x33f8a97c                serial_setbrg
- .text          0x33f8a984      0x384 drivers/usb/slave/libusb_slave.a(usbinit.o)
-                0x33f8a984                udc_disconnect
-                0x33f8a998                HaltDabort
-                0x33f8a9ac                HaltPabort
-                0x33f8a9c0                HaltSwi
-                0x33f8a9d4                HaltUndef
-                0x33f8a9e8                usb_init_slave
-                0x33f8aa4c                awaitkey
-                0x33f8aabc                usb_receive
- .text          0x33f8ad08      0x268 drivers/usb/slave/libusb_slave.a(interrupt.o)
-                0x33f8ad08                ClearPending_my
-                0x33f8ad18                Timer_InitEx
-                0x33f8ad5c                IsrWatchdog
-                0x33f8ad8c                IsrTimer4
-                0x33f8adb0                Isr_Init
-                0x33f8ae3c                IRQ_Handle
-                0x33f8ae88                Dummy_isr
-                0x33f8aea8                Timer_StopEx
-                0x33f8af18                Timer_StartEx
- .text          0x33f8af70      0x2ac drivers/usb/slave/libusb_slave.a(usblib.o)
-                0x33f8af70                ReconfigUsbd
-                0x33f8b048                ConfigUsbd
-                0x33f8b064                RdPktEp0
-                0x33f8b08c                WrPktEp0
-                0x33f8b0b4                WrPktEp1
-                0x33f8b0dc                WrPktEp2
-                0x33f8b104                RdPktEp3
-                0x33f8b12c                RdPktEp4
-                0x33f8b154                ConfigEp3DmaMode
-                0x33f8b1e0                ConfigEp3IntMode
- .text          0x33f8b21c      0x11c drivers/usb/slave/libusb_slave.a(usbmain.o)
-                0x33f8b21c                _WrDbgStrFifo
-                0x33f8b24c                DbgPrintf
-                0x33f8b258                IsrUsbd
-                0x33f8b324                UsbdMain
- .text          0x33f8b338      0x3b4 drivers/usb/slave/libusb_slave.a(usbout.o)
-                0x33f8b338                ClearEp3OutPktReady
-                0x33f8b358                IsrDma2
-                0x33f8b4e0                Ep3Handler
- .text          0x33f8b6ec      0xbb8 drivers/usb/slave/libusb_slave.a(usbsetup.o)
-                0x33f8b6ec                InitDescriptorTable
-                0x33f8b810                PrintEp0Pkt
-                0x33f8b854                Ep0Handler
- .text          0x33f8c2a4       0xa4 drivers/usb/slave/libusb_slave.a(usbin.o)
-                0x33f8c2a4                PrepareEp1Fifo
-                0x33f8c30c                Ep1Handler
- .text          0x33f8c348       0xf0 common/libcommon.a(cmd_bdinfo.o)
-                0x33f8c348                do_bdinfo
- .text          0x33f8c438      0x2c0 common/libcommon.a(cmd_bmp.o)
-                0x33f8c438                gunzip_bmp
-                0x33f8c4dc                do_bmp
- .text          0x33f8c6f8       0x94 common/libcommon.a(cmd_boot.o)
-                0x33f8c6f8                do_go_exec
-                0x33f8c714                do_go
- .text          0x33f8c78c      0xe30 common/libcommon.a(cmd_bootm.o)
-                0x33f8c78c                board_lmb_reserve
-                0x33f8c78c                __board_lmb_reserve
-                0x33f8c790                arch_lmb_reserve
-                0x33f8c790                __arch_lmb_reserve
-                0x33f8c794                arch_preboot_os
-                0x33f8c794                __arch_preboot_os
-                0x33f8c930                do_iminfo
-                0x33f8c990                do_bootd
-                0x33f8d144                do_bootm_subcommand
-                0x33f8d318                do_bootm
- .text          0x33f8d5bc      0x12c common/libcommon.a(cmd_cache.o)
-                0x33f8d5f8                do_dcache
-                0x33f8d670                do_icache
- .text          0x33f8d6e8       0xd4 common/libcommon.a(cmd_console.o)
-                0x33f8d6e8                do_coninfo
- .text          0x33f8d7bc      0x3a8 common/libcommon.a(cmd_date.o)
-                0x33f8d7bc                mk_date
-                0x33f8da44                do_date
- .text          0x33f8db64      0x21c common/libcommon.a(cmd_eeprom.o)
-                0x33f8db64                eeprom_init
-                0x33f8db74                eeprom_probe
-                0x33f8db80                eeprom_write
-                0x33f8dbf8                eeprom_read
-                0x33f8dc6c                do_eeprom
- .text          0x33f8dd80      0x450 common/libcommon.a(cmd_elf.o)
-                0x33f8dd80                load_elf_image
-                0x33f8de18                valid_elf_image
-                0x33f8de6c                do_bootvx
-                0x33f8e0f8                do_bootelf_exec
-                0x33f8e138                do_bootelf
- .text          0x33f8e1d0      0x360 common/libcommon.a(cmd_fat.o)
-                0x33f8e1d0                do_fat_fsinfo
-                0x33f8e2a8                do_fat_ls
-                0x33f8e3ac                do_fat_fsload
- .text          0x33f8e530      0xb28 common/libcommon.a(cmd_flash.o)
-                0x33f8e530                flash_sect_roundb
-                0x33f8e7cc                flash_sect_protect
-                0x33f8eacc                do_protect
-                0x33f8ed68                flash_sect_erase
-                0x33f8ee48                do_flerase
-                0x33f8efdc                do_flinfo
- .text          0x33f8f058      0xaa0 common/libcommon.a(cmd_i2c.o)
-                0x33f8f058                __def_i2c_get_bus_speed
-                0x33f8f058                i2c_get_bus_speed
-                0x33f8f064                __def_i2c_set_bus_speed
-                0x33f8f064                i2c_set_bus_speed
-                0x33f8f07c                do_i2c_bus_speed
-                0x33f8f338                do_i2c_loop
-                0x33f8f448                do_i2c_mw
-                0x33f8f570                do_i2c_probe
-                0x33f8f5bc                do_i2c_md
-                0x33f8f79c                do_i2c_crc
-                0x33f8f8e8                do_i2c
- .text          0x33f8faf8      0x2ec common/libcommon.a(cmd_itest.o)
-                0x33f8fb40                binary_test
-                0x33f8fd48                do_itest
- .text          0x33f8fde4      0x624 common/libcommon.a(cmd_jffs2.o)
-                0x33f8fe78                mtdparts_init
-                0x33f9021c                do_jffs2_fsinfo
-                0x33f90278                do_jffs2_ls
-                0x33f902d0                do_jffs2_fsload
- .text          0x33f90408      0xf6c common/libcommon.a(cmd_load.o)
-                0x33f90408                ktrans
-                0x33f90428                chk1
-                0x33f90490                k_data_init
-                0x33f904b0                k_data_save
-                0x33f904d4                k_data_restore
-                0x33f904f8                k_data_char
-                0x33f90570                send_pad
-                0x33f905a0                s1_sendpacket
-                0x33f905cc                handle_send_packet
-                0x33f907c8                send_nack
-                0x33f90840                send_ack
-                0x33f90b40                do_load_serial_bin
-                0x33f91298                do_load_serial
- .text          0x33f91374      0xaa4 common/libcommon.a(cmd_mem.o)
-                0x33f91374                do_unzip
-                0x33f913f4                do_mem_crc
-                0x33f914a0                do_mem_base
-                0x33f914e4                do_mem_mtest
-                0x33f9168c                do_mem_loop
-                0x33f91784                do_mem_cmp
-                0x33f91914                do_mem_mw
-                0x33f919d0                do_mem_cp
-                0x33f91d04                do_mem_nm
-                0x33f91d24                do_mem_mm
-                0x33f91d44                do_mem_md
- .text          0x33f91e18       0x84 common/libcommon.a(cmd_misc.o)
-                0x33f91e18                do_sleep
- .text          0x33f91e9c      0x13c common/libcommon.a(cmd_mmc.o)
-                0x33f91e9c                do_mmc
- .text          0x33f91fd8      0xf30 common/libcommon.a(cmd_nand.o)
-                0x33f92170                do_nandboot
-                0x33f926e0                do_nand
- .text          0x33f92f08      0x3b8 common/libcommon.a(cmd_net.o)
-                0x33f92f08                do_ping
-                0x33f93284                do_nfs
-                0x33f93290                do_dhcp
-                0x33f9329c                do_rarpb
-                0x33f932a8                do_tftpb
-                0x33f932b4                do_bootp
- .text          0x33f932c0      0x98c common/libcommon.a(cmd_nvedit.o)
-                0x33f932c0                get_env_id
-                0x33f932d0                envmatch
-                0x33f93330                getenv_r
-                0x33f933d8                do_saveenv
-                0x33f93404                getenv
-                0x33f93474                _do_setenv
-                0x33f938a0                do_askenv
-                0x33f93a04                do_setenv
-                0x33f93a30                setenv
-                0x33f93a7c                do_editenv
-                0x33f93bbc                do_printenv
- .text          0x33f93c4c        0x8 common/libcommon.a(cmd_reginfo.o)
-                0x33f93c4c                do_reginfo
- .text          0x33f93c54      0x198 common/libcommon.a(cmd_source.o)
-                0x33f93c54                source
-                0x33f93da4                do_source
- .text          0x33f93dec     0x1088 common/libcommon.a(cmd_usb.o)
-                0x33f93dec                usb_get_class_desc
-                0x33f93e8c                usb_display_ep_desc
-                0x33f93f40                usb_display_class_sub
-                0x33f940bc                do_usbboot
-                0x33f9445c                usb_show_tree_graph
-                0x33f9467c                usb_show_tree
-                0x33f946b0                usb_display_desc
-                0x33f947e0                usb_display_string
-                0x33f9481c                usb_display_if_desc
-                0x33f948a4                usb_display_conf_desc
-                0x33f94950                usb_display_config
-                0x33f949dc                do_usb
- .text          0x33f94e74      0x14c common/libcommon.a(cmd_usbslave.o)
-                0x33f94e74                do_usbslave
- .text          0x33f94fc0      0x23c common/libcommon.a(cmd_ximg.o)
-                0x33f94fc0                do_imgextract
- .text          0x33f951fc      0xdc4 common/libcommon.a(command.o)
-                0x33f951fc                cmd_get_data_size
-                0x33f9524c                do_echo
-                0x33f952cc                cmd_usage
-                0x33f9532c                do_version
-                0x33f9534c                var_complete
-                0x33f953cc                find_cmd_tbl
-                0x33f95460                find_cmd
-                0x33f95488                install_auto_complete
-                0x33f954dc                _do_help
-                0x33f95654                do_help
-                0x33f9569c                do_exit
-                0x33f956cc                do_test
-                0x33f95b34                cmd_auto_complete
- .text          0x33f95fc0      0x5b4 common/libcommon.a(console.o)
-                0x33f96064                fgetc
-                0x33f9608c                ftstc
-                0x33f960b4                fputc
-                0x33f960e0                fputs
-                0x33f9610c                disable_ctrlc
-                0x33f96124                had_ctrlc
-                0x33f96134                clear_ctrlc
-                0x33f96148                dbg
-                0x33f96154                console_init_f
-                0x33f96164                getc
-                0x33f9617c                tstc
-                0x33f96194                ctrlc
-                0x33f961e0                putc
-                0x33f961fc                puts
-                0x33f96218                search_device
-                0x33f96240                console_assign
-                0x33f96280                vprintf
-                0x33f962ac                printf
-                0x33f962ec                stdio_print_current_devices
-                0x33f963a4                console_init_r
-                0x33f964ec                fprintf
-                0x33f96534                serial_printf
- .text          0x33f96574     0x10e0 common/libcommon.a(dlmalloc.o)
-                0x33f96574                sbrk
-                0x33f965ac                malloc_trim
-                0x33f966bc                free
-                0x33f968e0                cfree
-                0x33f968e4                malloc
-                0x33f96ef4                memalign
-                0x33f97004                pvalloc
-                0x33f9701c                valloc
-                0x33f97028                malloc_usable_size
-                0x33f9706c                mallopt
-                0x33f970e4                calloc
-                0x33f971c4                mem_malloc_init
-                0x33f971ec                realloc
- .text          0x33f97654      0x298 common/libcommon.a(env_common.o)
-                0x33f97654                env_get_char_memory
-                0x33f97678                env_get_addr
-                0x33f9769c                env_get_char
-                0x33f976e4                env_complete
-                0x33f97824                env_crc_update
-                0x33f97850                set_default_env
-                0x33f97894                env_relocate
- .text          0x33f978ec      0x294 common/libcommon.a(env_nand.o)
-                0x33f978ec                env_get_char_spec
-                0x33f978f8                env_init
-                0x33f97914                writeenv
-                0x33f979c8                readenv
-                0x33f97a94                env_relocate_spec
-                0x33f97ae0                saveenv
- .text          0x33f97b80      0x110 common/libcommon.a(exports.o)
-                0x33f97b84                get_version
-                0x33f97b8c                jumptable_init
- .text          0x33f97c90      0x3c0 common/libcommon.a(flash.o)
-                0x33f97c90                flash_protect
-                0x33f97d84                addr2info
-                0x33f97dcc                flash_perror
-                0x33f97e90                flash_write
- .text          0x33f98050     0x1e2c common/libcommon.a(hush.o)
-                0x33f98050                simple_itoa
-                0x33f980d8                mapset
-                0x33f98104                do_showvar
-                0x33f981f0                u_boot_hush_start
-                0x33f98260                new_pipe
-                0x33f98518                unset_local_var
-                0x33f986dc                reserved_word
-                0x33f98c4c                set_local_var
-                0x33f98dfc                update_ifs_map
-                0x33f99504                parse_file_outer
-                0x33f99548                parse_string_outer
- .text          0x33f99e7c      0x970 common/libcommon.a(image.o)
-                0x33f99e7c                image_multi_count
-                0x33f99ea0                get_table_entry_name
-                0x33f99ecc                genimg_get_os_name
-                0x33f99f04                genimg_get_arch_name
-                0x33f99f3c                genimg_get_type_name
-                0x33f99f74                genimg_get_comp_name
-                0x33f99fac                genimg_get_image
-                0x33f99fb0                genimg_has_config
-                0x33f99fb8                get_table_entry_id
-                0x33f9a004                genimg_get_comp_id
-                0x33f9a01c                genimg_get_type_id
-                0x33f9a034                genimg_get_arch_id
-                0x33f9a04c                genimg_get_os_id
-                0x33f9a064                genimg_get_format
-                0x33f9a0b8                image_multi_getimg
-                0x33f9a160                genimg_print_size
-                0x33f9a18c                memmove_wd
-                0x33f9a190                getenv_bootm_size
-                0x33f9a1c4                getenv_bootm_low
-                0x33f9a1f8                getenv_yesno
-                0x33f9a21c                image_print_contents
-                0x33f9a4c4                image_check_dcrc
-                0x33f9a510                image_check_hcrc
-                0x33f9a578                boot_get_ramdisk
- .text          0x33f9a7ec     0x10c8 common/libcommon.a(main.o)
-                0x33f9a7ec                __show_boot_progress
-                0x33f9a7ec                show_boot_progress
-                0x33f9a7f0                parse_line
-                0x33f9a87c                do_run
-                0x33f9a8ec                run_command
-                0x33f9ae8c                readline_into_buffer
-                0x33f9b7a0                readline
-                0x33f9b7bc                main_loop
- .text          0x33f9b8b4      0x2f4 common/libcommon.a(s_record.o)
-                0x33f9b934                srec_decode
- .text          0x33f9bba8      0x1e8 common/libcommon.a(stdio.o)
-                0x33f9bba8                nulldev_putc
-                0x33f9bbac                nulldev_puts
-                0x33f9bbb0                nulldev_input
-                0x33f9bbb8                stdio_get_list
-                0x33f9bbc4                stdio_clone
-                0x33f9bc0c                stdio_register
-                0x33f9bc4c                stdio_init
-                0x33f9bd44                stdio_get_by_name
- .text          0x33f9bd90     0x1604 common/libcommon.a(usb.o)
-                0x33f9bd90                usb_disable_asynch
-                0x33f9bda8                usb_maxpacket
-                0x33f9be18                usb_set_maxpacket
-                0x33f9be7c                usb_get_dev_index
-                0x33f9beac                usb_hub_reset
-                0x33f9bec0                usb_hub_allocate
-                0x33f9bf04                usb_alloc_new_device
-                0x33f9bfa4                usb_parse_config
-                0x33f9c0f4                usb_submit_int_msg
-                0x33f9c0f8                usb_stop
-                0x33f9c12c                wait_ms
-                0x33f9c150                usb_bulk_msg
-                0x33f9c1b4                usb_control_msg
-                0x33f9c268                usb_get_port_status
-                0x33f9c2c8                usb_get_hub_status
-                0x33f9c31c                usb_set_port_feature
-                0x33f9c37c                usb_clear_port_feature
-                0x33f9c3dc                usb_clear_hub_feature
-                0x33f9c430                usb_get_hub_descriptor
-                0x33f9c490                usb_get_string
-                0x33f9c60c                usb_string
-                0x33f9c70c                usb_get_class_descriptor
-                0x33f9c780                usb_get_report
-                0x33f9c7f4                usb_set_idle
-                0x33f9c858                usb_set_protocol
-                0x33f9c8b8                usb_set_configuration
-                0x33f9c924                usb_set_interface
-                0x33f9c9e4                usb_set_address
-                0x33f9ca28                usb_get_descriptor
-                0x33f9ca94                usb_get_configuration_no
-                0x33f9cb2c                usb_clear_halt
-                0x33f9ccc0                usb_hub_port_connect_change
-                0x33f9cdac                usb_hub_configure
-                0x33f9cfb4                usb_hub_probe
-                0x33f9d010                usb_new_device
-                0x33f9d2a0                usb_scan_devices
-                0x33f9d318                usb_init
- .text          0x33f9d394     0x1368 common/libcommon.a(usb_storage.o)
-                0x33f9d394                usb_stor_get_dev
-                0x33f9d3d0                usb_show_progress
-                0x33f9d3dc                usb_storage_probe
-                0x33f9d60c                usb_stor_BBB_clear_endpt_stall
-                0x33f9d82c                usb_stor_CB_comdat
-                0x33f9da78                usb_stor_BBB_comdat
-                0x33f9db64                usb_stor_BBB_transport
-                0x33f9dd2c                usb_stor_CBI_get_status
-                0x33f9de0c                usb_stor_CB_transport
-                0x33f9dff8                usb_stor_info
-                0x33f9e150                usb_stor_get_info
-                0x33f9e3c8                usb_stor_scan
-                0x33f9e514                usb_stor_read
- .text          0x33f9e6fc      0x978 common/libcommon.a(xyzModem.o)
-                0x33f9e6fc                parse_num
-                0x33f9e828                xyzModem_error
-                0x33f9e848                xyzModem_stream_close
-                0x33f9e898                CYGACC_COMM_IF_PUTC
-                0x33f9e8a0                CYGACC_COMM_IF_GETC_TIMEOUT
-                0x33f9e8f4                xyzModem_stream_terminate
-                0x33f9eca4                xyzModem_stream_read
-                0x33f9ef20                xyzModem_stream_open
- .text          0x33f9f074      0x1a4 board/Embedded/ok2440/libok2440.a(ok2440.o)
-                0x33f9f074                board_video_init
-                0x33f9f0c8                dram_init
-                0x33f9f0e8                board_eth_init
-                0x33f9f0ec                board_init
- .text          0x33f9f218      0x59c board/Embedded/ok2440/libok2440.a(flash.o)
-                0x33f9f2b8                write_buff
-                0x33f9f428                flash_print_info
-                0x33f9f564                flash_erase
-                0x33f9f70c                flash_init
- .text          0x33f9f7b4       0x48 lib_generic/libgeneric.a(crc16.o)
-                0x33f9f7b4                cyg_crc16
- .text          0x33f9f7fc      0x214 lib_generic/libgeneric.a(crc32.o)
-                0x33f9f7fc                crc32
-                0x33f9f908                crc32_no_comp
-                0x33f9fa0c                crc32_wd
- .text          0x33f9fa10        0x0 lib_generic/libgeneric.a(ctype.o)
- .text          0x33f9fa10      0x254 lib_generic/libgeneric.a(display_options.o)
-                0x33f9fa10                print_size
-                0x33f9fad4                display_options
-                0x33f9faf4                print_buffer
- .text          0x33f9fc64      0x1bc lib_generic/libgeneric.a(gunzip.o)
-                0x33f9fc64                zunzip
-                0x33f9fd54                gunzip
-                0x33f9fe08                zfree
-                0x33f9fe10                zalloc
- .text          0x33f9fe20      0x568 lib_generic/libgeneric.a(lmb.o)
-                0x33f9fe20                lmb_dump_all
-                0x33f9fe24                lmb_init
-                0x33fa0018                lmb_add
-                0x33fa001c                lmb_free
-                0x33fa013c                lmb_reserve
-                0x33fa0144                lmb_overlaps_region
-                0x33fa0198                __lmb_alloc_base
-                0x33fa02f0                lmb_is_reserved
-                0x33fa0350                lmb_alloc_base
-                0x33fa0380                lmb_alloc
- .text          0x33fa0388      0x6bc lib_generic/libgeneric.a(string.o)
-                0x33fa0388                strcpy
-                0x33fa03a4                strncpy
-                0x33fa03cc                strcat
-                0x33fa03fc                strncat
-                0x33fa0458                strcmp
-                0x33fa0488                strncmp
-                0x33fa04d0                strchr
-                0x33fa04fc                strrchr
-                0x33fa0538                strlen
-                0x33fa0558                strnlen
-                0x33fa0580                strspn
-                0x33fa05c4                strpbrk
-                0x33fa05fc                strtok
-                0x33fa06c8                strsep
-                0x33fa072c                strswab
-                0x33fa0774                memset
-                0x33fa07e8                bcopy
-                0x33fa0810                memcpy
-                0x33fa087c                memmove
-                0x33fa08d8                memcmp
-                0x33fa0910                memscan
-                0x33fa0940                strstr
-                0x33fa09c0                memchr
-                0x33fa09ec                strdup
- .text          0x33fa0a44      0xd18 lib_generic/libgeneric.a(vsprintf.o)
-                0x33fa0a44                simple_strtoul
-                0x33fa0af4                simple_strtol
-                0x33fa0b1c                ustrtoul
-                0x33fa0c64                panic
-                0x33fa10dc                vsprintf
-                0x33fa1734                sprintf
- .text          0x33fa175c     0x2744 lib_generic/libgeneric.a(zlib.o)
-                0x33fa175c                inflate_fast
-                0x33fa1c5c                inflate_table
-                0x33fa2208                inflateReset
-                0x33fa22a8                inflateInit2_
-                0x33fa23a8                inflateInit_
-                0x33fa23b8                inflateEnd
-                0x33fa243c                adler32
-                0x33fa274c                zcfree
-                0x33fa2754                zcalloc
-                0x33fa275c                inflate
- .text          0x33fa3ea0       0xf8 lib_generic/libgeneric.a(div64.o)
-                0x33fa3ea0                __div64_32
- .text          0x33fa3f98       0x14 cpu/arm920t/s3c24x0/libs3c24x0.a(interrupts.o)
-                0x33fa3f98                do_irq
-                0x33fa3fa4                arch_interrupt_init
- .text          0x33fa3fac      0x154 cpu/arm920t/s3c24x0/libs3c24x0.a(speed.o)
-                0x33fa4024                get_UCLK
-                0x33fa402c                get_FCLK
-                0x33fa4034                get_HCLK
-                0x33fa40d8                get_PCLK
- .text          0x33fa4100      0x35c cpu/arm920t/s3c24x0/libs3c24x0.a(timer.o)
-                0x33fa4100                reset_timer
-                0x33fa4128                set_timer
-                0x33fa4138                udelay
-                0x33fa41e8                reset_timer_masked
-                0x33fa4210                get_timer_masked
-                0x33fa4274                get_timer
-                0x33fa4288                udelay_masked
-                0x33fa4368                get_ticks
-                0x33fa43b8                get_tbclk
-                0x33fa43c0                reset_cpu
-                0x33fa43e0                timer_init
- .text          0x33fa445c     0x1690 cpu/arm920t/s3c24x0/libs3c24x0.a(usb_ohci.o)
-                0x33fa445c                rh_check_port_status
-                0x33fa4508                submit_int_msg
-                0x33fa45c8                usb_lowlevel_init
-                0x33fa4824                usb_lowlevel_stop
-                0x33fa48e4                sohci_submit_job
-                0x33fa4ed4                submit_common_msg
-                0x33fa542c                submit_bulk_msg
-                0x33fa5444                submit_control_msg
- .text          0x33fa5aec      0xa80 cpu/arm920t/s3c24x0/libs3c24x0.a(mmc.o)
-                0x33fa5aec                mmc_get_dev
-                0x33fa5af8                mmc_ident
-                0x33fa5b00                mmc2info
-                0x33fa5be8                mmc_init
-                0x33fa636c                mmc_read
-                0x33fa6470                mmc_bread
-                0x33fa6494                mmc_write
- .text          0x33fa656c      0x1c8 lib_arm/libarm.a(bootm.o)
-                0x33fa656c                do_bootm_linux
- .text          0x33fa6734        0x4 lib_arm/libarm.a(cache.o)
-                0x33fa6734                flush_cache
- .text          0x33fa6738      0x120 lib_arm/libarm.a(cache-cp15.o)
-                0x33fa6738                icache_enable
-                0x33fa6778                icache_disable
-                0x33fa67b8                icache_status
-                0x33fa67c8                dcache_enable
-                0x33fa6808                dcache_disable
-                0x33fa6848                dcache_status
- .text          0x33fa6858       0x30 lib_arm/libarm.a(reset.o)
-                0x33fa6858                do_reset
- .text          0x33fa6888     0x13b0 fs/fat/libfat.a(fat.o)
-                0x33fa6888                disk_read
-                0x33fa6f58                file_fat_detectfs
-                0x33fa70b8                do_fat_read
-                0x33fa7b00                file_fat_read
-                0x33fa7b38                file_fat_ls
-                0x33fa7b48                fat_register_device
- .text          0x33fa7c38     0x1c78 fs/jffs2/libjffs2.a(jffs2_1pass.o)
-                0x33fa7c38                mkmodestr
-                0x33fa7e34                jffs2_free_cache
-                0x33fa80fc                jffs2_1pass_rescan_needed
-                0x33fa8770                jffs2_1pass_info
-                0x33fa8c54                jffs2_1pass_load
-                0x33fa9868                jffs2_1pass_ls
- .text          0x33fa98b0       0xc8 fs/jffs2/libjffs2.a(compr_rtime.o)
-                0x33fa98b0                rtime_decompress
- .text          0x33fa9978      0x124 fs/jffs2/libjffs2.a(compr_rubin.o)
-                0x33fa9978                rubin_do_decompress
-                0x33fa9a60                dynrubin_decompress
- .text          0x33fa9a9c       0x18 fs/jffs2/libjffs2.a(compr_zlib.o)
-                0x33fa9a9c                zlib_decompress
- .text          0x33fa9ab4      0xd50 fs/jffs2/libjffs2.a(mini_inflate.o)
-                0x33fa9ab4                cramfs_memset
-                0x33fa9ad8                pull_bits
-                0x33fa9b30                pull_bit
-                0x33fa9f34                decompress_block
- .text          0x33faa804      0x380 disk/libdisk.a(part.o)
-                0x33faa804                dev_print
-                0x33faaa04                get_partition_info
-                0x33faaa28                init_part
-                0x33faaa44                get_dev
-                0x33faaaa8                print_part
- .text          0x33faab84      0x558 disk/libdisk.a(part_dos.o)
-                0x33faab84                test_part_dos
-                0x33faae64                get_partition_info_dos
-                0x33fab0b0                print_part_dos
- .text          0x33fab0dc      0x828 drivers/mtd/nand/libnand.a(nand_util.o)
-                0x33fab174                nand_read_skip_bad
-                0x33fab334                nand_write_skip_bad
-                0x33fab5d8                nand_erase_opts
- .text          0x33fab904      0x910 drivers/net/libnet.a(dm9000x.o)
-                0x33fabab0                dm9000_initialize
- .text          0x33fac214      0x29c drivers/rtc/librtc.a(date.o)
-                0x33fac214                GregorianDay
-                0x33fac304                to_tm
-                0x33fac418                mktime
- .text          0x33fac4b0      0x258 drivers/rtc/librtc.a(s3c24x0_rtc.o)
-                0x33fac4dc                rtc_get
-                0x33fac63c                rtc_set
-                0x33fac6e4                rtc_reset
- .text          0x33fac708     0x1754 drivers/video/libvideo.a(cfb_console.o)
-                0x33facd84                video_putc
-                0x33facf8c                __board_video_skip
-                0x33facf8c                board_video_skip
-                0x33facf94                video_puts
-                0x33facfc4                logo_plot
-                0x33fad1d8                video_display_bitmap
-                0x33fadbb4                drv_video_init
- .text          0x33fade5c      0x240 drivers/video/libvideo.a(s3c2410_fb.o)
-                0x33fade5c                video_set_lut
-                0x33fade60                video_hw_init
- .text          0x33fae09c      0x480 drivers/video/libvideo.a(videomodes.o)
-                0x33fae09c                video_get_params
- .text          0x33fae51c       0x20 cpu/arm920t/libarm920t.a(cpu.o)
-                0x33fae51c                cleanup_before_linux
- .text          0x33fae53c       0x1c /home/bamboo/work/ok2440/u-boot_for_ok2440/lib_arm/eabi_compat.o
-                0x33fae53c                raise
- .text          0x33fae558      0x114 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_udivsi3.o)
-                0x33fae558                __udivsi3
-                0x33fae558                __aeabi_uidiv
-                0x33fae654                __aeabi_uidivmod
- .text          0x33fae66c      0x144 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_divsi3.o)
-                0x33fae66c                __aeabi_idiv
-                0x33fae66c                __divsi3
-                0x33fae798                __aeabi_idivmod
- .text          0x33fae7b0       0x1c /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_lshrdi3.o)
-                0x33fae7b0                __aeabi_llsr
-                0x33fae7b0                __lshrdi3
- .text          0x33fae7cc       0x1c /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_ashrdi3.o)
-                0x33fae7cc                __ashrdi3
-                0x33fae7cc                __aeabi_lasr
- .text          0x33fae7e8       0x1c /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_ashldi3.o)
-                0x33fae7e8                __ashldi3
-                0x33fae7e8                __aeabi_llsl
- .text          0x33fae804       0x14 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_dvmd_lnx.o)
-                0x33fae804                __div0
+                0x33f8096c                start_armboot
+ .text          0x33f80b30      0x294 lib_arm/libarm.a(interrupts.o)
+                0x33f80b30                enable_interrupts
+                0x33f80b40                disable_interrupts
+                0x33f80b5c                show_regs
+                0x33f80c9c                bad_mode
+                0x33f80cb8                do_fiq
+                0x33f80cdc                do_not_used
+                0x33f80d00                do_data_abort
+                0x33f80d24                do_prefetch_abort
+                0x33f80d48                do_software_interrupt
+                0x33f80d6c                do_undefined_instruction
+                0x33f80d90                interrupt_init
+ .text          0x33f80dc4      0x75c net/libnet.a(eth.o)
+                0x33f80dc4                cpu_eth_init
+                0x33f80dcc                eth_get_dev
+                0x33f80ddc                eth_get_dev_by_index
+                0x33f80e20                eth_get_dev_index
+                0x33f80e6c                eth_halt
+                0x33f80ea0                eth_send
+                0x33f80ed4                eth_rx
+                0x33f80f00                eth_get_name
+                0x33f80f20                eth_get_dev_by_name
+                0x33f80f70                eth_set_current
+                0x33f81010                eth_try_another
+                0x33f810c0                eth_register
+                0x33f8114c                eth_setenv_enetaddr
+                0x33f81184                eth_parse_enetaddr
+                0x33f811e4                eth_getenv_enetaddr
+                0x33f8123c                eth_getenv_enetaddr_by_index
+                0x33f81288                eth_init
+                0x33f81348                eth_initialize
+ .text          0x33f81520     0x14f8 net/libnet.a(net.o)
+                0x33f81538                NetSetHandler
+                0x33f81548                NetCksumOk
+                0x33f815a0                NetCksum
+                0x33f815e8                copy_filename
+                0x33f81640                string_to_VLAN
+                0x33f81694                getenv_VLAN
+                0x33f816a4                string_to_ip
+                0x33f81720                getenv_IPaddr
+                0x33f81730                NetEthHdrSize
+                0x33f81774                VLAN_to_string
+                0x33f817c0                ip_to_string
+                0x33f81810                random_port
+                0x33f8182c                NetSetTimeout
+                0x33f81864                NetSetIP
+                0x33f81984                NetSetEther
+                0x33f81a6c                NetSendPacket
+                0x33f81a70                NetReceive
+                0x33f82084                ArpRequest
+                0x33f82188                PingSend
+                0x33f82338                NetSendUDPPacket
+                0x33f82494                NetStartAgain
+                0x33f8259c                ArpTimeoutCheck
+                0x33f82610                NetLoop
+ .text          0x33f82a18      0xfd4 net/libnet.a(nfs.o)
+                0x33f832ec                NfsStart
+ .text          0x33f839ec      0x1a0 net/libnet.a(rarp.o)
+                0x33f839ec                RarpRequest
+ .text          0x33f83b8c      0x744 net/libnet.a(tftp.o)
+                0x33f83d20                TftpStart
+ .text          0x33f842d0      0x9cc net/libnet.a(bootp.o)
+                0x33f84a84                BootpRequest
+                0x33f84c50                DhcpRequest
+ .text          0x33f84c9c      0x610 drivers/i2c/libi2c.a(s3c24x0_i2c.o)
+                0x33f84fb8                i2c_write
+                0x33f85058                i2c_read
+                0x33f85100                i2c_probe
+                0x33f8513c                i2c_init
+ .text          0x33f852ac       0xb8 drivers/mtd/nand/libnand.a(nand.o)
+                0x33f852ac                nand_init
+ .text          0x33f85364     0x39f8 drivers/mtd/nand/libnand.a(nand_base.o)
+                0x33f864cc                nand_release
+                0x33f86514                nand_scan_tail
+                0x33f86cb0                nand_scan_ident
+                0x33f87220                nand_scan
+                0x33f87d10                nand_erase_nand
+                0x33f88184                nand_wait_ready
+ .text          0x33f88d5c     0x1820 drivers/mtd/nand/libnand.a(nand_bbt.o)
+                0x33f88da4                nand_isbad_bbt
+                0x33f89d7c                nand_update_bbt
+                0x33f8a050                nand_scan_bbt
+                0x33f8a4b8                nand_default_bbt
+ .text          0x33f8a57c      0x214 drivers/mtd/nand/libnand.a(nand_ecc.o)
+                0x33f8a57c                nand_calculate_ecc
+                0x33f8a670                nand_correct_data
+ .text          0x33f8a790        0x0 drivers/mtd/nand/libnand.a(nand_ids.o)
+ .text          0x33f8a790       0xec drivers/mtd/nand/libnand.a(s3c2410_nand.o)
+                0x33f8a810                board_nand_init
+ .text          0x33f8a87c      0x130 drivers/serial/libserial.a(serial_s3c24x0.o)
+                0x33f8a87c                _serial_getc
+                0x33f8a898                serial_getc
+                0x33f8a8b4                serial_putc
+                0x33f8a8bc                _serial_putc
+                0x33f8a8e4                _serial_tstc
+                0x33f8a8f8                serial_tstc
+                0x33f8a908                _serial_puts
+                0x33f8a938                serial_puts
+                0x33f8a940                _serial_setbrg
+                0x33f8a968                serial_init
+                0x33f8a9a4                serial_setbrg
+ .text          0x33f8a9ac      0x384 drivers/usb/slave/libusb_slave.a(usbinit.o)
+                0x33f8a9ac                udc_disconnect
+                0x33f8a9c0                HaltDabort
+                0x33f8a9d4                HaltPabort
+                0x33f8a9e8                HaltSwi
+                0x33f8a9fc                HaltUndef
+                0x33f8aa10                usb_init_slave
+                0x33f8aa74                awaitkey
+                0x33f8aae4                usb_receive
+ .text          0x33f8ad30      0x268 drivers/usb/slave/libusb_slave.a(interrupt.o)
+                0x33f8ad30                ClearPending_my
+                0x33f8ad40                Timer_InitEx
+                0x33f8ad84                IsrWatchdog
+                0x33f8adb4                IsrTimer4
+                0x33f8add8                Isr_Init
+                0x33f8ae64                IRQ_Handle
+                0x33f8aeb0                Dummy_isr
+                0x33f8aed0                Timer_StopEx
+                0x33f8af40                Timer_StartEx
+ .text          0x33f8af98      0x2ac drivers/usb/slave/libusb_slave.a(usblib.o)
+                0x33f8af98                ReconfigUsbd
+                0x33f8b070                ConfigUsbd
+                0x33f8b08c                RdPktEp0
+                0x33f8b0b4                WrPktEp0
+                0x33f8b0dc                WrPktEp1
+                0x33f8b104                WrPktEp2
+                0x33f8b12c                RdPktEp3
+                0x33f8b154                RdPktEp4
+                0x33f8b17c                ConfigEp3DmaMode
+                0x33f8b208                ConfigEp3IntMode
+ .text          0x33f8b244      0x11c drivers/usb/slave/libusb_slave.a(usbmain.o)
+                0x33f8b244                _WrDbgStrFifo
+                0x33f8b274                DbgPrintf
+                0x33f8b280                IsrUsbd
+                0x33f8b34c                UsbdMain
+ .text          0x33f8b360      0x3b4 drivers/usb/slave/libusb_slave.a(usbout.o)
+                0x33f8b360                ClearEp3OutPktReady
+                0x33f8b380                IsrDma2
+                0x33f8b508                Ep3Handler
+ .text          0x33f8b714      0xbb8 drivers/usb/slave/libusb_slave.a(usbsetup.o)
+                0x33f8b714                InitDescriptorTable
+                0x33f8b838                PrintEp0Pkt
+                0x33f8b87c                Ep0Handler
+ .text          0x33f8c2cc       0xa4 drivers/usb/slave/libusb_slave.a(usbin.o)
+                0x33f8c2cc                PrepareEp1Fifo
+                0x33f8c334                Ep1Handler
+ .text          0x33f8c370       0xf0 common/libcommon.a(cmd_bdinfo.o)
+                0x33f8c370                do_bdinfo
+ .text          0x33f8c460      0x2c0 common/libcommon.a(cmd_bmp.o)
+                0x33f8c460                gunzip_bmp
+                0x33f8c504                do_bmp
+ .text          0x33f8c720       0x94 common/libcommon.a(cmd_boot.o)
+                0x33f8c720                do_go_exec
+                0x33f8c73c                do_go
+ .text          0x33f8c7b4      0xe30 common/libcommon.a(cmd_bootm.o)
+                0x33f8c7b4                board_lmb_reserve
+                0x33f8c7b4                __board_lmb_reserve
+                0x33f8c7b8                arch_lmb_reserve
+                0x33f8c7b8                __arch_lmb_reserve
+                0x33f8c7bc                arch_preboot_os
+                0x33f8c7bc                __arch_preboot_os
+                0x33f8c958                do_iminfo
+                0x33f8c9b8                do_bootd
+                0x33f8d16c                do_bootm_subcommand
+                0x33f8d340                do_bootm
+ .text          0x33f8d5e4      0x12c common/libcommon.a(cmd_cache.o)
+                0x33f8d620                do_dcache
+                0x33f8d698                do_icache
+ .text          0x33f8d710       0xd4 common/libcommon.a(cmd_console.o)
+                0x33f8d710                do_coninfo
+ .text          0x33f8d7e4      0x3a8 common/libcommon.a(cmd_date.o)
+                0x33f8d7e4                mk_date
+                0x33f8da6c                do_date
+ .text          0x33f8db8c      0x21c common/libcommon.a(cmd_eeprom.o)
+                0x33f8db8c                eeprom_init
+                0x33f8db9c                eeprom_probe
+                0x33f8dba8                eeprom_write
+                0x33f8dc20                eeprom_read
+                0x33f8dc94                do_eeprom
+ .text          0x33f8dda8      0x450 common/libcommon.a(cmd_elf.o)
+                0x33f8dda8                load_elf_image
+                0x33f8de40                valid_elf_image
+                0x33f8de94                do_bootvx
+                0x33f8e120                do_bootelf_exec
+                0x33f8e160                do_bootelf
+ .text          0x33f8e1f8      0x360 common/libcommon.a(cmd_fat.o)
+                0x33f8e1f8                do_fat_fsinfo
+                0x33f8e2d0                do_fat_ls
+                0x33f8e3d4                do_fat_fsload
+ .text          0x33f8e558      0xb28 common/libcommon.a(cmd_flash.o)
+                0x33f8e558                flash_sect_roundb
+                0x33f8e7f4                flash_sect_protect
+                0x33f8eaf4                do_protect
+                0x33f8ed90                flash_sect_erase
+                0x33f8ee70                do_flerase
+                0x33f8f004                do_flinfo
+ .text          0x33f8f080      0xaa0 common/libcommon.a(cmd_i2c.o)
+                0x33f8f080                __def_i2c_get_bus_speed
+                0x33f8f080                i2c_get_bus_speed
+                0x33f8f08c                __def_i2c_set_bus_speed
+                0x33f8f08c                i2c_set_bus_speed
+                0x33f8f0a4                do_i2c_bus_speed
+                0x33f8f360                do_i2c_loop
+                0x33f8f470                do_i2c_mw
+                0x33f8f598                do_i2c_probe
+                0x33f8f5e4                do_i2c_md
+                0x33f8f7c4                do_i2c_crc
+                0x33f8f910                do_i2c
+ .text          0x33f8fb20      0x2ec common/libcommon.a(cmd_itest.o)
+                0x33f8fb68                binary_test
+                0x33f8fd70                do_itest
+ .text          0x33f8fe0c      0x624 common/libcommon.a(cmd_jffs2.o)
+                0x33f8fea0                mtdparts_init
+                0x33f90244                do_jffs2_fsinfo
+                0x33f902a0                do_jffs2_ls
+                0x33f902f8                do_jffs2_fsload
+ .text          0x33f90430      0xf6c common/libcommon.a(cmd_load.o)
+                0x33f90430                ktrans
+                0x33f90450                chk1
+                0x33f904b8                k_data_init
+                0x33f904d8                k_data_save
+                0x33f904fc                k_data_restore
+                0x33f90520                k_data_char
+                0x33f90598                send_pad
+                0x33f905c8                s1_sendpacket
+                0x33f905f4                handle_send_packet
+                0x33f907f0                send_nack
+                0x33f90868                send_ack
+                0x33f90b68                do_load_serial_bin
+                0x33f912c0                do_load_serial
+ .text          0x33f9139c      0xaa4 common/libcommon.a(cmd_mem.o)
+                0x33f9139c                do_unzip
+                0x33f9141c                do_mem_crc
+                0x33f914c8                do_mem_base
+                0x33f9150c                do_mem_mtest
+                0x33f916b4                do_mem_loop
+                0x33f917ac                do_mem_cmp
+                0x33f9193c                do_mem_mw
+                0x33f919f8                do_mem_cp
+                0x33f91d2c                do_mem_nm
+                0x33f91d4c                do_mem_mm
+                0x33f91d6c                do_mem_md
+ .text          0x33f91e40       0x84 common/libcommon.a(cmd_misc.o)
+                0x33f91e40                do_sleep
+ .text          0x33f91ec4      0x13c common/libcommon.a(cmd_mmc.o)
+                0x33f91ec4                do_mmc
+ .text          0x33f92000      0xf30 common/libcommon.a(cmd_nand.o)
+                0x33f92198                do_nandboot
+                0x33f92708                do_nand
+ .text          0x33f92f30      0x3b8 common/libcommon.a(cmd_net.o)
+                0x33f92f30                do_ping
+                0x33f932ac                do_nfs
+                0x33f932b8                do_dhcp
+                0x33f932c4                do_rarpb
+                0x33f932d0                do_tftpb
+                0x33f932dc                do_bootp
+ .text          0x33f932e8      0x98c common/libcommon.a(cmd_nvedit.o)
+                0x33f932e8                get_env_id
+                0x33f932f8                envmatch
+                0x33f93358                getenv_r
+                0x33f93400                do_saveenv
+                0x33f9342c                getenv
+                0x33f9349c                _do_setenv
+                0x33f938c8                do_askenv
+                0x33f93a2c                do_setenv
+                0x33f93a58                setenv
+                0x33f93aa4                do_editenv
+                0x33f93be4                do_printenv
+ .text          0x33f93c74        0x8 common/libcommon.a(cmd_reginfo.o)
+                0x33f93c74                do_reginfo
+ .text          0x33f93c7c      0x198 common/libcommon.a(cmd_source.o)
+                0x33f93c7c                source
+                0x33f93dcc                do_source
+ .text          0x33f93e14     0x1088 common/libcommon.a(cmd_usb.o)
+                0x33f93e14                usb_get_class_desc
+                0x33f93eb4                usb_display_ep_desc
+                0x33f93f68                usb_display_class_sub
+                0x33f940e4                do_usbboot
+                0x33f94484                usb_show_tree_graph
+                0x33f946a4                usb_show_tree
+                0x33f946d8                usb_display_desc
+                0x33f94808                usb_display_string
+                0x33f94844                usb_display_if_desc
+                0x33f948cc                usb_display_conf_desc
+                0x33f94978                usb_display_config
+                0x33f94a04                do_usb
+ .text          0x33f94e9c      0x14c common/libcommon.a(cmd_usbslave.o)
+                0x33f94e9c                do_usbslave
+ .text          0x33f94fe8      0x23c common/libcommon.a(cmd_ximg.o)
+                0x33f94fe8                do_imgextract
+ .text          0x33f95224      0xdc4 common/libcommon.a(command.o)
+                0x33f95224                cmd_get_data_size
+                0x33f95274                do_echo
+                0x33f952f4                cmd_usage
+                0x33f95354                do_version
+                0x33f95374                var_complete
+                0x33f953f4                find_cmd_tbl
+                0x33f95488                find_cmd
+                0x33f954b0                install_auto_complete
+                0x33f95504                _do_help
+                0x33f9567c                do_help
+                0x33f956c4                do_exit
+                0x33f956f4                do_test
+                0x33f95b5c                cmd_auto_complete
+ .text          0x33f95fe8      0x5b4 common/libcommon.a(console.o)
+                0x33f9608c                fgetc
+                0x33f960b4                ftstc
+                0x33f960dc                fputc
+                0x33f96108                fputs
+                0x33f96134                disable_ctrlc
+                0x33f9614c                had_ctrlc
+                0x33f9615c                clear_ctrlc
+                0x33f96170                dbg
+                0x33f9617c                console_init_f
+                0x33f9618c                getc
+                0x33f961a4                tstc
+                0x33f961bc                ctrlc
+                0x33f96208                putc
+                0x33f96224                puts
+                0x33f96240                search_device
+                0x33f96268                console_assign
+                0x33f962a8                vprintf
+                0x33f962d4                printf
+                0x33f96314                stdio_print_current_devices
+                0x33f963cc                console_init_r
+                0x33f96514                fprintf
+                0x33f9655c                serial_printf
+ .text          0x33f9659c     0x10e0 common/libcommon.a(dlmalloc.o)
+                0x33f9659c                sbrk
+                0x33f965d4                malloc_trim
+                0x33f966e4                free
+                0x33f96908                cfree
+                0x33f9690c                malloc
+                0x33f96f1c                memalign
+                0x33f9702c                pvalloc
+                0x33f97044                valloc
+                0x33f97050                malloc_usable_size
+                0x33f97094                mallopt
+                0x33f9710c                calloc
+                0x33f971ec                mem_malloc_init
+                0x33f97214                realloc
+ .text          0x33f9767c      0x298 common/libcommon.a(env_common.o)
+                0x33f9767c                env_get_char_memory
+                0x33f976a0                env_get_addr
+                0x33f976c4                env_get_char
+                0x33f9770c                env_complete
+                0x33f9784c                env_crc_update
+                0x33f97878                set_default_env
+                0x33f978bc                env_relocate
+ .text          0x33f97914      0x294 common/libcommon.a(env_nand.o)
+                0x33f97914                env_get_char_spec
+                0x33f97920                env_init
+                0x33f9793c                writeenv
+                0x33f979f0                readenv
+                0x33f97abc                env_relocate_spec
+                0x33f97b08                saveenv
+ .text          0x33f97ba8      0x110 common/libcommon.a(exports.o)
+                0x33f97bac                get_version
+                0x33f97bb4                jumptable_init
+ .text          0x33f97cb8      0x3c0 common/libcommon.a(flash.o)
+                0x33f97cb8                flash_protect
+                0x33f97dac                addr2info
+                0x33f97df4                flash_perror
+                0x33f97eb8                flash_write
+ .text          0x33f98078     0x1e2c common/libcommon.a(hush.o)
+                0x33f98078                simple_itoa
+                0x33f98100                mapset
+                0x33f9812c                do_showvar
+                0x33f98218                u_boot_hush_start
+                0x33f98288                new_pipe
+                0x33f98540                unset_local_var
+                0x33f98704                reserved_word
+                0x33f98c74                set_local_var
+                0x33f98e24                update_ifs_map
+                0x33f9952c                parse_file_outer
+                0x33f99570                parse_string_outer
+ .text          0x33f99ea4      0x970 common/libcommon.a(image.o)
+                0x33f99ea4                image_multi_count
+                0x33f99ec8                get_table_entry_name
+                0x33f99ef4                genimg_get_os_name
+                0x33f99f2c                genimg_get_arch_name
+                0x33f99f64                genimg_get_type_name
+                0x33f99f9c                genimg_get_comp_name
+                0x33f99fd4                genimg_get_image
+                0x33f99fd8                genimg_has_config
+                0x33f99fe0                get_table_entry_id
+                0x33f9a02c                genimg_get_comp_id
+                0x33f9a044                genimg_get_type_id
+                0x33f9a05c                genimg_get_arch_id
+                0x33f9a074                genimg_get_os_id
+                0x33f9a08c                genimg_get_format
+                0x33f9a0e0                image_multi_getimg
+                0x33f9a188                genimg_print_size
+                0x33f9a1b4                memmove_wd
+                0x33f9a1b8                getenv_bootm_size
+                0x33f9a1ec                getenv_bootm_low
+                0x33f9a220                getenv_yesno
+                0x33f9a244                image_print_contents
+                0x33f9a4ec                image_check_dcrc
+                0x33f9a538                image_check_hcrc
+                0x33f9a5a0                boot_get_ramdisk
+ .text          0x33f9a814     0x10c8 common/libcommon.a(main.o)
+                0x33f9a814                __show_boot_progress
+                0x33f9a814                show_boot_progress
+                0x33f9a818                parse_line
+                0x33f9a8a4                do_run
+                0x33f9a914                run_command
+                0x33f9aeb4                readline_into_buffer
+                0x33f9b7c8                readline
+                0x33f9b7e4                main_loop
+ .text          0x33f9b8dc      0x2f4 common/libcommon.a(s_record.o)
+                0x33f9b95c                srec_decode
+ .text          0x33f9bbd0      0x1e8 common/libcommon.a(stdio.o)
+                0x33f9bbd0                nulldev_putc
+                0x33f9bbd4                nulldev_puts
+                0x33f9bbd8                nulldev_input
+                0x33f9bbe0                stdio_get_list
+                0x33f9bbec                stdio_clone
+                0x33f9bc34                stdio_register
+                0x33f9bc74                stdio_init
+                0x33f9bd6c                stdio_get_by_name
+ .text          0x33f9bdb8     0x1604 common/libcommon.a(usb.o)
+                0x33f9bdb8                usb_disable_asynch
+                0x33f9bdd0                usb_maxpacket
+                0x33f9be40                usb_set_maxpacket
+                0x33f9bea4                usb_get_dev_index
+                0x33f9bed4                usb_hub_reset
+                0x33f9bee8                usb_hub_allocate
+                0x33f9bf2c                usb_alloc_new_device
+                0x33f9bfcc                usb_parse_config
+                0x33f9c11c                usb_submit_int_msg
+                0x33f9c120                usb_stop
+                0x33f9c154                wait_ms
+                0x33f9c178                usb_bulk_msg
+                0x33f9c1dc                usb_control_msg
+                0x33f9c290                usb_get_port_status
+                0x33f9c2f0                usb_get_hub_status
+                0x33f9c344                usb_set_port_feature
+                0x33f9c3a4                usb_clear_port_feature
+                0x33f9c404                usb_clear_hub_feature
+                0x33f9c458                usb_get_hub_descriptor
+                0x33f9c4b8                usb_get_string
+                0x33f9c634                usb_string
+                0x33f9c734                usb_get_class_descriptor
+                0x33f9c7a8                usb_get_report
+                0x33f9c81c                usb_set_idle
+                0x33f9c880                usb_set_protocol
+                0x33f9c8e0                usb_set_configuration
+                0x33f9c94c                usb_set_interface
+                0x33f9ca0c                usb_set_address
+                0x33f9ca50                usb_get_descriptor
+                0x33f9cabc                usb_get_configuration_no
+                0x33f9cb54                usb_clear_halt
+                0x33f9cce8                usb_hub_port_connect_change
+                0x33f9cdd4                usb_hub_configure
+                0x33f9cfdc                usb_hub_probe
+                0x33f9d038                usb_new_device
+                0x33f9d2c8                usb_scan_devices
+                0x33f9d340                usb_init
+ .text          0x33f9d3bc     0x1368 common/libcommon.a(usb_storage.o)
+                0x33f9d3bc                usb_stor_get_dev
+                0x33f9d3f8                usb_show_progress
+                0x33f9d404                usb_storage_probe
+                0x33f9d634                usb_stor_BBB_clear_endpt_stall
+                0x33f9d854                usb_stor_CB_comdat
+                0x33f9daa0                usb_stor_BBB_comdat
+                0x33f9db8c                usb_stor_BBB_transport
+                0x33f9dd54                usb_stor_CBI_get_status
+                0x33f9de34                usb_stor_CB_transport
+                0x33f9e020                usb_stor_info
+                0x33f9e178                usb_stor_get_info
+                0x33f9e3f0                usb_stor_scan
+                0x33f9e53c                usb_stor_read
+ .text          0x33f9e724      0x978 common/libcommon.a(xyzModem.o)
+                0x33f9e724                parse_num
+                0x33f9e850                xyzModem_error
+                0x33f9e870                xyzModem_stream_close
+                0x33f9e8c0                CYGACC_COMM_IF_PUTC
+                0x33f9e8c8                CYGACC_COMM_IF_GETC_TIMEOUT
+                0x33f9e91c                xyzModem_stream_terminate
+                0x33f9eccc                xyzModem_stream_read
+                0x33f9ef48                xyzModem_stream_open
+ .text          0x33f9f09c      0x1c4 board/Embedded/ok2440/libok2440.a(ok2440.o)
+                0x33f9f09c                board_video_init
+                0x33f9f0f0                dram_init
+                0x33f9f110                board_eth_init
+                0x33f9f114                board_init
+ .text          0x33f9f260      0x59c board/Embedded/ok2440/libok2440.a(flash.o)
+                0x33f9f300                write_buff
+                0x33f9f470                flash_print_info
+                0x33f9f5ac                flash_erase
+                0x33f9f754                flash_init
+ .text          0x33f9f7fc       0x48 lib_generic/libgeneric.a(crc16.o)
+                0x33f9f7fc                cyg_crc16
+ .text          0x33f9f844      0x214 lib_generic/libgeneric.a(crc32.o)
+                0x33f9f844                crc32
+                0x33f9f950                crc32_no_comp
+                0x33f9fa54                crc32_wd
+ .text          0x33f9fa58        0x0 lib_generic/libgeneric.a(ctype.o)
+ .text          0x33f9fa58      0x254 lib_generic/libgeneric.a(display_options.o)
+                0x33f9fa58                print_size
+                0x33f9fb1c                display_options
+                0x33f9fb3c                print_buffer
+ .text          0x33f9fcac      0x1bc lib_generic/libgeneric.a(gunzip.o)
+                0x33f9fcac                zunzip
+                0x33f9fd9c                gunzip
+                0x33f9fe50                zfree
+                0x33f9fe58                zalloc
+ .text          0x33f9fe68      0x568 lib_generic/libgeneric.a(lmb.o)
+                0x33f9fe68                lmb_dump_all
+                0x33f9fe6c                lmb_init
+                0x33fa0060                lmb_add
+                0x33fa0064                lmb_free
+                0x33fa0184                lmb_reserve
+                0x33fa018c                lmb_overlaps_region
+                0x33fa01e0                __lmb_alloc_base
+                0x33fa0338                lmb_is_reserved
+                0x33fa0398                lmb_alloc_base
+                0x33fa03c8                lmb_alloc
+ .text          0x33fa03d0      0x6bc lib_generic/libgeneric.a(string.o)
+                0x33fa03d0                strcpy
+                0x33fa03ec                strncpy
+                0x33fa0414                strcat
+                0x33fa0444                strncat
+                0x33fa04a0                strcmp
+                0x33fa04d0                strncmp
+                0x33fa0518                strchr
+                0x33fa0544                strrchr
+                0x33fa0580                strlen
+                0x33fa05a0                strnlen
+                0x33fa05c8                strspn
+                0x33fa060c                strpbrk
+                0x33fa0644                strtok
+                0x33fa0710                strsep
+                0x33fa0774                strswab
+                0x33fa07bc                memset
+                0x33fa0830                bcopy
+                0x33fa0858                memcpy
+                0x33fa08c4                memmove
+                0x33fa0920                memcmp
+                0x33fa0958                memscan
+                0x33fa0988                strstr
+                0x33fa0a08                memchr
+                0x33fa0a34                strdup
+ .text          0x33fa0a8c      0xd18 lib_generic/libgeneric.a(vsprintf.o)
+                0x33fa0a8c                simple_strtoul
+                0x33fa0b3c                simple_strtol
+                0x33fa0b64                ustrtoul
+                0x33fa0cac                panic
+                0x33fa1124                vsprintf
+                0x33fa177c                sprintf
+ .text          0x33fa17a4     0x2744 lib_generic/libgeneric.a(zlib.o)
+                0x33fa17a4                inflate_fast
+                0x33fa1ca4                inflate_table
+                0x33fa2250                inflateReset
+                0x33fa22f0                inflateInit2_
+                0x33fa23f0                inflateInit_
+                0x33fa2400                inflateEnd
+                0x33fa2484                adler32
+                0x33fa2794                zcfree
+                0x33fa279c                zcalloc
+                0x33fa27a4                inflate
+ .text          0x33fa3ee8       0xf8 lib_generic/libgeneric.a(div64.o)
+                0x33fa3ee8                __div64_32
+ .text          0x33fa3fe0       0x14 cpu/arm920t/s3c24x0/libs3c24x0.a(interrupts.o)
+                0x33fa3fe0                do_irq
+                0x33fa3fec                arch_interrupt_init
+ .text          0x33fa3ff4      0x154 cpu/arm920t/s3c24x0/libs3c24x0.a(speed.o)
+                0x33fa406c                get_UCLK
+                0x33fa4074                get_FCLK
+                0x33fa407c                get_HCLK
+                0x33fa4120                get_PCLK
+ .text          0x33fa4148      0x35c cpu/arm920t/s3c24x0/libs3c24x0.a(timer.o)
+                0x33fa4148                reset_timer
+                0x33fa4170                set_timer
+                0x33fa4180                udelay
+                0x33fa4230                reset_timer_masked
+                0x33fa4258                get_timer_masked
+                0x33fa42bc                get_timer
+                0x33fa42d0                udelay_masked
+                0x33fa43b0                get_ticks
+                0x33fa4400                get_tbclk
+                0x33fa4408                reset_cpu
+                0x33fa4428                timer_init
+ .text          0x33fa44a4     0x1690 cpu/arm920t/s3c24x0/libs3c24x0.a(usb_ohci.o)
+                0x33fa44a4                rh_check_port_status
+                0x33fa4550                submit_int_msg
+                0x33fa4610                usb_lowlevel_init
+                0x33fa486c                usb_lowlevel_stop
+                0x33fa492c                sohci_submit_job
+                0x33fa4f1c                submit_common_msg
+                0x33fa5474                submit_bulk_msg
+                0x33fa548c                submit_control_msg
+ .text          0x33fa5b34      0xa80 cpu/arm920t/s3c24x0/libs3c24x0.a(mmc.o)
+                0x33fa5b34                mmc_get_dev
+                0x33fa5b40                mmc_ident
+                0x33fa5b48                mmc2info
+                0x33fa5c30                mmc_init
+                0x33fa63b4                mmc_read
+                0x33fa64b8                mmc_bread
+                0x33fa64dc                mmc_write
+ .text          0x33fa65b4      0x1c8 lib_arm/libarm.a(bootm.o)
+                0x33fa65b4                do_bootm_linux
+ .text          0x33fa677c        0x4 lib_arm/libarm.a(cache.o)
+                0x33fa677c                flush_cache
+ .text          0x33fa6780      0x120 lib_arm/libarm.a(cache-cp15.o)
+                0x33fa6780                icache_enable
+                0x33fa67c0                icache_disable
+                0x33fa6800                icache_status
+                0x33fa6810                dcache_enable
+                0x33fa6850                dcache_disable
+                0x33fa6890                dcache_status
+ .text          0x33fa68a0       0x30 lib_arm/libarm.a(reset.o)
+                0x33fa68a0                do_reset
+ .text          0x33fa68d0     0x13b0 fs/fat/libfat.a(fat.o)
+                0x33fa68d0                disk_read
+                0x33fa6fa0                file_fat_detectfs
+                0x33fa7100                do_fat_read
+                0x33fa7b48                file_fat_read
+                0x33fa7b80                file_fat_ls
+                0x33fa7b90                fat_register_device
+ .text          0x33fa7c80     0x1c78 fs/jffs2/libjffs2.a(jffs2_1pass.o)
+                0x33fa7c80                mkmodestr
+                0x33fa7e7c                jffs2_free_cache
+                0x33fa8144                jffs2_1pass_rescan_needed
+                0x33fa87b8                jffs2_1pass_info
+                0x33fa8c9c                jffs2_1pass_load
+                0x33fa98b0                jffs2_1pass_ls
+ .text          0x33fa98f8       0xc8 fs/jffs2/libjffs2.a(compr_rtime.o)
+                0x33fa98f8                rtime_decompress
+ .text          0x33fa99c0      0x124 fs/jffs2/libjffs2.a(compr_rubin.o)
+                0x33fa99c0                rubin_do_decompress
+                0x33fa9aa8                dynrubin_decompress
+ .text          0x33fa9ae4       0x18 fs/jffs2/libjffs2.a(compr_zlib.o)
+                0x33fa9ae4                zlib_decompress
+ .text          0x33fa9afc      0xd50 fs/jffs2/libjffs2.a(mini_inflate.o)
+                0x33fa9afc                cramfs_memset
+                0x33fa9b20                pull_bits
+                0x33fa9b78                pull_bit
+                0x33fa9f7c                decompress_block
+ .text          0x33faa84c      0x380 disk/libdisk.a(part.o)
+                0x33faa84c                dev_print
+                0x33faaa4c                get_partition_info
+                0x33faaa70                init_part
+                0x33faaa8c                get_dev
+                0x33faaaf0                print_part
+ .text          0x33faabcc      0x558 disk/libdisk.a(part_dos.o)
+                0x33faabcc                test_part_dos
+                0x33faaeac                get_partition_info_dos
+                0x33fab0f8                print_part_dos
+ .text          0x33fab124      0x828 drivers/mtd/nand/libnand.a(nand_util.o)
+                0x33fab1bc                nand_read_skip_bad
+                0x33fab37c                nand_write_skip_bad
+                0x33fab620                nand_erase_opts
+ .text          0x33fab94c      0x910 drivers/net/libnet.a(dm9000x.o)
+                0x33fabaf8                dm9000_initialize
+ .text          0x33fac25c      0x29c drivers/rtc/librtc.a(date.o)
+                0x33fac25c                GregorianDay
+                0x33fac34c                to_tm
+                0x33fac460                mktime
+ .text          0x33fac4f8      0x258 drivers/rtc/librtc.a(s3c24x0_rtc.o)
+                0x33fac524                rtc_get
+                0x33fac684                rtc_set
+                0x33fac72c                rtc_reset
+ .text          0x33fac750     0x1754 drivers/video/libvideo.a(cfb_console.o)
+                0x33facdcc                video_putc
+                0x33facfd4                __board_video_skip
+                0x33facfd4                board_video_skip
+                0x33facfdc                video_puts
+                0x33fad00c                logo_plot
+                0x33fad220                video_display_bitmap
+                0x33fadbfc                drv_video_init
+ .text          0x33fadea4      0x240 drivers/video/libvideo.a(s3c2410_fb.o)
+                0x33fadea4                video_set_lut
+                0x33fadea8                video_hw_init
+ .text          0x33fae0e4      0x480 drivers/video/libvideo.a(videomodes.o)
+                0x33fae0e4                video_get_params
+ .text          0x33fae564       0x20 cpu/arm920t/libarm920t.a(cpu.o)
+                0x33fae564                cleanup_before_linux
+ .text          0x33fae584       0x1c /home/bamboo/work/ok2440/u-boot_for_ok2440/lib_arm/eabi_compat.o
+                0x33fae584                raise
+ .text          0x33fae5a0      0x114 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_udivsi3.o)
+                0x33fae5a0                __udivsi3
+                0x33fae5a0                __aeabi_uidiv
+                0x33fae69c                __aeabi_uidivmod
+ .text          0x33fae6b4      0x144 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_divsi3.o)
+                0x33fae6b4                __aeabi_idiv
+                0x33fae6b4                __divsi3
+                0x33fae7e0                __aeabi_idivmod
+ .text          0x33fae7f8       0x1c /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_lshrdi3.o)
+                0x33fae7f8                __aeabi_llsr
+                0x33fae7f8                __lshrdi3
+ .text          0x33fae814       0x1c /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_ashrdi3.o)
+                0x33fae814                __ashrdi3
+                0x33fae814                __aeabi_lasr
+ .text          0x33fae830       0x1c /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_ashldi3.o)
+                0x33fae830                __ashldi3
+                0x33fae830                __aeabi_llsl
+ .text          0x33fae84c       0x14 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_dvmd_lnx.o)
+                0x33fae84c                __div0
 
-.glue_7         0x33fae818        0x0
+.glue_7         0x33fae860        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x33fae818        0x0
+.glue_7t        0x33fae860        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x33fae818        0x0
+.vfp11_veneer   0x33fae860        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x33fae818        0x0
+.v4_bx          0x33fae860        0x0
  .v4_bx         0x00000000        0x0 linker stubs
-                0x33fae818                . = ALIGN (0x4)
+                0x33fae860                . = ALIGN (0x4)
 
-.rodata         0x33fae818     0x9de5
+.rodata         0x33fae860     0x9de2
  *(SORT(.rodata*))
- .rodata        0x33fae818       0x30 lib_arm/libarm.a(board.o)
-                0x33fae818                version_string
- .rodata        0x33fae848       0x80 lib_arm/libarm.a(interrupts.o)
- .rodata        0x33fae8c8        0x8 drivers/mtd/nand/libnand.a(nand.o)
- .rodata        0x33fae8d0       0x5c drivers/mtd/nand/libnand.a(nand_base.o)
- .rodata        0x33fae92c      0x100 drivers/mtd/nand/libnand.a(nand_ecc.o)
- .rodata        0x33faea2c       0x48 drivers/usb/slave/libusb_slave.a(usbsetup.o)
- .rodata        0x33faea74       0x4c common/libcommon.a(cmd_bootm.o)
- .rodata        0x33faeac0       0x20 common/libcommon.a(cmd_jffs2.o)
- .rodata        0x33faeae0       0x58 common/libcommon.a(command.o)
- .rodata        0x33faeb38        0x8 common/libcommon.a(usb_storage.o)
- .rodata        0x33faeb40       0x20 common/libcommon.a(xyzModem.o)
- .rodata        0x33faeb60      0x200 lib_generic/libgeneric.a(crc16.o)
- .rodata        0x33faed60      0x400 lib_generic/libgeneric.a(crc32.o)
- .rodata        0x33faf160       0x24 lib_generic/libgeneric.a(vsprintf.o)
-                0x33faf170                hex_asc
- .rodata        0x33faf184      0x9d0 lib_generic/libgeneric.a(zlib.o)
-                0x33fafb2c                z_errmsg
- .rodata        0x33fafb54       0x40 cpu/arm920t/s3c24x0/libs3c24x0.a(usb_ohci.o)
- .rodata        0x33fafb94       0xc4 fs/jffs2/libjffs2.a(jffs2_1pass.o)
- .rodata        0x33fafc58       0x14 fs/jffs2/libjffs2.a(mini_inflate.o)
- .rodata        0x33fafc6c       0x18 disk/libdisk.a(part.o)
- .rodata        0x33fafc84       0x30 drivers/rtc/librtc.a(date.o)
- .rodata        0x33fafcb4      0x220 drivers/video/libvideo.a(cfb_console.o)
- .rodata        0x33fafed4      0x224 drivers/video/libvideo.a(videomodes.o)
-                0x33fafed4                res_mode_init
-                0x33fb0008                vesa_modes
- .rodata        0x33fb00f8        0x7 net/libnet.a(eth.o)
- .rodata        0x33fb00ff        0x7 net/libnet.a(net.o)
+ .rodata        0x33fae860       0x30 lib_arm/libarm.a(board.o)
+                0x33fae860                version_string
+ .rodata        0x33fae890       0x80 lib_arm/libarm.a(interrupts.o)
+ .rodata        0x33fae910        0x8 drivers/mtd/nand/libnand.a(nand.o)
+ .rodata        0x33fae918       0x5c drivers/mtd/nand/libnand.a(nand_base.o)
+ .rodata        0x33fae974      0x100 drivers/mtd/nand/libnand.a(nand_ecc.o)
+ .rodata        0x33faea74       0x48 drivers/usb/slave/libusb_slave.a(usbsetup.o)
+ .rodata        0x33faeabc       0x4c common/libcommon.a(cmd_bootm.o)
+ .rodata        0x33faeb08       0x20 common/libcommon.a(cmd_jffs2.o)
+ .rodata        0x33faeb28       0x58 common/libcommon.a(command.o)
+ .rodata        0x33faeb80        0x8 common/libcommon.a(usb_storage.o)
+ .rodata        0x33faeb88       0x20 common/libcommon.a(xyzModem.o)
+ .rodata        0x33faeba8      0x200 lib_generic/libgeneric.a(crc16.o)
+ .rodata        0x33faeda8      0x400 lib_generic/libgeneric.a(crc32.o)
+ .rodata        0x33faf1a8       0x24 lib_generic/libgeneric.a(vsprintf.o)
+                0x33faf1b8                hex_asc
+ .rodata        0x33faf1cc      0x9d0 lib_generic/libgeneric.a(zlib.o)
+                0x33fafb74                z_errmsg
+ .rodata        0x33fafb9c       0x40 cpu/arm920t/s3c24x0/libs3c24x0.a(usb_ohci.o)
+ .rodata        0x33fafbdc       0xc4 fs/jffs2/libjffs2.a(jffs2_1pass.o)
+ .rodata        0x33fafca0       0x14 fs/jffs2/libjffs2.a(mini_inflate.o)
+ .rodata        0x33fafcb4       0x18 disk/libdisk.a(part.o)
+ .rodata        0x33fafccc       0x30 drivers/rtc/librtc.a(date.o)
+ .rodata        0x33fafcfc      0x220 drivers/video/libvideo.a(cfb_console.o)
+ .rodata        0x33faff1c      0x224 drivers/video/libvideo.a(videomodes.o)
+                0x33faff1c                res_mode_init
+                0x33fb0050                vesa_modes
+ .rodata        0x33fb0140        0x7 net/libnet.a(eth.o)
+ .rodata        0x33fb0147        0x7 net/libnet.a(net.o)
  .rodata.str1.1
-                0x33fb0106      0x117 lib_arm/libarm.a(board.o)
-                                0x11d (size before relaxing)
+                0x33fb014e      0x114 lib_arm/libarm.a(board.o)
+                                0x11a (size before relaxing)
  .rodata.str1.1
-                0x33fb021d      0x264 lib_arm/libarm.a(interrupts.o)
+                0x33fb0262      0x264 lib_arm/libarm.a(interrupts.o)
                                 0x268 (size before relaxing)
  .rodata.str1.1
-                0x33fb0481       0xad net/libnet.a(eth.o)
+                0x33fb04c6       0xad net/libnet.a(eth.o)
                                  0xc7 (size before relaxing)
  .rodata.str1.1
-                0x33fb052e      0x20c net/libnet.a(net.o)
+                0x33fb0573      0x20c net/libnet.a(net.o)
                                 0x217 (size before relaxing)
  .rodata.str1.1
-                0x33fb073a      0x193 net/libnet.a(nfs.o)
+                0x33fb077f      0x193 net/libnet.a(nfs.o)
                                 0x1a9 (size before relaxing)
  .rodata.str1.1
-                0x33fb08cd       0x20 net/libnet.a(rarp.o)
+                0x33fb0912       0x20 net/libnet.a(rarp.o)
                                  0x47 (size before relaxing)
  .rodata.str1.1
-                0x33fb08ed      0x117 net/libnet.a(tftp.o)
+                0x33fb0932      0x117 net/libnet.a(tftp.o)
                                 0x1f6 (size before relaxing)
  .rodata.str1.1
-                0x33fb0a04      0x100 net/libnet.a(bootp.o)
+                0x33fb0a49      0x100 net/libnet.a(bootp.o)
                                 0x13d (size before relaxing)
  .rodata.str1.1
-                0x33fb0b04       0x78 drivers/i2c/libi2c.a(s3c24x0_i2c.o)
+                0x33fb0b49       0x78 drivers/i2c/libi2c.a(s3c24x0_i2c.o)
  .rodata.str1.1
-                0x33fb0b7c        0x8 drivers/mtd/nand/libnand.a(nand.o)
+                0x33fb0bc1        0x8 drivers/mtd/nand/libnand.a(nand.o)
  .rodata.str1.1
-                0x33fb0b84      0x2e3 drivers/mtd/nand/libnand.a(nand_base.o)
+                0x33fb0bc9      0x2e3 drivers/mtd/nand/libnand.a(nand_base.o)
  .rodata.str1.1
-                0x33fb0e67      0x300 drivers/mtd/nand/libnand.a(nand_bbt.o)
+                0x33fb0eac      0x300 drivers/mtd/nand/libnand.a(nand_bbt.o)
  .rodata.str1.1
-                0x33fb1167      0x31f drivers/mtd/nand/libnand.a(nand_ids.o)
+                0x33fb11ac      0x31f drivers/mtd/nand/libnand.a(nand_ids.o)
                                 0x335 (size before relaxing)
  .rodata.str1.1
-                0x33fb1486      0x14d drivers/usb/slave/libusb_slave.a(usbinit.o)
+                0x33fb14cb      0x14d drivers/usb/slave/libusb_slave.a(usbinit.o)
  .rodata.str1.1
-                0x33fb15d3       0x36 drivers/usb/slave/libusb_slave.a(interrupt.o)
+                0x33fb1618       0x36 drivers/usb/slave/libusb_slave.a(interrupt.o)
  .rodata.str1.1
-                0x33fb1609       0x17 drivers/usb/slave/libusb_slave.a(usbout.o)
+                0x33fb164e       0x17 drivers/usb/slave/libusb_slave.a(usbout.o)
  .rodata.str1.1
-                0x33fb1620      0x102 drivers/usb/slave/libusb_slave.a(usbsetup.o)
+                0x33fb1665      0x102 drivers/usb/slave/libusb_slave.a(usbsetup.o)
                                 0x10c (size before relaxing)
  .rodata.str1.1
-                0x33fb1722       0xaa common/libcommon.a(cmd_bdinfo.o)
+                0x33fb1767       0xaa common/libcommon.a(cmd_bdinfo.o)
                                  0xb3 (size before relaxing)
  .rodata.str1.1
-                0x33fb17cc      0x177 common/libcommon.a(cmd_bmp.o)
+                0x33fb1811      0x177 common/libcommon.a(cmd_bmp.o)
                                 0x184 (size before relaxing)
  .rodata.str1.1
-                0x33fb1943       0xef common/libcommon.a(cmd_boot.o)
+                0x33fb1988       0xef common/libcommon.a(cmd_boot.o)
                                  0xf0 (size before relaxing)
  .rodata.str1.1
-                0x33fb1a32      0x86b common/libcommon.a(cmd_bootm.o)
+                0x33fb1a77      0x86b common/libcommon.a(cmd_bootm.o)
                                 0x8c8 (size before relaxing)
  .rodata.str1.1
-                0x33fb229d       0xd9 common/libcommon.a(cmd_cache.o)
+                0x33fb22e2       0xd9 common/libcommon.a(cmd_cache.o)
                                 0x107 (size before relaxing)
  .rodata.str1.1
-                0x33fb2376       0x5c common/libcommon.a(cmd_console.o)
+                0x33fb23bb       0x5c common/libcommon.a(cmd_console.o)
                                  0x61 (size before relaxing)
  .rodata.str1.1
-                0x33fb23d2      0x175 common/libcommon.a(cmd_date.o)
+                0x33fb2417      0x175 common/libcommon.a(cmd_date.o)
                                 0x17b (size before relaxing)
  .rodata.str1.1
-                0x33fb2547       0xc1 common/libcommon.a(cmd_eeprom.o)
+                0x33fb258c       0xc1 common/libcommon.a(cmd_eeprom.o)
                                  0xc7 (size before relaxing)
  .rodata.str1.1
-                0x33fb2608      0x278 common/libcommon.a(cmd_elf.o)
+                0x33fb264d      0x278 common/libcommon.a(cmd_elf.o)
                                 0x29a (size before relaxing)
  .rodata.str1.1
-                0x33fb2880      0x396 common/libcommon.a(cmd_fat.o)
+                0x33fb28c5      0x396 common/libcommon.a(cmd_fat.o)
                                 0x3a5 (size before relaxing)
  .rodata.str1.1
-                0x33fb2c16      0x723 common/libcommon.a(cmd_flash.o)
+                0x33fb2c5b      0x723 common/libcommon.a(cmd_flash.o)
                                 0x730 (size before relaxing)
  .rodata.str1.1
-                0x33fb3339      0x357 common/libcommon.a(cmd_i2c.o)
+                0x33fb337e      0x357 common/libcommon.a(cmd_i2c.o)
                                 0x387 (size before relaxing)
  .rodata.str1.1
-                0x33fb3690       0xb3 common/libcommon.a(cmd_itest.o)
+                0x33fb36d5       0xb3 common/libcommon.a(cmd_itest.o)
                                  0xb5 (size before relaxing)
  .rodata.str1.1
-                0x33fb3743      0x2bd common/libcommon.a(cmd_jffs2.o)
+                0x33fb3788      0x2bd common/libcommon.a(cmd_jffs2.o)
                                 0x325 (size before relaxing)
  .rodata.str1.1
-                0x33fb3a00      0x3ae common/libcommon.a(cmd_load.o)
+                0x33fb3a45      0x3ae common/libcommon.a(cmd_load.o)
                                 0x3c8 (size before relaxing)
  .rodata.str1.1
-                0x33fb3dae      0x4f2 common/libcommon.a(cmd_mem.o)
+                0x33fb3df3      0x4f2 common/libcommon.a(cmd_mem.o)
                                 0x528 (size before relaxing)
  .rodata.str1.1
-                0x33fb42a0       0x5f common/libcommon.a(cmd_misc.o)
+                0x33fb42e5       0x5f common/libcommon.a(cmd_misc.o)
  .rodata.str1.1
-                0x33fb42ff       0xc0 common/libcommon.a(cmd_mmc.o)
+                0x33fb4344       0xc0 common/libcommon.a(cmd_mmc.o)
                                  0xc7 (size before relaxing)
  .rodata.str1.1
-                0x33fb43bf      0x821 common/libcommon.a(cmd_nand.o)
+                0x33fb4404      0x821 common/libcommon.a(cmd_nand.o)
                                 0x880 (size before relaxing)
  .rodata.str1.1
-                0x33fb4be0      0x1e1 common/libcommon.a(cmd_net.o)
+                0x33fb4c25      0x1e1 common/libcommon.a(cmd_net.o)
                                 0x223 (size before relaxing)
  .rodata.str1.1
-                0x33fb4dc1      0x4db common/libcommon.a(cmd_nvedit.o)
+                0x33fb4e06      0x4db common/libcommon.a(cmd_nvedit.o)
                                 0x541 (size before relaxing)
  .rodata.str1.1
-                0x33fb529c       0x23 common/libcommon.a(cmd_reginfo.o)
+                0x33fb52e1       0x23 common/libcommon.a(cmd_reginfo.o)
                                  0x24 (size before relaxing)
  .rodata.str1.1
-                0x33fb52bf      0x101 common/libcommon.a(cmd_source.o)
+                0x33fb5304      0x101 common/libcommon.a(cmd_source.o)
                                 0x108 (size before relaxing)
  .rodata.str1.1
-                0x33fb53c0      0x791 common/libcommon.a(cmd_usb.o)
+                0x33fb5405      0x791 common/libcommon.a(cmd_usb.o)
                                 0x8c9 (size before relaxing)
  .rodata.str1.1
-                0x33fb5b51       0xa8 common/libcommon.a(cmd_usbslave.o)
+                0x33fb5b96       0xa8 common/libcommon.a(cmd_usbslave.o)
                                  0xb4 (size before relaxing)
  .rodata.str1.1
-                0x33fb5bf9      0x10e common/libcommon.a(cmd_ximg.o)
+                0x33fb5c3e      0x10e common/libcommon.a(cmd_ximg.o)
                                 0x19c (size before relaxing)
  .rodata.str1.1
-                0x33fb5d07      0x29f common/libcommon.a(command.o)
+                0x33fb5d4c      0x29f common/libcommon.a(command.o)
                                 0x2fe (size before relaxing)
  .rodata.str1.1
-                0x33fb5fa6       0x77 common/libcommon.a(console.o)
+                0x33fb5feb       0x77 common/libcommon.a(console.o)
                                  0x8f (size before relaxing)
  .rodata.str1.1
-                0x33fb601d       0x33 common/libcommon.a(env_common.o)
+                0x33fb6062       0x33 common/libcommon.a(env_common.o)
                                  0x37 (size before relaxing)
  .rodata.str1.1
-                0x33fb6050       0x6e common/libcommon.a(env_nand.o)
+                0x33fb6095       0x6e common/libcommon.a(env_nand.o)
                                  0x74 (size before relaxing)
  .rodata.str1.1
-                0x33fb60be       0xf7 common/libcommon.a(flash.o)
+                0x33fb6103       0xf7 common/libcommon.a(flash.o)
                                 0x10c (size before relaxing)
  .rodata.str1.1
-                0x33fb61b5      0x237 common/libcommon.a(hush.o)
+                0x33fb61fa      0x237 common/libcommon.a(hush.o)
                                 0x274 (size before relaxing)
  .rodata.str1.1
-                0x33fb63ec      0x44d common/libcommon.a(image.o)
+                0x33fb6431      0x44d common/libcommon.a(image.o)
                                 0x4ed (size before relaxing)
  .rodata.str1.1
-                0x33fb6839       0x6f common/libcommon.a(main.o)
+                0x33fb687e       0x6f common/libcommon.a(main.o)
                                  0xd6 (size before relaxing)
  .rodata.str1.1
-                0x33fb68a8        0x8 common/libcommon.a(stdio.o)
+                0x33fb68ed        0x8 common/libcommon.a(stdio.o)
                                  0x23 (size before relaxing)
  .rodata.str1.1
-                0x33fb68b0      0x28b common/libcommon.a(usb.o)
+                0x33fb68f5      0x28b common/libcommon.a(usb.o)
  .rodata.str1.1
-                0x33fb6b3b      0x1ed common/libcommon.a(usb_storage.o)
+                0x33fb6b80      0x1ed common/libcommon.a(usb_storage.o)
                                 0x1ff (size before relaxing)
  .rodata.str1.1
-                0x33fb6d28       0xe3 common/libcommon.a(xyzModem.o)
+                0x33fb6d6d       0xe3 common/libcommon.a(xyzModem.o)
                                  0xe5 (size before relaxing)
  .rodata.str1.1
-                0x33fb6e0b       0xfd board/Embedded/ok2440/libok2440.a(flash.o)
+                0x33fb6e50       0xfd board/Embedded/ok2440/libok2440.a(flash.o)
                                 0x105 (size before relaxing)
  .rodata.str1.1
-                0x33fb6f08       0x11 lib_generic/libgeneric.a(display_options.o)
+                0x33fb6f4d       0x11 lib_generic/libgeneric.a(display_options.o)
                                  0x36 (size before relaxing)
  .rodata.str1.1
-                0x33fb6f19       0x85 lib_generic/libgeneric.a(gunzip.o)
+                0x33fb6f5e       0x85 lib_generic/libgeneric.a(gunzip.o)
  .rodata.str1.1
-                0x33fb6f9e       0x34 lib_generic/libgeneric.a(lmb.o)
+                0x33fb6fe3       0x34 lib_generic/libgeneric.a(lmb.o)
  .rodata.str1.1
-                0x33fb6fd2        0xe lib_generic/libgeneric.a(vsprintf.o)
+                0x33fb7017        0xe lib_generic/libgeneric.a(vsprintf.o)
  .rodata.str1.1
-                0x33fb6fe0      0x21c lib_generic/libgeneric.a(zlib.o)
+                0x33fb7025      0x21c lib_generic/libgeneric.a(zlib.o)
                                 0x21d (size before relaxing)
  .rodata.str1.1
-                0x33fb71fc      0x238 cpu/arm920t/s3c24x0/libs3c24x0.a(usb_ohci.o)
+                0x33fb7241      0x238 cpu/arm920t/s3c24x0/libs3c24x0.a(usb_ohci.o)
  .rodata.str1.1
-                0x33fb7434      0x334 cpu/arm920t/s3c24x0/libs3c24x0.a(mmc.o)
+                0x33fb7479      0x334 cpu/arm920t/s3c24x0/libs3c24x0.a(mmc.o)
                                 0x343 (size before relaxing)
  .rodata.str1.1
-                0x33fb7768       0x42 lib_arm/libarm.a(bootm.o)
+                0x33fb77ad       0x42 lib_arm/libarm.a(bootm.o)
                                  0x4b (size before relaxing)
  .rodata.str1.1
-                0x33fb77aa        0xf lib_arm/libarm.a(reset.o)
+                0x33fb77ef        0xf lib_arm/libarm.a(reset.o)
  .rodata.str1.1
-                0x33fb77b9      0x15b fs/fat/libfat.a(fat.o)
+                0x33fb77fe      0x15b fs/fat/libfat.a(fat.o)
                                 0x16d (size before relaxing)
  .rodata.str1.1
-                0x33fb7914      0x40a fs/jffs2/libjffs2.a(jffs2_1pass.o)
+                0x33fb7959      0x40a fs/jffs2/libjffs2.a(jffs2_1pass.o)
                                 0x41d (size before relaxing)
  .rodata.str1.1
-                0x33fb7d1e      0x1af disk/libdisk.a(part.o)
+                0x33fb7d63      0x1af disk/libdisk.a(part.o)
                                 0x1e4 (size before relaxing)
  .rodata.str1.1
-                0x33fb7ecd       0xe5 disk/libdisk.a(part_dos.o)
+                0x33fb7f12       0xe5 disk/libdisk.a(part_dos.o)
                                  0xf1 (size before relaxing)
  .rodata.str1.1
-                0x33fb7fb2      0x2ba drivers/mtd/nand/libnand.a(nand_util.o)
+                0x33fb7ff7      0x2ba drivers/mtd/nand/libnand.a(nand_util.o)
                                 0x2bc (size before relaxing)
  .rodata.str1.1
-                0x33fb826c      0x1de drivers/net/libnet.a(dm9000x.o)
+                0x33fb82b1      0x1de drivers/net/libnet.a(dm9000x.o)
                                 0x1e4 (size before relaxing)
  .rodata.str1.1
-                0x33fb844a      0x103 drivers/video/libvideo.a(cfb_console.o)
+                0x33fb848f      0x103 drivers/video/libvideo.a(cfb_console.o)
                                 0x16d (size before relaxing)
  .rodata.str1.1
-                0x33fb854d       0x54 drivers/video/libvideo.a(s3c2410_fb.o)
+                0x33fb8592       0x54 drivers/video/libvideo.a(s3c2410_fb.o)
                                  0x58 (size before relaxing)
  .rodata.str1.1
-                0x33fb85a1       0x41 drivers/video/libvideo.a(videomodes.o)
+                0x33fb85e6       0x41 drivers/video/libvideo.a(videomodes.o)
                                  0x4a (size before relaxing)
  .rodata.str1.1
-                0x33fb85e2       0x1b /home/bamboo/work/ok2440/u-boot_for_ok2440/lib_arm/eabi_compat.o
-                0x33fb8600                . = ALIGN (0x4)
+                0x33fb8627       0x1b /home/bamboo/work/ok2440/u-boot_for_ok2440/lib_arm/eabi_compat.o
+                0x33fb8644                . = ALIGN (0x4)
 
-.data           0x33fb8600     0x6310
+.data           0x33fb8644     0x6310
  *(.data)
- .data          0x33fb8600        0x0 cpu/arm920t/start.o
- .data          0x33fb8600        0x0 board/Embedded/ok2440/lowlevel_init.o
- .data          0x33fb8600        0x0 board/Embedded/ok2440/nand_read.o
- .data          0x33fb8600       0x30 lib_arm/libarm.a(board.o)
-                0x33fb8600                init_sequence
- .data          0x33fb8630        0x0 lib_arm/libarm.a(interrupts.o)
- .data          0x33fb8630        0x0 net/libnet.a(eth.o)
- .data          0x33fb8630        0xc net/libnet.a(net.o)
-                0x33fb8630                NetOurVLAN
-                0x33fb8632                NetOurNativeVLAN
-                0x33fb8634                NetBcastAddr
- .data          0x33fb863c        0x4 net/libnet.a(nfs.o)
- .data          0x33fb8640        0x0 net/libnet.a(rarp.o)
- .data          0x33fb8640       0x18 net/libnet.a(tftp.o)
-                0x33fb8644                TftpRRQTimeoutMSecs
-                0x33fb8650                TftpRRQTimeoutCountMax
- .data          0x33fb8658        0x0 net/libnet.a(bootp.o)
- .data          0x33fb8658        0x0 drivers/i2c/libi2c.a(s3c24x0_i2c.o)
- .data          0x33fb8658        0x4 drivers/mtd/nand/libnand.a(nand.o)
-                0x33fb8658                nand_curr_device
- .data          0x33fb865c      0x520 drivers/mtd/nand/libnand.a(nand_base.o)
- .data          0x33fb8b7c      0x110 drivers/mtd/nand/libnand.a(nand_bbt.o)
- .data          0x33fb8c8c        0x0 drivers/mtd/nand/libnand.a(nand_ecc.o)
- .data          0x33fb8c8c      0x4a0 drivers/mtd/nand/libnand.a(nand_ids.o)
-                0x33fb8c8c                nand_flash_ids
-                0x33fb90dc                nand_manuf_ids
- .data          0x33fb912c        0x4 drivers/mtd/nand/libnand.a(s3c2410_nand.o)
-                0x33fb912c                IO_ADDR_W
- .data          0x33fb9130        0x0 drivers/serial/libserial.a(serial_s3c24x0.o)
- .data          0x33fb9130        0x0 drivers/usb/slave/libusb_slave.a(usbinit.o)
- .data          0x33fb9130        0x0 drivers/usb/slave/libusb_slave.a(interrupt.o)
- .data          0x33fb9130        0x0 drivers/usb/slave/libusb_slave.a(usblib.o)
- .data          0x33fb9130        0x0 drivers/usb/slave/libusb_slave.a(usbmain.o)
- .data          0x33fb9130        0x0 drivers/usb/slave/libusb_slave.a(usbout.o)
- .data          0x33fb9130        0x2 drivers/usb/slave/libusb_slave.a(usbsetup.o)
-                0x33fb9130                Selfpwr
-                0x33fb9131                Configuration
- .data          0x33fb9132        0x0 drivers/usb/slave/libusb_slave.a(usbin.o)
- .data          0x33fb9132        0x0 common/libcommon.a(cmd_bdinfo.o)
- .data          0x33fb9132        0x0 common/libcommon.a(cmd_bmp.o)
- .data          0x33fb9132        0x0 common/libcommon.a(cmd_boot.o)
- *fill*         0x33fb9132        0x2 00
- .data          0x33fb9134       0xac common/libcommon.a(cmd_bootm.o)
-                0x33fb9134                load_addr
-                0x33fb9138                cmd_bootm_sub
- .data          0x33fb91e0        0x0 common/libcommon.a(cmd_cache.o)
- .data          0x33fb91e0        0x0 common/libcommon.a(cmd_console.o)
- .data          0x33fb91e0       0x1c common/libcommon.a(cmd_date.o)
-                0x33fb91e0                weekdays
- .data          0x33fb91fc        0x0 common/libcommon.a(cmd_eeprom.o)
- .data          0x33fb91fc        0x0 common/libcommon.a(cmd_elf.o)
- .data          0x33fb91fc        0x0 common/libcommon.a(cmd_fat.o)
- .data          0x33fb91fc        0x0 common/libcommon.a(cmd_flash.o)
- .data          0x33fb91fc        0x4 common/libcommon.a(cmd_i2c.o)
- .data          0x33fb9200       0x68 common/libcommon.a(cmd_itest.o)
-                0x33fb9200                op_table
- .data          0x33fb9268        0x0 common/libcommon.a(cmd_jffs2.o)
- .data          0x33fb9268        0x4 common/libcommon.a(cmd_load.o)
- .data          0x33fb926c        0x4 common/libcommon.a(cmd_mem.o)
-                0x33fb926c                dp_last_length
- .data          0x33fb9270        0x0 common/libcommon.a(cmd_misc.o)
- .data          0x33fb9270        0x4 common/libcommon.a(cmd_mmc.o)
- .data          0x33fb9274        0x0 common/libcommon.a(cmd_nand.o)
- .data          0x33fb9274        0x0 common/libcommon.a(cmd_net.o)
- .data          0x33fb9274        0x4 common/libcommon.a(cmd_nvedit.o)
- .data          0x33fb9278        0x0 common/libcommon.a(cmd_reginfo.o)
- .data          0x33fb9278        0x0 common/libcommon.a(cmd_source.o)
- .data          0x33fb9278        0x4 common/libcommon.a(cmd_usb.o)
- .data          0x33fb927c        0x4 common/libcommon.a(cmd_usbslave.o)
-                0x33fb927c                g_bUSBWait
- .data          0x33fb9280        0x0 common/libcommon.a(cmd_ximg.o)
- .data          0x33fb9280        0x0 common/libcommon.a(command.o)
- .data          0x33fb9280        0x0 common/libcommon.a(console.o)
- .data          0x33fb9280      0x414 common/libcommon.a(dlmalloc.o)
- .data          0x33fb9694      0x1d4 common/libcommon.a(env_common.o)
-                0x33fb9694                default_environment
- .data          0x33fb9868        0x4 common/libcommon.a(env_nand.o)
-                0x33fb9868                env_name_spec
- .data          0x33fb986c        0x0 common/libcommon.a(exports.o)
- .data          0x33fb986c        0x0 common/libcommon.a(flash.o)
- .data          0x33fb986c       0x84 common/libcommon.a(hush.o)
- .data          0x33fb98f0      0x210 common/libcommon.a(image.o)
- .data          0x33fb9b00       0x14 common/libcommon.a(main.o)
- .data          0x33fb9b14        0x0 common/libcommon.a(s_record.o)
- .data          0x33fb9b14        0xc common/libcommon.a(stdio.o)
-                0x33fb9b14                stdio_names
- .data          0x33fb9b20        0x0 common/libcommon.a(usb.o)
- .data          0x33fb9b20       0x20 common/libcommon.a(usb_storage.o)
-                0x33fb9b20                us_direction
- .data          0x33fb9b40        0x0 common/libcommon.a(xyzModem.o)
- .data          0x33fb9b40        0x0 board/Embedded/ok2440/libok2440.a(ok2440.o)
- .data          0x33fb9b40        0x0 board/Embedded/ok2440/libok2440.a(flash.o)
- .data          0x33fb9b40        0x0 lib_generic/libgeneric.a(crc16.o)
- .data          0x33fb9b40        0x0 lib_generic/libgeneric.a(crc32.o)
- .data          0x33fb9b40      0x100 lib_generic/libgeneric.a(ctype.o)
-                0x33fb9b40                _ctype
- .data          0x33fb9c40        0x0 lib_generic/libgeneric.a(display_options.o)
- .data          0x33fb9c40        0x0 lib_generic/libgeneric.a(gunzip.o)
- .data          0x33fb9c40        0x0 lib_generic/libgeneric.a(lmb.o)
- .data          0x33fb9c40        0x0 lib_generic/libgeneric.a(string.o)
- .data          0x33fb9c40        0x0 lib_generic/libgeneric.a(vsprintf.o)
- .data          0x33fb9c40        0x0 lib_generic/libgeneric.a(zlib.o)
- .data          0x33fb9c40        0x0 lib_generic/libgeneric.a(div64.o)
- .data          0x33fb9c40        0x0 cpu/arm920t/s3c24x0/libs3c24x0.a(interrupts.o)
- .data          0x33fb9c40        0x0 cpu/arm920t/s3c24x0/libs3c24x0.a(speed.o)
- .data          0x33fb9c40        0x0 cpu/arm920t/s3c24x0/libs3c24x0.a(timer.o)
- .data          0x33fb9c40       0x50 cpu/arm920t/s3c24x0/libs3c24x0.a(usb_ohci.o)
- .data          0x33fb9c90        0x2 cpu/arm920t/s3c24x0/libs3c24x0.a(mmc.o)
- .data          0x33fb9c92        0x0 lib_arm/libarm.a(bootm.o)
- .data          0x33fb9c92        0x0 lib_arm/libarm.a(cache.o)
- .data          0x33fb9c92        0x0 lib_arm/libarm.a(cache-cp15.o)
- .data          0x33fb9c92        0x0 lib_arm/libarm.a(reset.o)
- *fill*         0x33fb9c92        0x2 00
- .data          0x33fb9c94        0x4 fs/fat/libfat.a(fat.o)
- .data          0x33fb9c98        0x4 fs/jffs2/libjffs2.a(jffs2_1pass.o)
- .data          0x33fb9c9c        0x0 fs/jffs2/libjffs2.a(compr_rtime.o)
- .data          0x33fb9c9c        0x0 fs/jffs2/libjffs2.a(compr_rubin.o)
- .data          0x33fb9c9c        0x0 fs/jffs2/libjffs2.a(compr_zlib.o)
- .data          0x33fb9c9c        0x0 fs/jffs2/libjffs2.a(mini_inflate.o)
- .data          0x33fb9c9c        0x0 disk/libdisk.a(part.o)
- .data          0x33fb9c9c        0x0 disk/libdisk.a(part_dos.o)
- .data          0x33fb9c9c        0x0 drivers/mtd/nand/libnand.a(nand_util.o)
- .data          0x33fb9c9c        0x0 drivers/net/libnet.a(dm9000x.o)
- .data          0x33fb9c9c       0x30 drivers/rtc/librtc.a(date.o)
- .data          0x33fb9ccc        0x0 drivers/rtc/librtc.a(s3c24x0_rtc.o)
- .data          0x33fb9ccc     0x4c44 drivers/video/libvideo.a(cfb_console.o)
-                0x33fbacd0                bmp_logo_palette
-                0x33fbad10                bmp_logo_bitmap
- .data          0x33fbe910        0x0 drivers/video/libvideo.a(s3c2410_fb.o)
- .data          0x33fbe910        0x0 drivers/video/libvideo.a(videomodes.o)
- .data          0x33fbe910        0x0 cpu/arm920t/libarm920t.a(cpu.o)
- .data          0x33fbe910        0x0 /home/bamboo/work/ok2440/u-boot_for_ok2440/lib_arm/eabi_compat.o
- .data          0x33fbe910        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_udivsi3.o)
- .data          0x33fbe910        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_divsi3.o)
- .data          0x33fbe910        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_lshrdi3.o)
- .data          0x33fbe910        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_ashrdi3.o)
- .data          0x33fbe910        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_ashldi3.o)
- .data          0x33fbe910        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_dvmd_lnx.o)
-                0x33fbe910                . = ALIGN (0x4)
+ .data          0x33fb8644        0x0 cpu/arm920t/start.o
+ .data          0x33fb8644        0x0 board/Embedded/ok2440/lowlevel_init.o
+ .data          0x33fb8644        0x0 board/Embedded/ok2440/nand_read.o
+ .data          0x33fb8644       0x30 lib_arm/libarm.a(board.o)
+                0x33fb8644                init_sequence
+ .data          0x33fb8674        0x0 lib_arm/libarm.a(interrupts.o)
+ .data          0x33fb8674        0x0 net/libnet.a(eth.o)
+ .data          0x33fb8674        0xc net/libnet.a(net.o)
+                0x33fb8674                NetOurVLAN
+                0x33fb8676                NetOurNativeVLAN
+                0x33fb8678                NetBcastAddr
+ .data          0x33fb8680        0x4 net/libnet.a(nfs.o)
+ .data          0x33fb8684        0x0 net/libnet.a(rarp.o)
+ .data          0x33fb8684       0x18 net/libnet.a(tftp.o)
+                0x33fb8688                TftpRRQTimeoutMSecs
+                0x33fb8694                TftpRRQTimeoutCountMax
+ .data          0x33fb869c        0x0 net/libnet.a(bootp.o)
+ .data          0x33fb869c        0x0 drivers/i2c/libi2c.a(s3c24x0_i2c.o)
+ .data          0x33fb869c        0x4 drivers/mtd/nand/libnand.a(nand.o)
+                0x33fb869c                nand_curr_device
+ .data          0x33fb86a0      0x520 drivers/mtd/nand/libnand.a(nand_base.o)
+ .data          0x33fb8bc0      0x110 drivers/mtd/nand/libnand.a(nand_bbt.o)
+ .data          0x33fb8cd0        0x0 drivers/mtd/nand/libnand.a(nand_ecc.o)
+ .data          0x33fb8cd0      0x4a0 drivers/mtd/nand/libnand.a(nand_ids.o)
+                0x33fb8cd0                nand_flash_ids
+                0x33fb9120                nand_manuf_ids
+ .data          0x33fb9170        0x4 drivers/mtd/nand/libnand.a(s3c2410_nand.o)
+                0x33fb9170                IO_ADDR_W
+ .data          0x33fb9174        0x0 drivers/serial/libserial.a(serial_s3c24x0.o)
+ .data          0x33fb9174        0x0 drivers/usb/slave/libusb_slave.a(usbinit.o)
+ .data          0x33fb9174        0x0 drivers/usb/slave/libusb_slave.a(interrupt.o)
+ .data          0x33fb9174        0x0 drivers/usb/slave/libusb_slave.a(usblib.o)
+ .data          0x33fb9174        0x0 drivers/usb/slave/libusb_slave.a(usbmain.o)
+ .data          0x33fb9174        0x0 drivers/usb/slave/libusb_slave.a(usbout.o)
+ .data          0x33fb9174        0x2 drivers/usb/slave/libusb_slave.a(usbsetup.o)
+                0x33fb9174                Selfpwr
+                0x33fb9175                Configuration
+ .data          0x33fb9176        0x0 drivers/usb/slave/libusb_slave.a(usbin.o)
+ .data          0x33fb9176        0x0 common/libcommon.a(cmd_bdinfo.o)
+ .data          0x33fb9176        0x0 common/libcommon.a(cmd_bmp.o)
+ .data          0x33fb9176        0x0 common/libcommon.a(cmd_boot.o)
+ *fill*         0x33fb9176        0x2 00
+ .data          0x33fb9178       0xac common/libcommon.a(cmd_bootm.o)
+                0x33fb9178                load_addr
+                0x33fb917c                cmd_bootm_sub
+ .data          0x33fb9224        0x0 common/libcommon.a(cmd_cache.o)
+ .data          0x33fb9224        0x0 common/libcommon.a(cmd_console.o)
+ .data          0x33fb9224       0x1c common/libcommon.a(cmd_date.o)
+                0x33fb9224                weekdays
+ .data          0x33fb9240        0x0 common/libcommon.a(cmd_eeprom.o)
+ .data          0x33fb9240        0x0 common/libcommon.a(cmd_elf.o)
+ .data          0x33fb9240        0x0 common/libcommon.a(cmd_fat.o)
+ .data          0x33fb9240        0x0 common/libcommon.a(cmd_flash.o)
+ .data          0x33fb9240        0x4 common/libcommon.a(cmd_i2c.o)
+ .data          0x33fb9244       0x68 common/libcommon.a(cmd_itest.o)
+                0x33fb9244                op_table
+ .data          0x33fb92ac        0x0 common/libcommon.a(cmd_jffs2.o)
+ .data          0x33fb92ac        0x4 common/libcommon.a(cmd_load.o)
+ .data          0x33fb92b0        0x4 common/libcommon.a(cmd_mem.o)
+                0x33fb92b0                dp_last_length
+ .data          0x33fb92b4        0x0 common/libcommon.a(cmd_misc.o)
+ .data          0x33fb92b4        0x4 common/libcommon.a(cmd_mmc.o)
+ .data          0x33fb92b8        0x0 common/libcommon.a(cmd_nand.o)
+ .data          0x33fb92b8        0x0 common/libcommon.a(cmd_net.o)
+ .data          0x33fb92b8        0x4 common/libcommon.a(cmd_nvedit.o)
+ .data          0x33fb92bc        0x0 common/libcommon.a(cmd_reginfo.o)
+ .data          0x33fb92bc        0x0 common/libcommon.a(cmd_source.o)
+ .data          0x33fb92bc        0x4 common/libcommon.a(cmd_usb.o)
+ .data          0x33fb92c0        0x4 common/libcommon.a(cmd_usbslave.o)
+                0x33fb92c0                g_bUSBWait
+ .data          0x33fb92c4        0x0 common/libcommon.a(cmd_ximg.o)
+ .data          0x33fb92c4        0x0 common/libcommon.a(command.o)
+ .data          0x33fb92c4        0x0 common/libcommon.a(console.o)
+ .data          0x33fb92c4      0x414 common/libcommon.a(dlmalloc.o)
+ .data          0x33fb96d8      0x1d4 common/libcommon.a(env_common.o)
+                0x33fb96d8                default_environment
+ .data          0x33fb98ac        0x4 common/libcommon.a(env_nand.o)
+                0x33fb98ac                env_name_spec
+ .data          0x33fb98b0        0x0 common/libcommon.a(exports.o)
+ .data          0x33fb98b0        0x0 common/libcommon.a(flash.o)
+ .data          0x33fb98b0       0x84 common/libcommon.a(hush.o)
+ .data          0x33fb9934      0x210 common/libcommon.a(image.o)
+ .data          0x33fb9b44       0x14 common/libcommon.a(main.o)
+ .data          0x33fb9b58        0x0 common/libcommon.a(s_record.o)
+ .data          0x33fb9b58        0xc common/libcommon.a(stdio.o)
+                0x33fb9b58                stdio_names
+ .data          0x33fb9b64        0x0 common/libcommon.a(usb.o)
+ .data          0x33fb9b64       0x20 common/libcommon.a(usb_storage.o)
+                0x33fb9b64                us_direction
+ .data          0x33fb9b84        0x0 common/libcommon.a(xyzModem.o)
+ .data          0x33fb9b84        0x0 board/Embedded/ok2440/libok2440.a(ok2440.o)
+ .data          0x33fb9b84        0x0 board/Embedded/ok2440/libok2440.a(flash.o)
+ .data          0x33fb9b84        0x0 lib_generic/libgeneric.a(crc16.o)
+ .data          0x33fb9b84        0x0 lib_generic/libgeneric.a(crc32.o)
+ .data          0x33fb9b84      0x100 lib_generic/libgeneric.a(ctype.o)
+                0x33fb9b84                _ctype
+ .data          0x33fb9c84        0x0 lib_generic/libgeneric.a(display_options.o)
+ .data          0x33fb9c84        0x0 lib_generic/libgeneric.a(gunzip.o)
+ .data          0x33fb9c84        0x0 lib_generic/libgeneric.a(lmb.o)
+ .data          0x33fb9c84        0x0 lib_generic/libgeneric.a(string.o)
+ .data          0x33fb9c84        0x0 lib_generic/libgeneric.a(vsprintf.o)
+ .data          0x33fb9c84        0x0 lib_generic/libgeneric.a(zlib.o)
+ .data          0x33fb9c84        0x0 lib_generic/libgeneric.a(div64.o)
+ .data          0x33fb9c84        0x0 cpu/arm920t/s3c24x0/libs3c24x0.a(interrupts.o)
+ .data          0x33fb9c84        0x0 cpu/arm920t/s3c24x0/libs3c24x0.a(speed.o)
+ .data          0x33fb9c84        0x0 cpu/arm920t/s3c24x0/libs3c24x0.a(timer.o)
+ .data          0x33fb9c84       0x50 cpu/arm920t/s3c24x0/libs3c24x0.a(usb_ohci.o)
+ .data          0x33fb9cd4        0x2 cpu/arm920t/s3c24x0/libs3c24x0.a(mmc.o)
+ .data          0x33fb9cd6        0x0 lib_arm/libarm.a(bootm.o)
+ .data          0x33fb9cd6        0x0 lib_arm/libarm.a(cache.o)
+ .data          0x33fb9cd6        0x0 lib_arm/libarm.a(cache-cp15.o)
+ .data          0x33fb9cd6        0x0 lib_arm/libarm.a(reset.o)
+ *fill*         0x33fb9cd6        0x2 00
+ .data          0x33fb9cd8        0x4 fs/fat/libfat.a(fat.o)
+ .data          0x33fb9cdc        0x4 fs/jffs2/libjffs2.a(jffs2_1pass.o)
+ .data          0x33fb9ce0        0x0 fs/jffs2/libjffs2.a(compr_rtime.o)
+ .data          0x33fb9ce0        0x0 fs/jffs2/libjffs2.a(compr_rubin.o)
+ .data          0x33fb9ce0        0x0 fs/jffs2/libjffs2.a(compr_zlib.o)
+ .data          0x33fb9ce0        0x0 fs/jffs2/libjffs2.a(mini_inflate.o)
+ .data          0x33fb9ce0        0x0 disk/libdisk.a(part.o)
+ .data          0x33fb9ce0        0x0 disk/libdisk.a(part_dos.o)
+ .data          0x33fb9ce0        0x0 drivers/mtd/nand/libnand.a(nand_util.o)
+ .data          0x33fb9ce0        0x0 drivers/net/libnet.a(dm9000x.o)
+ .data          0x33fb9ce0       0x30 drivers/rtc/librtc.a(date.o)
+ .data          0x33fb9d10        0x0 drivers/rtc/librtc.a(s3c24x0_rtc.o)
+ .data          0x33fb9d10     0x4c44 drivers/video/libvideo.a(cfb_console.o)
+                0x33fbad14                bmp_logo_palette
+                0x33fbad54                bmp_logo_bitmap
+ .data          0x33fbe954        0x0 drivers/video/libvideo.a(s3c2410_fb.o)
+ .data          0x33fbe954        0x0 drivers/video/libvideo.a(videomodes.o)
+ .data          0x33fbe954        0x0 cpu/arm920t/libarm920t.a(cpu.o)
+ .data          0x33fbe954        0x0 /home/bamboo/work/ok2440/u-boot_for_ok2440/lib_arm/eabi_compat.o
+ .data          0x33fbe954        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_udivsi3.o)
+ .data          0x33fbe954        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_divsi3.o)
+ .data          0x33fbe954        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_lshrdi3.o)
+ .data          0x33fbe954        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_ashrdi3.o)
+ .data          0x33fbe954        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_ashldi3.o)
+ .data          0x33fbe954        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_dvmd_lnx.o)
+                0x33fbe954                . = ALIGN (0x4)
 
 .got
  *(.got)
-                0x33fbe910                . = .
-                0x33fbe910                __u_boot_cmd_start = .
+                0x33fbe954                . = .
+                0x33fbe954                __u_boot_cmd_start = .
 
-.u_boot_cmd     0x33fbe910      0x7c4
+.u_boot_cmd     0x33fbe954      0x7c4
  *(.u_boot_cmd)
- .u_boot_cmd    0x33fbe910       0x1c common/libcommon.a(cmd_bdinfo.o)
-                0x33fbe910                __u_boot_cmd_bdinfo
- .u_boot_cmd    0x33fbe92c       0x1c common/libcommon.a(cmd_bmp.o)
-                0x33fbe92c                __u_boot_cmd_bmp
- .u_boot_cmd    0x33fbe948       0x38 common/libcommon.a(cmd_boot.o)
-                0x33fbe948                __u_boot_cmd_go
-                0x33fbe964                __u_boot_cmd_reset
- .u_boot_cmd    0x33fbe980       0x8c common/libcommon.a(cmd_bootm.o)
-                0x33fbe980                __u_boot_cmd_bootm
-                0x33fbe99c                __u_boot_cmd_boot
-                0x33fbe9b8                __u_boot_cmd_bootd
-                0x33fbe9d4                __u_boot_cmd_iminfo
-                0x33fbe9f0                __u_boot_cmd_imls
- .u_boot_cmd    0x33fbea0c       0x38 common/libcommon.a(cmd_cache.o)
-                0x33fbea0c                __u_boot_cmd_icache
-                0x33fbea28                __u_boot_cmd_dcache
- .u_boot_cmd    0x33fbea44       0x1c common/libcommon.a(cmd_console.o)
-                0x33fbea44                __u_boot_cmd_coninfo
- .u_boot_cmd    0x33fbea60       0x1c common/libcommon.a(cmd_date.o)
-                0x33fbea60                __u_boot_cmd_date
- .u_boot_cmd    0x33fbea7c       0x1c common/libcommon.a(cmd_eeprom.o)
-                0x33fbea7c                __u_boot_cmd_eeprom
- .u_boot_cmd    0x33fbea98       0x38 common/libcommon.a(cmd_elf.o)
-                0x33fbea98                __u_boot_cmd_bootelf
-                0x33fbeab4                __u_boot_cmd_bootvx
- .u_boot_cmd    0x33fbead0       0x54 common/libcommon.a(cmd_fat.o)
-                0x33fbead0                __u_boot_cmd_fatload
-                0x33fbeaec                __u_boot_cmd_fatls
-                0x33fbeb08                __u_boot_cmd_fatinfo
- .u_boot_cmd    0x33fbeb24       0x54 common/libcommon.a(cmd_flash.o)
-                0x33fbeb24                __u_boot_cmd_flinfo
-                0x33fbeb40                __u_boot_cmd_erase
-                0x33fbeb5c                __u_boot_cmd_protect
- .u_boot_cmd    0x33fbeb78       0x1c common/libcommon.a(cmd_i2c.o)
-                0x33fbeb78                __u_boot_cmd_i2c
- .u_boot_cmd    0x33fbeb94       0x1c common/libcommon.a(cmd_itest.o)
-                0x33fbeb94                __u_boot_cmd_itest
- .u_boot_cmd    0x33fbebb0       0x54 common/libcommon.a(cmd_jffs2.o)
-                0x33fbebb0                __u_boot_cmd_fsload
-                0x33fbebcc                __u_boot_cmd_ls
-                0x33fbebe8                __u_boot_cmd_fsinfo
- .u_boot_cmd    0x33fbec04       0x70 common/libcommon.a(cmd_load.o)
-                0x33fbec04                __u_boot_cmd_loads
-                0x33fbec20                __u_boot_cmd_loadb
-                0x33fbec3c                __u_boot_cmd_loadx
-                0x33fbec58                __u_boot_cmd_loady
- .u_boot_cmd    0x33fbec74      0x134 common/libcommon.a(cmd_mem.o)
-                0x33fbec74                __u_boot_cmd_md
-                0x33fbec90                __u_boot_cmd_mm
-                0x33fbecac                __u_boot_cmd_nm
-                0x33fbecc8                __u_boot_cmd_mw
-                0x33fbece4                __u_boot_cmd_cp
-                0x33fbed00                __u_boot_cmd_cmp
-                0x33fbed1c                __u_boot_cmd_crc32
-                0x33fbed38                __u_boot_cmd_base
-                0x33fbed54                __u_boot_cmd_loop
-                0x33fbed70                __u_boot_cmd_mtest
-                0x33fbed8c                __u_boot_cmd_unzip
- .u_boot_cmd    0x33fbeda8       0x1c common/libcommon.a(cmd_misc.o)
-                0x33fbeda8                __u_boot_cmd_sleep
- .u_boot_cmd    0x33fbedc4       0x1c common/libcommon.a(cmd_mmc.o)
-                0x33fbedc4                __u_boot_cmd_mmc
- .u_boot_cmd    0x33fbede0       0x38 common/libcommon.a(cmd_nand.o)
-                0x33fbede0                __u_boot_cmd_nand
-                0x33fbedfc                __u_boot_cmd_nboot
- .u_boot_cmd    0x33fbee18       0xa8 common/libcommon.a(cmd_net.o)
-                0x33fbee18                __u_boot_cmd_bootp
-                0x33fbee34                __u_boot_cmd_tftpboot
-                0x33fbee50                __u_boot_cmd_rarpboot
-                0x33fbee6c                __u_boot_cmd_dhcp
-                0x33fbee88                __u_boot_cmd_nfs
-                0x33fbeea4                __u_boot_cmd_ping
- .u_boot_cmd    0x33fbeec0       0xa8 common/libcommon.a(cmd_nvedit.o)
-                0x33fbeec0                __u_boot_cmd_saveenv
-                0x33fbeedc                __u_boot_cmd_editenv
-                0x33fbeef8                __u_boot_cmd_printenv
-                0x33fbef14                __u_boot_cmd_setenv
-                0x33fbef30                __u_boot_cmd_askenv
-                0x33fbef4c                __u_boot_cmd_run
- .u_boot_cmd    0x33fbef68       0x1c common/libcommon.a(cmd_reginfo.o)
-                0x33fbef68                __u_boot_cmd_reginfo
- .u_boot_cmd    0x33fbef84       0x1c common/libcommon.a(cmd_source.o)
-                0x33fbef84                __u_boot_cmd_source
- .u_boot_cmd    0x33fbefa0       0x38 common/libcommon.a(cmd_usb.o)
-                0x33fbefa0                __u_boot_cmd_usb
-                0x33fbefbc                __u_boot_cmd_usbboot
- .u_boot_cmd    0x33fbefd8       0x1c common/libcommon.a(cmd_usbslave.o)
-                0x33fbefd8                __u_boot_cmd_usbslave
- .u_boot_cmd    0x33fbeff4       0x1c common/libcommon.a(cmd_ximg.o)
-                0x33fbeff4                __u_boot_cmd_imxtract
- .u_boot_cmd    0x33fbf010       0xa8 common/libcommon.a(command.o)
-                0x33fbf010                __u_boot_cmd_version
-                0x33fbf02c                __u_boot_cmd_echo
-                0x33fbf048                __u_boot_cmd_test
-                0x33fbf064                __u_boot_cmd_exit
-                0x33fbf080                __u_boot_cmd_help
-                0x33fbf09c                __u_boot_cmd_question_mark
- .u_boot_cmd    0x33fbf0b8       0x1c common/libcommon.a(hush.o)
-                0x33fbf0b8                __u_boot_cmd_showvar
-                0x33fbf0d4                __u_boot_cmd_end = .
-                0x33fbf0d4                . = ALIGN (0x4)
-                0x33fbf0d4                __bss_start = .
+ .u_boot_cmd    0x33fbe954       0x1c common/libcommon.a(cmd_bdinfo.o)
+                0x33fbe954                __u_boot_cmd_bdinfo
+ .u_boot_cmd    0x33fbe970       0x1c common/libcommon.a(cmd_bmp.o)
+                0x33fbe970                __u_boot_cmd_bmp
+ .u_boot_cmd    0x33fbe98c       0x38 common/libcommon.a(cmd_boot.o)
+                0x33fbe98c                __u_boot_cmd_go
+                0x33fbe9a8                __u_boot_cmd_reset
+ .u_boot_cmd    0x33fbe9c4       0x8c common/libcommon.a(cmd_bootm.o)
+                0x33fbe9c4                __u_boot_cmd_bootm
+                0x33fbe9e0                __u_boot_cmd_boot
+                0x33fbe9fc                __u_boot_cmd_bootd
+                0x33fbea18                __u_boot_cmd_iminfo
+                0x33fbea34                __u_boot_cmd_imls
+ .u_boot_cmd    0x33fbea50       0x38 common/libcommon.a(cmd_cache.o)
+                0x33fbea50                __u_boot_cmd_icache
+                0x33fbea6c                __u_boot_cmd_dcache
+ .u_boot_cmd    0x33fbea88       0x1c common/libcommon.a(cmd_console.o)
+                0x33fbea88                __u_boot_cmd_coninfo
+ .u_boot_cmd    0x33fbeaa4       0x1c common/libcommon.a(cmd_date.o)
+                0x33fbeaa4                __u_boot_cmd_date
+ .u_boot_cmd    0x33fbeac0       0x1c common/libcommon.a(cmd_eeprom.o)
+                0x33fbeac0                __u_boot_cmd_eeprom
+ .u_boot_cmd    0x33fbeadc       0x38 common/libcommon.a(cmd_elf.o)
+                0x33fbeadc                __u_boot_cmd_bootelf
+                0x33fbeaf8                __u_boot_cmd_bootvx
+ .u_boot_cmd    0x33fbeb14       0x54 common/libcommon.a(cmd_fat.o)
+                0x33fbeb14                __u_boot_cmd_fatload
+                0x33fbeb30                __u_boot_cmd_fatls
+                0x33fbeb4c                __u_boot_cmd_fatinfo
+ .u_boot_cmd    0x33fbeb68       0x54 common/libcommon.a(cmd_flash.o)
+                0x33fbeb68                __u_boot_cmd_flinfo
+                0x33fbeb84                __u_boot_cmd_erase
+                0x33fbeba0                __u_boot_cmd_protect
+ .u_boot_cmd    0x33fbebbc       0x1c common/libcommon.a(cmd_i2c.o)
+                0x33fbebbc                __u_boot_cmd_i2c
+ .u_boot_cmd    0x33fbebd8       0x1c common/libcommon.a(cmd_itest.o)
+                0x33fbebd8                __u_boot_cmd_itest
+ .u_boot_cmd    0x33fbebf4       0x54 common/libcommon.a(cmd_jffs2.o)
+                0x33fbebf4                __u_boot_cmd_fsload
+                0x33fbec10                __u_boot_cmd_ls
+                0x33fbec2c                __u_boot_cmd_fsinfo
+ .u_boot_cmd    0x33fbec48       0x70 common/libcommon.a(cmd_load.o)
+                0x33fbec48                __u_boot_cmd_loads
+                0x33fbec64                __u_boot_cmd_loadb
+                0x33fbec80                __u_boot_cmd_loadx
+                0x33fbec9c                __u_boot_cmd_loady
+ .u_boot_cmd    0x33fbecb8      0x134 common/libcommon.a(cmd_mem.o)
+                0x33fbecb8                __u_boot_cmd_md
+                0x33fbecd4                __u_boot_cmd_mm
+                0x33fbecf0                __u_boot_cmd_nm
+                0x33fbed0c                __u_boot_cmd_mw
+                0x33fbed28                __u_boot_cmd_cp
+                0x33fbed44                __u_boot_cmd_cmp
+                0x33fbed60                __u_boot_cmd_crc32
+                0x33fbed7c                __u_boot_cmd_base
+                0x33fbed98                __u_boot_cmd_loop
+                0x33fbedb4                __u_boot_cmd_mtest
+                0x33fbedd0                __u_boot_cmd_unzip
+ .u_boot_cmd    0x33fbedec       0x1c common/libcommon.a(cmd_misc.o)
+                0x33fbedec                __u_boot_cmd_sleep
+ .u_boot_cmd    0x33fbee08       0x1c common/libcommon.a(cmd_mmc.o)
+                0x33fbee08                __u_boot_cmd_mmc
+ .u_boot_cmd    0x33fbee24       0x38 common/libcommon.a(cmd_nand.o)
+                0x33fbee24                __u_boot_cmd_nand
+                0x33fbee40                __u_boot_cmd_nboot
+ .u_boot_cmd    0x33fbee5c       0xa8 common/libcommon.a(cmd_net.o)
+                0x33fbee5c                __u_boot_cmd_bootp
+                0x33fbee78                __u_boot_cmd_tftpboot
+                0x33fbee94                __u_boot_cmd_rarpboot
+                0x33fbeeb0                __u_boot_cmd_dhcp
+                0x33fbeecc                __u_boot_cmd_nfs
+                0x33fbeee8                __u_boot_cmd_ping
+ .u_boot_cmd    0x33fbef04       0xa8 common/libcommon.a(cmd_nvedit.o)
+                0x33fbef04                __u_boot_cmd_saveenv
+                0x33fbef20                __u_boot_cmd_editenv
+                0x33fbef3c                __u_boot_cmd_printenv
+                0x33fbef58                __u_boot_cmd_setenv
+                0x33fbef74                __u_boot_cmd_askenv
+                0x33fbef90                __u_boot_cmd_run
+ .u_boot_cmd    0x33fbefac       0x1c common/libcommon.a(cmd_reginfo.o)
+                0x33fbefac                __u_boot_cmd_reginfo
+ .u_boot_cmd    0x33fbefc8       0x1c common/libcommon.a(cmd_source.o)
+                0x33fbefc8                __u_boot_cmd_source
+ .u_boot_cmd    0x33fbefe4       0x38 common/libcommon.a(cmd_usb.o)
+                0x33fbefe4                __u_boot_cmd_usb
+                0x33fbf000                __u_boot_cmd_usbboot
+ .u_boot_cmd    0x33fbf01c       0x1c common/libcommon.a(cmd_usbslave.o)
+                0x33fbf01c                __u_boot_cmd_usbslave
+ .u_boot_cmd    0x33fbf038       0x1c common/libcommon.a(cmd_ximg.o)
+                0x33fbf038                __u_boot_cmd_imxtract
+ .u_boot_cmd    0x33fbf054       0xa8 common/libcommon.a(command.o)
+                0x33fbf054                __u_boot_cmd_version
+                0x33fbf070                __u_boot_cmd_echo
+                0x33fbf08c                __u_boot_cmd_test
+                0x33fbf0a8                __u_boot_cmd_exit
+                0x33fbf0c4                __u_boot_cmd_help
+                0x33fbf0e0                __u_boot_cmd_question_mark
+ .u_boot_cmd    0x33fbf0fc       0x1c common/libcommon.a(hush.o)
+                0x33fbf0fc                __u_boot_cmd_showvar
+                0x33fbf118                __u_boot_cmd_end = .
+                0x33fbf118                . = ALIGN (0x4)
+                0x33fbf118                __bss_start = .
 
-.bss            0x33fbf100    0x45e4c
+.bss            0x33fbf200    0x45e4c
  *(.bss)
- .bss           0x33fbf100        0x0 cpu/arm920t/start.o
- .bss           0x33fbf100        0x0 board/Embedded/ok2440/lowlevel_init.o
- .bss           0x33fbf100        0x0 board/Embedded/ok2440/nand_read.o
- .bss           0x33fbf100        0x4 lib_arm/libarm.a(board.o)
-                0x33fbf100                monitor_flash_len
- .bss           0x33fbf104        0x0 lib_arm/libarm.a(interrupts.o)
- .bss           0x33fbf104       0x14 net/libnet.a(eth.o)
- .bss           0x33fbf118     0x25e4 net/libnet.a(net.o)
-                0x33fbf118                NetState
-                0x33fbf12c                NetIPID
-                0x33fbf130                NetOurIP
-                0x33fbf134                NetOurEther
-                0x33fbf13c                NetPingIP
-                0x33fbf140                NetRxPacket
-                0x33fbf144                NetRxPacketLen
-                0x33fbf148                NetArpWaitPacketIP
-                0x33fbf14c                NetArpWaitPacketMAC
-                0x33fbf150                NetArpWaitReplyIP
-                0x33fbf154                NetArpWaitTxPacket
-                0x33fbf158                NetArpWaitTxPacketSize
-                0x33fbf15c                NetServerIP
-                0x33fbf160                NetServerEther
-                0x33fbf168                NetTxPacket
-                0x33fbf16c                NetOurSubnetMask
-                0x33fbf170                NetOurGatewayIP
-                0x33fbf17c                NetEtherNullAddr
-                0x33fbf184                NetArpWaitTry
-                0x33fbf188                NetArpWaitTimerStart
-                0x33fbf194                NetRestartWrap
-                0x33fbf19c                PktBuf
-                0x33fc0fbc                NetRxPackets
-                0x33fc0fcc                NetArpWaitPacketBuf
-                0x33fc15f0                NetBootFileXferSize
-                0x33fc15f4                NetOurDNSIP
-                0x33fc15f8                NetOurNISDomain
-                0x33fc1618                NetOurHostName
-                0x33fc1638                NetOurRootPath
-                0x33fc1678                NetBootFileSize
-                0x33fc167c                BootFile
- .bss           0x33fc16fc      0x8b0 net/libnet.a(nfs.o)
- .bss           0x33fc1fac        0x4 net/libnet.a(rarp.o)
-                0x33fc1fac                RarpTry
- .bss           0x33fc1fb0       0xb4 net/libnet.a(tftp.o)
- .bss           0x33fc2064       0x14 net/libnet.a(bootp.o)
-                0x33fc2064                dhcp_leasetime
-                0x33fc2068                NetDHCPServerIP
-                0x33fc206c                BootpID
-                0x33fc2070                dhcp_state
-                0x33fc2074                BootpTry
- .bss           0x33fc2078        0x0 drivers/i2c/libi2c.a(s3c24x0_i2c.o)
- .bss           0x33fc2078      0x1c8 drivers/mtd/nand/libnand.a(nand.o)
-                0x33fc2078                nand_info
- .bss           0x33fc2240        0x0 drivers/mtd/nand/libnand.a(nand_base.o)
- .bss           0x33fc2240        0x0 drivers/mtd/nand/libnand.a(nand_bbt.o)
- .bss           0x33fc2240        0x0 drivers/mtd/nand/libnand.a(nand_ecc.o)
- .bss           0x33fc2240        0x0 drivers/mtd/nand/libnand.a(nand_ids.o)
- .bss           0x33fc2240        0x0 drivers/mtd/nand/libnand.a(s3c2410_nand.o)
- .bss           0x33fc2240        0x0 drivers/serial/libserial.a(serial_s3c24x0.o)
- .bss           0x33fc2240       0x4c drivers/usb/slave/libusb_slave.a(usbinit.o)
-                0x33fc2240                isUsbdSetConfiguration
-                0x33fc2244                download_run
-                0x33fc2248                dwUSBBufBase
-                0x33fc224c                dwUSBBufReadPtr
-                0x33fc2250                dwUSBBufWritePtr
-                0x33fc2254                bDMAPending
-                0x33fc2258                tempDownloadAddress
-                0x33fc225c                downloadAddress
-                0x33fc2260                downPt
-                0x33fc2264                downloadFileSize
-                0x33fc2268                dwWillDMACnt
-                0x33fc226c                totalDmaCount
-                0x33fc2270                restart
-                0x33fc2274                err
-                0x33fc2278                menuUsed
-                0x33fc227c                run
-                0x33fc2280                checkSum
-                0x33fc2284                dwUSBBufSize
-                0x33fc2288                consoleNum
- .bss           0x33fc228c       0xd0 drivers/usb/slave/libusb_slave.a(interrupt.o)
-                0x33fc2290                g_TimerIntHappen
-                0x33fc2294                isr_handle_array
- .bss           0x33fc235c        0x0 drivers/usb/slave/libusb_slave.a(usblib.o)
- .bss           0x33fc235c     0x1008 drivers/usb/slave/libusb_slave.a(usbmain.o)
-                0x33fc235c                dbgStrWrPt
-                0x33fc2360                dbgStrFifo
-                0x33fc3360                dbgStrRdPt
- .bss           0x33fc3364       0x20 drivers/usb/slave/libusb_slave.a(usbout.o)
-                0x33fc3364                ep3Buf
- .bss           0x33fc3384       0x68 drivers/usb/slave/libusb_slave.a(usbsetup.o)
-                0x33fc3384                descDev
-                0x33fc3398                descConf
-                0x33fc33a4                descIf
-                0x33fc33b0                descEndpt0
-                0x33fc33b8                descEndpt1
-                0x33fc33c0                ep0State
-                0x33fc33c4                descSetup
-                0x33fc33d0                ConfigSet
-                0x33fc33d1                Rwuen
-                0x33fc33d4                StatusGet
-                0x33fc33dc                InterfaceGet
-                0x33fc33e0                ep0SubState
-                0x33fc33e4                AlterSetting
-                0x33fc33e5                device_status
-                0x33fc33e6                interface_status
-                0x33fc33e7                endpoint0_status
-                0x33fc33e8                endpoint1_status
-                0x33fc33e9                endpoint3_status
- .bss           0x33fc33ec       0x24 drivers/usb/slave/libusb_slave.a(usbin.o)
-                0x33fc33ec                transferIndex
-                0x33fc33f0                ep1Buf
- .bss           0x33fc3410        0x0 common/libcommon.a(cmd_bdinfo.o)
- .bss           0x33fc3410        0x0 common/libcommon.a(cmd_bmp.o)
- .bss           0x33fc3410        0x0 common/libcommon.a(cmd_boot.o)
- .bss           0x33fc3410      0x12c common/libcommon.a(cmd_bootm.o)
- .bss           0x33fc353c        0x0 common/libcommon.a(cmd_cache.o)
- .bss           0x33fc353c        0x0 common/libcommon.a(cmd_console.o)
- .bss           0x33fc353c        0x0 common/libcommon.a(cmd_date.o)
- .bss           0x33fc353c        0x0 common/libcommon.a(cmd_eeprom.o)
- .bss           0x33fc353c        0x0 common/libcommon.a(cmd_elf.o)
- .bss           0x33fc353c        0x0 common/libcommon.a(cmd_fat.o)
- .bss           0x33fc353c        0x0 common/libcommon.a(cmd_flash.o)
- .bss           0x33fc353c       0x18 common/libcommon.a(cmd_i2c.o)
- .bss           0x33fc3554        0x0 common/libcommon.a(cmd_itest.o)
- .bss           0x33fc3554        0xc common/libcommon.a(cmd_jffs2.o)
-                0x33fc3558                current_mtd_dev
-                0x33fc355c                current_mtd_partnum
- .bss           0x33fc3560       0x60 common/libcommon.a(cmd_load.o)
-                0x33fc3570                os_data_init
-                0x33fc3580                os_data_char
-                0x33fc3584                his_quote
-                0x33fc3588                his_pad_count
-                0x33fc358c                his_pad_char
-                0x33fc358d                his_eol
-                0x33fc3590                send_ptr
-                0x33fc3594                send_parms
- .bss           0x33fc35c0       0x14 common/libcommon.a(cmd_mem.o)
-                0x33fc35c4                mm_last_addr
-                0x33fc35c8                mm_last_size
-                0x33fc35cc                dp_last_addr
-                0x33fc35d0                dp_last_size
- .bss           0x33fc35d4        0x0 common/libcommon.a(cmd_misc.o)
- .bss           0x33fc35d4        0x0 common/libcommon.a(cmd_mmc.o)
- .bss           0x33fc35d4        0x0 common/libcommon.a(cmd_nand.o)
- .bss           0x33fc35d4        0x0 common/libcommon.a(cmd_net.o)
- .bss           0x33fc35d4        0x0 common/libcommon.a(cmd_nvedit.o)
- .bss           0x33fc35d4        0x0 common/libcommon.a(cmd_reginfo.o)
- .bss           0x33fc35d4        0x0 common/libcommon.a(cmd_source.o)
- .bss           0x33fc35d4        0x0 common/libcommon.a(cmd_usb.o)
- .bss           0x33fc35d4        0x4 common/libcommon.a(cmd_usbslave.o)
-                0x33fc35d4                g_dwDownloadLen
- .bss           0x33fc35d8        0x0 common/libcommon.a(cmd_ximg.o)
- .bss           0x33fc35d8      0x300 common/libcommon.a(command.o)
- .bss           0x33fc38d8        0x8 common/libcommon.a(console.o)
- .bss           0x33fc38e0       0x44 common/libcommon.a(dlmalloc.o)
-                0x33fc38e0                mem_malloc_brk
-                0x33fc38e4                mem_malloc_start
-                0x33fc38e8                mem_malloc_end
- .bss           0x33fc3924        0x0 common/libcommon.a(env_common.o)
- .bss           0x33fc3924        0x4 common/libcommon.a(env_nand.o)
-                0x33fc3924                env_ptr
- .bss           0x33fc3928        0x0 common/libcommon.a(exports.o)
- .bss           0x33fc3928        0x0 common/libcommon.a(flash.o)
- .bss           0x33fc3928      0x258 common/libcommon.a(hush.o)
-                0x33fc3b74                last_return_code
-                0x33fc3b7c                nesting_level
- .bss           0x33fc3b80        0x0 common/libcommon.a(image.o)
- .bss           0x33fc3b80     0x1560 common/libcommon.a(main.o)
-                0x33fc3b8c                hist_num
-                0x33fc3b90                hist_lines
-                0x33fc4f90                hist_list
-                0x33fc4fe0                console_buffer
- .bss           0x33fc50e0        0x0 common/libcommon.a(s_record.o)
- .bss           0x33fc50e0       0x48 common/libcommon.a(stdio.o)
-                0x33fc511c                stdio_devices
- .bss           0x33fc5128     0xda1c common/libcommon.a(usb.o)
-                0x33fd2b34                usb_started
- .bss           0x33fd2b44      0x5b8 common/libcommon.a(usb_storage.o)
- .bss           0x33fd30fc      0x43c common/libcommon.a(xyzModem.o)
- .bss           0x33fd3538        0x0 board/Embedded/ok2440/libok2440.a(ok2440.o)
- .bss           0x33fd3538       0xac board/Embedded/ok2440/libok2440.a(flash.o)
-                0x33fd3538                flash_info
- .bss           0x33fd35e4        0x0 lib_generic/libgeneric.a(crc16.o)
- .bss           0x33fd35e4        0x0 lib_generic/libgeneric.a(crc32.o)
- .bss           0x33fd35e4        0x0 lib_generic/libgeneric.a(ctype.o)
- .bss           0x33fd35e4        0x0 lib_generic/libgeneric.a(display_options.o)
- .bss           0x33fd35e4        0x0 lib_generic/libgeneric.a(gunzip.o)
- .bss           0x33fd35e4        0x0 lib_generic/libgeneric.a(lmb.o)
- .bss           0x33fd35e4        0x4 lib_generic/libgeneric.a(string.o)
-                0x33fd35e4                ___strtok
- .bss           0x33fd35e8        0x0 lib_generic/libgeneric.a(vsprintf.o)
- .bss           0x33fd35e8        0x0 lib_generic/libgeneric.a(zlib.o)
- .bss           0x33fd35e8        0x0 lib_generic/libgeneric.a(div64.o)
- .bss           0x33fd35e8        0x0 cpu/arm920t/s3c24x0/libs3c24x0.a(interrupts.o)
- .bss           0x33fd35e8        0x0 cpu/arm920t/s3c24x0/libs3c24x0.a(speed.o)
- .bss           0x33fd35e8       0x10 cpu/arm920t/s3c24x0/libs3c24x0.a(timer.o)
-                0x33fd35f0                timer_load_val
- *fill*         0x33fd35f8        0x8 00
- .bss           0x33fd3600     0x1500 cpu/arm920t/s3c24x0/libs3c24x0.a(usb_ohci.o)
-                0x33fd36c8                urb_priv
-                0x33fd379c                phcca
-                0x33fd3800                ghcca
-                0x33fd3900                ohci_dev
-                0x33fd3aa0                gtd
-                0x33fd4ae0                ptd
-                0x33fd4ae8                urb_finished
-                0x33fd4aec                devgone
-                0x33fd4af0                got_rhsc
- .bss           0x33fd4b00      0x2a8 cpu/arm920t/s3c24x0/libs3c24x0.a(mmc.o)
- .bss           0x33fd4da8        0x4 lib_arm/libarm.a(bootm.o)
- .bss           0x33fd4dac        0x0 lib_arm/libarm.a(cache.o)
- .bss           0x33fd4dac        0x0 lib_arm/libarm.a(cache-cp15.o)
- .bss           0x33fd4dac        0x0 lib_arm/libarm.a(reset.o)
- .bss           0x33fd4dac    0x30008 fs/fat/libfat.a(fat.o)
-                0x33fd4db4                get_vfatname_block
-                0x33fe4db4                do_fat_read_block
-                0x33ff4db4                get_dentfromdir_block
- .bss           0x34004db4        0x8 fs/jffs2/libjffs2.a(jffs2_1pass.o)
- .bss           0x34004dbc        0x0 fs/jffs2/libjffs2.a(compr_rtime.o)
- .bss           0x34004dbc        0x0 fs/jffs2/libjffs2.a(compr_rubin.o)
- .bss           0x34004dbc        0x0 fs/jffs2/libjffs2.a(compr_zlib.o)
- .bss           0x34004dbc        0x0 fs/jffs2/libjffs2.a(mini_inflate.o)
- .bss           0x34004dbc        0x0 disk/libdisk.a(part.o)
- .bss           0x34004dbc        0x0 disk/libdisk.a(part_dos.o)
- .bss           0x34004dbc        0x0 drivers/mtd/nand/libnand.a(nand_util.o)
- .bss           0x34004dbc       0xe0 drivers/net/libnet.a(dm9000x.o)
- .bss           0x34004e9c        0x0 drivers/rtc/librtc.a(date.o)
- .bss           0x34004e9c        0x0 drivers/rtc/librtc.a(s3c24x0_rtc.o)
- .bss           0x34004e9c       0x20 drivers/video/libvideo.a(cfb_console.o)
- .bss           0x34004ebc       0x90 drivers/video/libvideo.a(s3c2410_fb.o)
-                0x34004ebc                smi
- .bss           0x34004f4c        0x0 drivers/video/libvideo.a(videomodes.o)
- .bss           0x34004f4c        0x0 cpu/arm920t/libarm920t.a(cpu.o)
- .bss           0x34004f4c        0x0 /home/bamboo/work/ok2440/u-boot_for_ok2440/lib_arm/eabi_compat.o
- .bss           0x34004f4c        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_udivsi3.o)
- .bss           0x34004f4c        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_divsi3.o)
- .bss           0x34004f4c        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_lshrdi3.o)
- .bss           0x34004f4c        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_ashrdi3.o)
- .bss           0x34004f4c        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_ashldi3.o)
- .bss           0x34004f4c        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_dvmd_lnx.o)
-                0x34004f4c                . = ALIGN (0x4)
-                0x34004f4c                _end = .
+ .bss           0x33fbf200        0x0 cpu/arm920t/start.o
+ .bss           0x33fbf200        0x0 board/Embedded/ok2440/lowlevel_init.o
+ .bss           0x33fbf200        0x0 board/Embedded/ok2440/nand_read.o
+ .bss           0x33fbf200        0x4 lib_arm/libarm.a(board.o)
+                0x33fbf200                monitor_flash_len
+ .bss           0x33fbf204        0x0 lib_arm/libarm.a(interrupts.o)
+ .bss           0x33fbf204       0x14 net/libnet.a(eth.o)
+ .bss           0x33fbf218     0x25e4 net/libnet.a(net.o)
+                0x33fbf218                NetState
+                0x33fbf22c                NetIPID
+                0x33fbf230                NetOurIP
+                0x33fbf234                NetOurEther
+                0x33fbf23c                NetPingIP
+                0x33fbf240                NetRxPacket
+                0x33fbf244                NetRxPacketLen
+                0x33fbf248                NetArpWaitPacketIP
+                0x33fbf24c                NetArpWaitPacketMAC
+                0x33fbf250                NetArpWaitReplyIP
+                0x33fbf254                NetArpWaitTxPacket
+                0x33fbf258                NetArpWaitTxPacketSize
+                0x33fbf25c                NetServerIP
+                0x33fbf260                NetServerEther
+                0x33fbf268                NetTxPacket
+                0x33fbf26c                NetOurSubnetMask
+                0x33fbf270                NetOurGatewayIP
+                0x33fbf27c                NetEtherNullAddr
+                0x33fbf284                NetArpWaitTry
+                0x33fbf288                NetArpWaitTimerStart
+                0x33fbf294                NetRestartWrap
+                0x33fbf29c                PktBuf
+                0x33fc10bc                NetRxPackets
+                0x33fc10cc                NetArpWaitPacketBuf
+                0x33fc16f0                NetBootFileXferSize
+                0x33fc16f4                NetOurDNSIP
+                0x33fc16f8                NetOurNISDomain
+                0x33fc1718                NetOurHostName
+                0x33fc1738                NetOurRootPath
+                0x33fc1778                NetBootFileSize
+                0x33fc177c                BootFile
+ .bss           0x33fc17fc      0x8b0 net/libnet.a(nfs.o)
+ .bss           0x33fc20ac        0x4 net/libnet.a(rarp.o)
+                0x33fc20ac                RarpTry
+ .bss           0x33fc20b0       0xb4 net/libnet.a(tftp.o)
+ .bss           0x33fc2164       0x14 net/libnet.a(bootp.o)
+                0x33fc2164                dhcp_leasetime
+                0x33fc2168                NetDHCPServerIP
+                0x33fc216c                BootpID
+                0x33fc2170                dhcp_state
+                0x33fc2174                BootpTry
+ .bss           0x33fc2178        0x0 drivers/i2c/libi2c.a(s3c24x0_i2c.o)
+ .bss           0x33fc2178      0x1c8 drivers/mtd/nand/libnand.a(nand.o)
+                0x33fc2178                nand_info
+ .bss           0x33fc2340        0x0 drivers/mtd/nand/libnand.a(nand_base.o)
+ .bss           0x33fc2340        0x0 drivers/mtd/nand/libnand.a(nand_bbt.o)
+ .bss           0x33fc2340        0x0 drivers/mtd/nand/libnand.a(nand_ecc.o)
+ .bss           0x33fc2340        0x0 drivers/mtd/nand/libnand.a(nand_ids.o)
+ .bss           0x33fc2340        0x0 drivers/mtd/nand/libnand.a(s3c2410_nand.o)
+ .bss           0x33fc2340        0x0 drivers/serial/libserial.a(serial_s3c24x0.o)
+ .bss           0x33fc2340       0x4c drivers/usb/slave/libusb_slave.a(usbinit.o)
+                0x33fc2340                isUsbdSetConfiguration
+                0x33fc2344                download_run
+                0x33fc2348                dwUSBBufBase
+                0x33fc234c                dwUSBBufReadPtr
+                0x33fc2350                dwUSBBufWritePtr
+                0x33fc2354                bDMAPending
+                0x33fc2358                tempDownloadAddress
+                0x33fc235c                downloadAddress
+                0x33fc2360                downPt
+                0x33fc2364                downloadFileSize
+                0x33fc2368                dwWillDMACnt
+                0x33fc236c                totalDmaCount
+                0x33fc2370                restart
+                0x33fc2374                err
+                0x33fc2378                menuUsed
+                0x33fc237c                run
+                0x33fc2380                checkSum
+                0x33fc2384                dwUSBBufSize
+                0x33fc2388                consoleNum
+ .bss           0x33fc238c       0xd0 drivers/usb/slave/libusb_slave.a(interrupt.o)
+                0x33fc2390                g_TimerIntHappen
+                0x33fc2394                isr_handle_array
+ .bss           0x33fc245c        0x0 drivers/usb/slave/libusb_slave.a(usblib.o)
+ .bss           0x33fc245c     0x1008 drivers/usb/slave/libusb_slave.a(usbmain.o)
+                0x33fc245c                dbgStrWrPt
+                0x33fc2460                dbgStrFifo
+                0x33fc3460                dbgStrRdPt
+ .bss           0x33fc3464       0x20 drivers/usb/slave/libusb_slave.a(usbout.o)
+                0x33fc3464                ep3Buf
+ .bss           0x33fc3484       0x68 drivers/usb/slave/libusb_slave.a(usbsetup.o)
+                0x33fc3484                descDev
+                0x33fc3498                descConf
+                0x33fc34a4                descIf
+                0x33fc34b0                descEndpt0
+                0x33fc34b8                descEndpt1
+                0x33fc34c0                ep0State
+                0x33fc34c4                descSetup
+                0x33fc34d0                ConfigSet
+                0x33fc34d1                Rwuen
+                0x33fc34d4                StatusGet
+                0x33fc34dc                InterfaceGet
+                0x33fc34e0                ep0SubState
+                0x33fc34e4                AlterSetting
+                0x33fc34e5                device_status
+                0x33fc34e6                interface_status
+                0x33fc34e7                endpoint0_status
+                0x33fc34e8                endpoint1_status
+                0x33fc34e9                endpoint3_status
+ .bss           0x33fc34ec       0x24 drivers/usb/slave/libusb_slave.a(usbin.o)
+                0x33fc34ec                transferIndex
+                0x33fc34f0                ep1Buf
+ .bss           0x33fc3510        0x0 common/libcommon.a(cmd_bdinfo.o)
+ .bss           0x33fc3510        0x0 common/libcommon.a(cmd_bmp.o)
+ .bss           0x33fc3510        0x0 common/libcommon.a(cmd_boot.o)
+ .bss           0x33fc3510      0x12c common/libcommon.a(cmd_bootm.o)
+ .bss           0x33fc363c        0x0 common/libcommon.a(cmd_cache.o)
+ .bss           0x33fc363c        0x0 common/libcommon.a(cmd_console.o)
+ .bss           0x33fc363c        0x0 common/libcommon.a(cmd_date.o)
+ .bss           0x33fc363c        0x0 common/libcommon.a(cmd_eeprom.o)
+ .bss           0x33fc363c        0x0 common/libcommon.a(cmd_elf.o)
+ .bss           0x33fc363c        0x0 common/libcommon.a(cmd_fat.o)
+ .bss           0x33fc363c        0x0 common/libcommon.a(cmd_flash.o)
+ .bss           0x33fc363c       0x18 common/libcommon.a(cmd_i2c.o)
+ .bss           0x33fc3654        0x0 common/libcommon.a(cmd_itest.o)
+ .bss           0x33fc3654        0xc common/libcommon.a(cmd_jffs2.o)
+                0x33fc3658                current_mtd_dev
+                0x33fc365c                current_mtd_partnum
+ .bss           0x33fc3660       0x60 common/libcommon.a(cmd_load.o)
+                0x33fc3670                os_data_init
+                0x33fc3680                os_data_char
+                0x33fc3684                his_quote
+                0x33fc3688                his_pad_count
+                0x33fc368c                his_pad_char
+                0x33fc368d                his_eol
+                0x33fc3690                send_ptr
+                0x33fc3694                send_parms
+ .bss           0x33fc36c0       0x14 common/libcommon.a(cmd_mem.o)
+                0x33fc36c4                mm_last_addr
+                0x33fc36c8                mm_last_size
+                0x33fc36cc                dp_last_addr
+                0x33fc36d0                dp_last_size
+ .bss           0x33fc36d4        0x0 common/libcommon.a(cmd_misc.o)
+ .bss           0x33fc36d4        0x0 common/libcommon.a(cmd_mmc.o)
+ .bss           0x33fc36d4        0x0 common/libcommon.a(cmd_nand.o)
+ .bss           0x33fc36d4        0x0 common/libcommon.a(cmd_net.o)
+ .bss           0x33fc36d4        0x0 common/libcommon.a(cmd_nvedit.o)
+ .bss           0x33fc36d4        0x0 common/libcommon.a(cmd_reginfo.o)
+ .bss           0x33fc36d4        0x0 common/libcommon.a(cmd_source.o)
+ .bss           0x33fc36d4        0x0 common/libcommon.a(cmd_usb.o)
+ .bss           0x33fc36d4        0x4 common/libcommon.a(cmd_usbslave.o)
+                0x33fc36d4                g_dwDownloadLen
+ .bss           0x33fc36d8        0x0 common/libcommon.a(cmd_ximg.o)
+ .bss           0x33fc36d8      0x300 common/libcommon.a(command.o)
+ .bss           0x33fc39d8        0x8 common/libcommon.a(console.o)
+ .bss           0x33fc39e0       0x44 common/libcommon.a(dlmalloc.o)
+                0x33fc39e0                mem_malloc_brk
+                0x33fc39e4                mem_malloc_start
+                0x33fc39e8                mem_malloc_end
+ .bss           0x33fc3a24        0x0 common/libcommon.a(env_common.o)
+ .bss           0x33fc3a24        0x4 common/libcommon.a(env_nand.o)
+                0x33fc3a24                env_ptr
+ .bss           0x33fc3a28        0x0 common/libcommon.a(exports.o)
+ .bss           0x33fc3a28        0x0 common/libcommon.a(flash.o)
+ .bss           0x33fc3a28      0x258 common/libcommon.a(hush.o)
+                0x33fc3c74                last_return_code
+                0x33fc3c7c                nesting_level
+ .bss           0x33fc3c80        0x0 common/libcommon.a(image.o)
+ .bss           0x33fc3c80     0x1560 common/libcommon.a(main.o)
+                0x33fc3c8c                hist_num
+                0x33fc3c90                hist_lines
+                0x33fc5090                hist_list
+                0x33fc50e0                console_buffer
+ .bss           0x33fc51e0        0x0 common/libcommon.a(s_record.o)
+ .bss           0x33fc51e0       0x48 common/libcommon.a(stdio.o)
+                0x33fc521c                stdio_devices
+ .bss           0x33fc5228     0xda1c common/libcommon.a(usb.o)
+                0x33fd2c34                usb_started
+ .bss           0x33fd2c44      0x5b8 common/libcommon.a(usb_storage.o)
+ .bss           0x33fd31fc      0x43c common/libcommon.a(xyzModem.o)
+ .bss           0x33fd3638        0x0 board/Embedded/ok2440/libok2440.a(ok2440.o)
+ .bss           0x33fd3638       0xac board/Embedded/ok2440/libok2440.a(flash.o)
+                0x33fd3638                flash_info
+ .bss           0x33fd36e4        0x0 lib_generic/libgeneric.a(crc16.o)
+ .bss           0x33fd36e4        0x0 lib_generic/libgeneric.a(crc32.o)
+ .bss           0x33fd36e4        0x0 lib_generic/libgeneric.a(ctype.o)
+ .bss           0x33fd36e4        0x0 lib_generic/libgeneric.a(display_options.o)
+ .bss           0x33fd36e4        0x0 lib_generic/libgeneric.a(gunzip.o)
+ .bss           0x33fd36e4        0x0 lib_generic/libgeneric.a(lmb.o)
+ .bss           0x33fd36e4        0x4 lib_generic/libgeneric.a(string.o)
+                0x33fd36e4                ___strtok
+ .bss           0x33fd36e8        0x0 lib_generic/libgeneric.a(vsprintf.o)
+ .bss           0x33fd36e8        0x0 lib_generic/libgeneric.a(zlib.o)
+ .bss           0x33fd36e8        0x0 lib_generic/libgeneric.a(div64.o)
+ .bss           0x33fd36e8        0x0 cpu/arm920t/s3c24x0/libs3c24x0.a(interrupts.o)
+ .bss           0x33fd36e8        0x0 cpu/arm920t/s3c24x0/libs3c24x0.a(speed.o)
+ .bss           0x33fd36e8       0x10 cpu/arm920t/s3c24x0/libs3c24x0.a(timer.o)
+                0x33fd36f0                timer_load_val
+ *fill*         0x33fd36f8        0x8 00
+ .bss           0x33fd3700     0x1500 cpu/arm920t/s3c24x0/libs3c24x0.a(usb_ohci.o)
+                0x33fd37c8                urb_priv
+                0x33fd389c                phcca
+                0x33fd3900                ghcca
+                0x33fd3a00                ohci_dev
+                0x33fd3ba0                gtd
+                0x33fd4be0                ptd
+                0x33fd4be8                urb_finished
+                0x33fd4bec                devgone
+                0x33fd4bf0                got_rhsc
+ .bss           0x33fd4c00      0x2a8 cpu/arm920t/s3c24x0/libs3c24x0.a(mmc.o)
+ .bss           0x33fd4ea8        0x4 lib_arm/libarm.a(bootm.o)
+ .bss           0x33fd4eac        0x0 lib_arm/libarm.a(cache.o)
+ .bss           0x33fd4eac        0x0 lib_arm/libarm.a(cache-cp15.o)
+ .bss           0x33fd4eac        0x0 lib_arm/libarm.a(reset.o)
+ .bss           0x33fd4eac    0x30008 fs/fat/libfat.a(fat.o)
+                0x33fd4eb4                get_vfatname_block
+                0x33fe4eb4                do_fat_read_block
+                0x33ff4eb4                get_dentfromdir_block
+ .bss           0x34004eb4        0x8 fs/jffs2/libjffs2.a(jffs2_1pass.o)
+ .bss           0x34004ebc        0x0 fs/jffs2/libjffs2.a(compr_rtime.o)
+ .bss           0x34004ebc        0x0 fs/jffs2/libjffs2.a(compr_rubin.o)
+ .bss           0x34004ebc        0x0 fs/jffs2/libjffs2.a(compr_zlib.o)
+ .bss           0x34004ebc        0x0 fs/jffs2/libjffs2.a(mini_inflate.o)
+ .bss           0x34004ebc        0x0 disk/libdisk.a(part.o)
+ .bss           0x34004ebc        0x0 disk/libdisk.a(part_dos.o)
+ .bss           0x34004ebc        0x0 drivers/mtd/nand/libnand.a(nand_util.o)
+ .bss           0x34004ebc       0xe0 drivers/net/libnet.a(dm9000x.o)
+ .bss           0x34004f9c        0x0 drivers/rtc/librtc.a(date.o)
+ .bss           0x34004f9c        0x0 drivers/rtc/librtc.a(s3c24x0_rtc.o)
+ .bss           0x34004f9c       0x20 drivers/video/libvideo.a(cfb_console.o)
+ .bss           0x34004fbc       0x90 drivers/video/libvideo.a(s3c2410_fb.o)
+                0x34004fbc                smi
+ .bss           0x3400504c        0x0 drivers/video/libvideo.a(videomodes.o)
+ .bss           0x3400504c        0x0 cpu/arm920t/libarm920t.a(cpu.o)
+ .bss           0x3400504c        0x0 /home/bamboo/work/ok2440/u-boot_for_ok2440/lib_arm/eabi_compat.o
+ .bss           0x3400504c        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_udivsi3.o)
+ .bss           0x3400504c        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_divsi3.o)
+ .bss           0x3400504c        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_lshrdi3.o)
+ .bss           0x3400504c        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_ashrdi3.o)
+ .bss           0x3400504c        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_ashldi3.o)
+ .bss           0x3400504c        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_dvmd_lnx.o)
+                0x3400504c                . = ALIGN (0x4)
+                0x3400504c                _end = .
 Address of section .text set to 0x33f80000
 LOAD cpu/arm920t/start.o
 START GROUP
@@ -2289,118 +2289,118 @@ OUTPUT(u-boot elf32-littlearm)
  .note.GNU-stack
                 0x00000000        0x0 /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_dvmd_lnx.o)
 
-.debug_line     0x00000000     0xe865
+.debug_line     0x00000000     0xe872
  .debug_line    0x00000000       0xf7 cpu/arm920t/start.o
  .debug_line    0x000000f7       0x4b board/Embedded/ok2440/lowlevel_init.o
  .debug_line    0x00000142       0xd2 board/Embedded/ok2440/nand_read.o
- .debug_line    0x00000214      0x1b1 lib_arm/libarm.a(board.o)
- .debug_line    0x000003c5      0x18e lib_arm/libarm.a(interrupts.o)
- .debug_line    0x00000553      0x21b net/libnet.a(eth.o)
- .debug_line    0x0000076e      0x5dc net/libnet.a(net.o)
- .debug_line    0x00000d4a      0x39e net/libnet.a(nfs.o)
- .debug_line    0x000010e8       0xff net/libnet.a(rarp.o)
- .debug_line    0x000011e7      0x28b net/libnet.a(tftp.o)
- .debug_line    0x00001472      0x33b net/libnet.a(bootp.o)
- .debug_line    0x000017ad      0x256 drivers/i2c/libi2c.a(s3c24x0_i2c.o)
- .debug_line    0x00001a03      0x1bb drivers/mtd/nand/libnand.a(nand.o)
- .debug_line    0x00001bbe      0xa7c drivers/mtd/nand/libnand.a(nand_base.o)
- .debug_line    0x0000263a      0x4ea drivers/mtd/nand/libnand.a(nand_bbt.o)
- .debug_line    0x00002b24      0x1c9 drivers/mtd/nand/libnand.a(nand_ecc.o)
- .debug_line    0x00002ced       0x72 drivers/mtd/nand/libnand.a(nand_ids.o)
- .debug_line    0x00002d5f      0x1c5 drivers/mtd/nand/libnand.a(s3c2410_nand.o)
- .debug_line    0x00002f24      0x1b0 drivers/serial/libserial.a(serial_s3c24x0.o)
- .debug_line    0x000030d4      0x1c3 drivers/usb/slave/libusb_slave.a(usbinit.o)
- .debug_line    0x00003297      0x11c drivers/usb/slave/libusb_slave.a(interrupt.o)
- .debug_line    0x000033b3      0x156 drivers/usb/slave/libusb_slave.a(usblib.o)
- .debug_line    0x00003509       0xc7 drivers/usb/slave/libusb_slave.a(usbmain.o)
- .debug_line    0x000035d0      0x12b drivers/usb/slave/libusb_slave.a(usbout.o)
- .debug_line    0x000036fb      0x212 drivers/usb/slave/libusb_slave.a(usbsetup.o)
- .debug_line    0x0000390d       0x98 drivers/usb/slave/libusb_slave.a(usbin.o)
- .debug_line    0x000039a5      0x12f common/libcommon.a(cmd_bdinfo.o)
- .debug_line    0x00003ad4      0x177 common/libcommon.a(cmd_bmp.o)
- .debug_line    0x00003c4b       0xd0 common/libcommon.a(cmd_boot.o)
- .debug_line    0x00003d1b      0x410 common/libcommon.a(cmd_bootm.o)
- .debug_line    0x0000412b       0x9f common/libcommon.a(cmd_cache.o)
- .debug_line    0x000041ca       0xf1 common/libcommon.a(cmd_console.o)
- .debug_line    0x000042bb      0x1d5 common/libcommon.a(cmd_date.o)
- .debug_line    0x00004490      0x148 common/libcommon.a(cmd_eeprom.o)
- .debug_line    0x000045d8      0x1d0 common/libcommon.a(cmd_elf.o)
- .debug_line    0x000047a8      0x138 common/libcommon.a(cmd_fat.o)
- .debug_line    0x000048e0      0x24c common/libcommon.a(cmd_flash.o)
- .debug_line    0x00004b2c      0x354 common/libcommon.a(cmd_i2c.o)
- .debug_line    0x00004e80      0x10e common/libcommon.a(cmd_itest.o)
- .debug_line    0x00004f8e      0x31a common/libcommon.a(cmd_jffs2.o)
- .debug_line    0x000052a8      0x434 common/libcommon.a(cmd_load.o)
- .debug_line    0x000056dc      0x27d common/libcommon.a(cmd_mem.o)
- .debug_line    0x00005959       0xcf common/libcommon.a(cmd_misc.o)
- .debug_line    0x00005a28       0x96 common/libcommon.a(cmd_mmc.o)
- .debug_line    0x00005abe      0x3ba common/libcommon.a(cmd_nand.o)
- .debug_line    0x00005e78      0x154 common/libcommon.a(cmd_net.o)
- .debug_line    0x00005fcc      0x302 common/libcommon.a(cmd_nvedit.o)
- .debug_line    0x000062ce       0x81 common/libcommon.a(cmd_reginfo.o)
- .debug_line    0x0000634f      0x1bb common/libcommon.a(cmd_source.o)
- .debug_line    0x0000650a      0x38a common/libcommon.a(cmd_usb.o)
- .debug_line    0x00006894      0x15b common/libcommon.a(cmd_usbslave.o)
- .debug_line    0x000069ef      0x1c0 common/libcommon.a(cmd_ximg.o)
- .debug_line    0x00006baf      0x263 common/libcommon.a(command.o)
- .debug_line    0x00006e12      0x2d5 common/libcommon.a(console.o)
- .debug_line    0x000070e7      0x3ef common/libcommon.a(dlmalloc.o)
- .debug_line    0x000074d6      0x1b0 common/libcommon.a(env_common.o)
- .debug_line    0x00007686      0x260 common/libcommon.a(env_nand.o)
- .debug_line    0x000078e6      0x135 common/libcommon.a(exports.o)
- .debug_line    0x00007a1b      0x164 common/libcommon.a(flash.o)
- .debug_line    0x00007b7f      0x6ae common/libcommon.a(hush.o)
- .debug_line    0x0000822d      0x3da common/libcommon.a(image.o)
- .debug_line    0x00008607      0x366 common/libcommon.a(main.o)
- .debug_line    0x0000896d       0xee common/libcommon.a(s_record.o)
- .debug_line    0x00008a5b      0x1ad common/libcommon.a(stdio.o)
- .debug_line    0x00008c08      0x440 common/libcommon.a(usb.o)
- .debug_line    0x00009048      0x4b5 common/libcommon.a(usb_storage.o)
- .debug_line    0x000094fd      0x212 common/libcommon.a(xyzModem.o)
- .debug_line    0x0000970f      0x189 board/Embedded/ok2440/libok2440.a(ok2440.o)
- .debug_line    0x00009898      0x1de board/Embedded/ok2440/libok2440.a(flash.o)
- .debug_line    0x00009a76       0xc6 lib_generic/libgeneric.a(crc16.o)
- .debug_line    0x00009b3c      0x134 lib_generic/libgeneric.a(crc32.o)
- .debug_line    0x00009c70       0x28 lib_generic/libgeneric.a(ctype.o)
- .debug_line    0x00009c98      0x12d lib_generic/libgeneric.a(display_options.o)
- .debug_line    0x00009dc5       0xda lib_generic/libgeneric.a(gunzip.o)
- .debug_line    0x00009e9f      0x249 lib_generic/libgeneric.a(lmb.o)
- .debug_line    0x0000a0e8      0x216 lib_generic/libgeneric.a(string.o)
- .debug_line    0x0000a2fe      0x3bc lib_generic/libgeneric.a(vsprintf.o)
- .debug_line    0x0000a6ba      0x615 lib_generic/libgeneric.a(zlib.o)
- .debug_line    0x0000accf       0xdb lib_generic/libgeneric.a(div64.o)
- .debug_line    0x0000adaa      0x15b cpu/arm920t/s3c24x0/libs3c24x0.a(interrupts.o)
- .debug_line    0x0000af05       0xff cpu/arm920t/s3c24x0/libs3c24x0.a(speed.o)
- .debug_line    0x0000b004      0x1e1 cpu/arm920t/s3c24x0/libs3c24x0.a(timer.o)
- .debug_line    0x0000b1e5      0x58a cpu/arm920t/s3c24x0/libs3c24x0.a(usb_ohci.o)
- .debug_line    0x0000b76f      0x2ed cpu/arm920t/s3c24x0/libs3c24x0.a(mmc.o)
- .debug_line    0x0000ba5c      0x199 lib_arm/libarm.a(bootm.o)
- .debug_line    0x0000bbf5       0x38 lib_arm/libarm.a(cache.o)
- .debug_line    0x0000bc2d      0x168 lib_arm/libarm.a(cache-cp15.o)
- .debug_line    0x0000bd95       0x7c lib_arm/libarm.a(reset.o)
- .debug_line    0x0000be11      0x48e fs/fat/libfat.a(fat.o)
- .debug_line    0x0000c29f      0x627 fs/jffs2/libjffs2.a(jffs2_1pass.o)
- .debug_line    0x0000c8c6       0xa8 fs/jffs2/libjffs2.a(compr_rtime.o)
- .debug_line    0x0000c96e       0xd0 fs/jffs2/libjffs2.a(compr_rubin.o)
- .debug_line    0x0000ca3e       0x81 fs/jffs2/libjffs2.a(compr_zlib.o)
- .debug_line    0x0000cabf      0x42a fs/jffs2/libjffs2.a(mini_inflate.o)
- .debug_line    0x0000cee9      0x1ab disk/libdisk.a(part.o)
- .debug_line    0x0000d094      0x1b5 disk/libdisk.a(part_dos.o)
- .debug_line    0x0000d249      0x3a0 drivers/mtd/nand/libnand.a(nand_util.o)
- .debug_line    0x0000d5e9      0x379 drivers/net/libnet.a(dm9000x.o)
- .debug_line    0x0000d962       0xbf drivers/rtc/librtc.a(date.o)
- .debug_line    0x0000da21      0x1a6 drivers/rtc/librtc.a(s3c24x0_rtc.o)
- .debug_line    0x0000dbc7      0x686 drivers/video/libvideo.a(cfb_console.o)
- .debug_line    0x0000e24d       0xff drivers/video/libvideo.a(s3c2410_fb.o)
- .debug_line    0x0000e34c       0x9d drivers/video/libvideo.a(videomodes.o)
- .debug_line    0x0000e3e9       0x3e cpu/arm920t/libarm920t.a(cpu.o)
- .debug_line    0x0000e427       0x3f /home/bamboo/work/ok2440/u-boot_for_ok2440/lib_arm/eabi_compat.o
- .debug_line    0x0000e466       0xbf /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_udivsi3.o)
- .debug_line    0x0000e525       0xcb /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_divsi3.o)
- .debug_line    0x0000e5f0       0x9e /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_lshrdi3.o)
- .debug_line    0x0000e68e       0x9e /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_ashrdi3.o)
- .debug_line    0x0000e72c       0x9e /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_ashldi3.o)
- .debug_line    0x0000e7ca       0x9b /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_dvmd_lnx.o)
+ .debug_line    0x00000214      0x1b7 lib_arm/libarm.a(board.o)
+ .debug_line    0x000003cb      0x18e lib_arm/libarm.a(interrupts.o)
+ .debug_line    0x00000559      0x21b net/libnet.a(eth.o)
+ .debug_line    0x00000774      0x5dc net/libnet.a(net.o)
+ .debug_line    0x00000d50      0x39e net/libnet.a(nfs.o)
+ .debug_line    0x000010ee       0xff net/libnet.a(rarp.o)
+ .debug_line    0x000011ed      0x28b net/libnet.a(tftp.o)
+ .debug_line    0x00001478      0x33b net/libnet.a(bootp.o)
+ .debug_line    0x000017b3      0x256 drivers/i2c/libi2c.a(s3c24x0_i2c.o)
+ .debug_line    0x00001a09      0x1bb drivers/mtd/nand/libnand.a(nand.o)
+ .debug_line    0x00001bc4      0xa7c drivers/mtd/nand/libnand.a(nand_base.o)
+ .debug_line    0x00002640      0x4ea drivers/mtd/nand/libnand.a(nand_bbt.o)
+ .debug_line    0x00002b2a      0x1c9 drivers/mtd/nand/libnand.a(nand_ecc.o)
+ .debug_line    0x00002cf3       0x72 drivers/mtd/nand/libnand.a(nand_ids.o)
+ .debug_line    0x00002d65      0x1c5 drivers/mtd/nand/libnand.a(s3c2410_nand.o)
+ .debug_line    0x00002f2a      0x1b0 drivers/serial/libserial.a(serial_s3c24x0.o)
+ .debug_line    0x000030da      0x1c3 drivers/usb/slave/libusb_slave.a(usbinit.o)
+ .debug_line    0x0000329d      0x11c drivers/usb/slave/libusb_slave.a(interrupt.o)
+ .debug_line    0x000033b9      0x156 drivers/usb/slave/libusb_slave.a(usblib.o)
+ .debug_line    0x0000350f       0xc7 drivers/usb/slave/libusb_slave.a(usbmain.o)
+ .debug_line    0x000035d6      0x12b drivers/usb/slave/libusb_slave.a(usbout.o)
+ .debug_line    0x00003701      0x212 drivers/usb/slave/libusb_slave.a(usbsetup.o)
+ .debug_line    0x00003913       0x98 drivers/usb/slave/libusb_slave.a(usbin.o)
+ .debug_line    0x000039ab      0x12f common/libcommon.a(cmd_bdinfo.o)
+ .debug_line    0x00003ada      0x177 common/libcommon.a(cmd_bmp.o)
+ .debug_line    0x00003c51       0xd0 common/libcommon.a(cmd_boot.o)
+ .debug_line    0x00003d21      0x410 common/libcommon.a(cmd_bootm.o)
+ .debug_line    0x00004131       0x9f common/libcommon.a(cmd_cache.o)
+ .debug_line    0x000041d0       0xf1 common/libcommon.a(cmd_console.o)
+ .debug_line    0x000042c1      0x1d5 common/libcommon.a(cmd_date.o)
+ .debug_line    0x00004496      0x148 common/libcommon.a(cmd_eeprom.o)
+ .debug_line    0x000045de      0x1d0 common/libcommon.a(cmd_elf.o)
+ .debug_line    0x000047ae      0x138 common/libcommon.a(cmd_fat.o)
+ .debug_line    0x000048e6      0x24c common/libcommon.a(cmd_flash.o)
+ .debug_line    0x00004b32      0x354 common/libcommon.a(cmd_i2c.o)
+ .debug_line    0x00004e86      0x10e common/libcommon.a(cmd_itest.o)
+ .debug_line    0x00004f94      0x31a common/libcommon.a(cmd_jffs2.o)
+ .debug_line    0x000052ae      0x434 common/libcommon.a(cmd_load.o)
+ .debug_line    0x000056e2      0x27d common/libcommon.a(cmd_mem.o)
+ .debug_line    0x0000595f       0xcf common/libcommon.a(cmd_misc.o)
+ .debug_line    0x00005a2e       0x96 common/libcommon.a(cmd_mmc.o)
+ .debug_line    0x00005ac4      0x3ba common/libcommon.a(cmd_nand.o)
+ .debug_line    0x00005e7e      0x154 common/libcommon.a(cmd_net.o)
+ .debug_line    0x00005fd2      0x302 common/libcommon.a(cmd_nvedit.o)
+ .debug_line    0x000062d4       0x81 common/libcommon.a(cmd_reginfo.o)
+ .debug_line    0x00006355      0x1bb common/libcommon.a(cmd_source.o)
+ .debug_line    0x00006510      0x38a common/libcommon.a(cmd_usb.o)
+ .debug_line    0x0000689a      0x15b common/libcommon.a(cmd_usbslave.o)
+ .debug_line    0x000069f5      0x1c0 common/libcommon.a(cmd_ximg.o)
+ .debug_line    0x00006bb5      0x263 common/libcommon.a(command.o)
+ .debug_line    0x00006e18      0x2d5 common/libcommon.a(console.o)
+ .debug_line    0x000070ed      0x3ef common/libcommon.a(dlmalloc.o)
+ .debug_line    0x000074dc      0x1b0 common/libcommon.a(env_common.o)
+ .debug_line    0x0000768c      0x260 common/libcommon.a(env_nand.o)
+ .debug_line    0x000078ec      0x135 common/libcommon.a(exports.o)
+ .debug_line    0x00007a21      0x164 common/libcommon.a(flash.o)
+ .debug_line    0x00007b85      0x6ae common/libcommon.a(hush.o)
+ .debug_line    0x00008233      0x3da common/libcommon.a(image.o)
+ .debug_line    0x0000860d      0x366 common/libcommon.a(main.o)
+ .debug_line    0x00008973       0xee common/libcommon.a(s_record.o)
+ .debug_line    0x00008a61      0x1ad common/libcommon.a(stdio.o)
+ .debug_line    0x00008c0e      0x440 common/libcommon.a(usb.o)
+ .debug_line    0x0000904e      0x4b5 common/libcommon.a(usb_storage.o)
+ .debug_line    0x00009503      0x212 common/libcommon.a(xyzModem.o)
+ .debug_line    0x00009715      0x190 board/Embedded/ok2440/libok2440.a(ok2440.o)
+ .debug_line    0x000098a5      0x1de board/Embedded/ok2440/libok2440.a(flash.o)
+ .debug_line    0x00009a83       0xc6 lib_generic/libgeneric.a(crc16.o)
+ .debug_line    0x00009b49      0x134 lib_generic/libgeneric.a(crc32.o)
+ .debug_line    0x00009c7d       0x28 lib_generic/libgeneric.a(ctype.o)
+ .debug_line    0x00009ca5      0x12d lib_generic/libgeneric.a(display_options.o)
+ .debug_line    0x00009dd2       0xda lib_generic/libgeneric.a(gunzip.o)
+ .debug_line    0x00009eac      0x249 lib_generic/libgeneric.a(lmb.o)
+ .debug_line    0x0000a0f5      0x216 lib_generic/libgeneric.a(string.o)
+ .debug_line    0x0000a30b      0x3bc lib_generic/libgeneric.a(vsprintf.o)
+ .debug_line    0x0000a6c7      0x615 lib_generic/libgeneric.a(zlib.o)
+ .debug_line    0x0000acdc       0xdb lib_generic/libgeneric.a(div64.o)
+ .debug_line    0x0000adb7      0x15b cpu/arm920t/s3c24x0/libs3c24x0.a(interrupts.o)
+ .debug_line    0x0000af12       0xff cpu/arm920t/s3c24x0/libs3c24x0.a(speed.o)
+ .debug_line    0x0000b011      0x1e1 cpu/arm920t/s3c24x0/libs3c24x0.a(timer.o)
+ .debug_line    0x0000b1f2      0x58a cpu/arm920t/s3c24x0/libs3c24x0.a(usb_ohci.o)
+ .debug_line    0x0000b77c      0x2ed cpu/arm920t/s3c24x0/libs3c24x0.a(mmc.o)
+ .debug_line    0x0000ba69      0x199 lib_arm/libarm.a(bootm.o)
+ .debug_line    0x0000bc02       0x38 lib_arm/libarm.a(cache.o)
+ .debug_line    0x0000bc3a      0x168 lib_arm/libarm.a(cache-cp15.o)
+ .debug_line    0x0000bda2       0x7c lib_arm/libarm.a(reset.o)
+ .debug_line    0x0000be1e      0x48e fs/fat/libfat.a(fat.o)
+ .debug_line    0x0000c2ac      0x627 fs/jffs2/libjffs2.a(jffs2_1pass.o)
+ .debug_line    0x0000c8d3       0xa8 fs/jffs2/libjffs2.a(compr_rtime.o)
+ .debug_line    0x0000c97b       0xd0 fs/jffs2/libjffs2.a(compr_rubin.o)
+ .debug_line    0x0000ca4b       0x81 fs/jffs2/libjffs2.a(compr_zlib.o)
+ .debug_line    0x0000cacc      0x42a fs/jffs2/libjffs2.a(mini_inflate.o)
+ .debug_line    0x0000cef6      0x1ab disk/libdisk.a(part.o)
+ .debug_line    0x0000d0a1      0x1b5 disk/libdisk.a(part_dos.o)
+ .debug_line    0x0000d256      0x3a0 drivers/mtd/nand/libnand.a(nand_util.o)
+ .debug_line    0x0000d5f6      0x379 drivers/net/libnet.a(dm9000x.o)
+ .debug_line    0x0000d96f       0xbf drivers/rtc/librtc.a(date.o)
+ .debug_line    0x0000da2e      0x1a6 drivers/rtc/librtc.a(s3c24x0_rtc.o)
+ .debug_line    0x0000dbd4      0x686 drivers/video/libvideo.a(cfb_console.o)
+ .debug_line    0x0000e25a       0xff drivers/video/libvideo.a(s3c2410_fb.o)
+ .debug_line    0x0000e359       0x9d drivers/video/libvideo.a(videomodes.o)
+ .debug_line    0x0000e3f6       0x3e cpu/arm920t/libarm920t.a(cpu.o)
+ .debug_line    0x0000e434       0x3f /home/bamboo/work/ok2440/u-boot_for_ok2440/lib_arm/eabi_compat.o
+ .debug_line    0x0000e473       0xbf /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_udivsi3.o)
+ .debug_line    0x0000e532       0xcb /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_divsi3.o)
+ .debug_line    0x0000e5fd       0x9e /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_lshrdi3.o)
+ .debug_line    0x0000e69b       0x9e /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_ashrdi3.o)
+ .debug_line    0x0000e739       0x9e /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_ashldi3.o)
+ .debug_line    0x0000e7d7       0x9b /home/bamboo/work/ok2440/cross_tools/4.4.3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.3/libgcc.a(_dvmd_lnx.o)
 
 .debug_info     0x00000000    0x3ce7c
  .debug_info    0x00000000       0x65 cpu/arm920t/start.o

@@ -130,8 +130,8 @@ void *video_hw_init (void)
          }
  
          /* statically configure settings */
-        pGD->winSizeX = pGD->plnSizeX = 240;
-         pGD->winSizeY = pGD->plnSizeY = 320;
+        pGD->winSizeX = pGD->plnSizeX = 320;
+         pGD->winSizeY = pGD->plnSizeY = 240;
          pGD->gdfBytesPP = 2;
          pGD->gdfIndex = GDF_16BIT_565RGB;
  

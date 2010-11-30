@@ -137,13 +137,16 @@ static int init_baudrate (void)
 
 static int display_banner (void)
 {
-#if defined(CONFIG_MINI2440_LED) 	
+#if defined(CONFIG_OK2440_LED) 	
 	struct s3c24x0_gpio * const gpio = s3c24x0_get_base_gpio();
-	gpio->GPBDAT = 0x101; //tekkamanninja
+	gpio->GPBDAT = 0x01; //Wu DaoGuang
+	gpio->GPFDAT &=(0<<3) | (0<<4);
+	gpio->GPFDAT |=(1<<5) | (1<<6);
+	
 #endif
 	printf ("\n\n%s\n\n", version_string);	
-	printf (" modified by tekkamanninja (tekkamanninja@163.com)\n");
-	printf (" Love Linux forever!!\n\n");
+	printf (" modified by Wu DaoGuang ! My email:wdgvip@gmail.com\n");
+	printf ("The universal bootloader!\n\n");
 	debug ("U-Boot code: %08lX -> %08lX  BSS: -> %08lX\n",
 	       _armboot_start, _bss_start, _bss_end);
 #ifdef CONFIG_MODEM_SUPPORT
@@ -446,13 +449,15 @@ extern void davinci_eth_set_mac_addr (const u_int8_t *addr);
 	reset_phy();
 #endif
 #endif
-#if defined(CONFIG_MINI2440_LED) 	
-		gpio->GPBDAT = 0x0; //tekkamanninja
+#if defined(CONFIG_OK2440_LED) 	
+		gpio->GPBDAT = 0x0; //Wu DaoGuang
+		gpio->GPFDAT &= (0<<4);
+		gpio->GPFDAT |= (1<<3) | (1<<5) | (1<<6);
 #endif
  
 #if defined(CONFIG_CFB_CONSOLE)        
 	printf ("%s\n", version_string);
-	printf ("modified by tekkamanninja\n(tekkamanninja@163.com)\n");
+	printf ("modified by Wu DaoGung\n wdgvip@gmail.com\n");
 	printf ("Love Linux forever!!\n");
 #endif
 	/* main_loop() can return to retry autoboot, if so just run it again. */

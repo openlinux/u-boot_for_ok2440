@@ -103,6 +103,7 @@
 #define CONFIG_BAUDRATE		115200
 
 
+
 /*
  * BOOTP options
  */
@@ -143,7 +144,7 @@
 /* USB Support*/
 
 #define CONFIG_BOOTDELAY	1
-#define CONFIG_BOOTARGS		"noinitrd root=/dev/nfs rw nfsroot=192.168.1.101:/home/bamboo/work/ok2440/rootbox  ip=192.168.1.111:192.168.1.101::255.255.255.0 console=ttySAC1,115200 init=/linuxrc mem=64M"
+#define CONFIG_BOOTARGS		"noinitrd root=/dev/nfs rw nfsroot=192.168.1.101:/home/bamboo/work/ok2440/rootbox  ip=192.168.1.111:192.168.1.101::255.255.255.0 console=ttySAC0,115200 init=/linuxrc mem=64M"
 #define CONFIG_ETHADDR	        08:08:11:18:12:27
 #define CONFIG_NETMASK          255.255.255.0
 #define CONFIG_IPADDR		192.168.1.111
