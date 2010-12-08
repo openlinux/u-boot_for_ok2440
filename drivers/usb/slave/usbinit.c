@@ -125,8 +125,12 @@ void usb_init_slave(void)
 	isUsbdSetConfiguration=0;
 
 	UsbdMain(); 
+	gpioregs->GPGUP  |= 1<<9;
+	gpioregs->GPGCON &= ~(3<<18);
+
 	udelay(100000);
-	gpioregs->GPCDAT |= (1<<5);   /* enable USB Device, thisway.diy */
+	gpioregs->GPGDAT |= (1<<9);
+	gpioregs->GPGCON |= 1<<18;
 
 #if USBDMA
 	mode="DMA";

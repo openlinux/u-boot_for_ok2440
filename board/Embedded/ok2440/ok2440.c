@@ -151,8 +151,10 @@ int board_init (void)
 	gpio->GPGCON = 0xFF95FF3A;
 	gpio->GPGUP = 0x0000FFFF;
 	gpio->GPGDAT &= ~(1<<9);
+//	gpio->GPGCON = 0x00A2AAAA;
+//	gpio->GPGUP = 0x0000FFFF;
 #else
-	gpio->GPGCON = 0xFF95FF3A;
+	gpio->GPGCON = 0x00A2AAAA;
 	gpio->GPGUP = 0x0000FFFF;
 	
 #endif
