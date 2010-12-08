@@ -93,6 +93,33 @@ static inline void delay (unsigned long loops)
 /*
  * Miscellaneous platform dependent initialisations
  */
+int bBootFrmNORFlash(void)
+{
+	volatile unsigned int *pdw = (volatile unsigned int *)0;
+	unsigned int dwVal;
+
+	/*
+	 * 鏃犺鏄粠NOR Flash杩樻槸浠嶯AND Flash鍚姩锛?
+	 * 鍦板潃0澶勪负鎸囦护"b	Reset", 鏈哄櫒鐮佷负0xEA00000B锛?
+	 * 瀵逛簬浠嶯AND Flash鍚姩鐨勬儏鍐碉紝鍏跺紑濮?KB鐨勪唬鐮佷細澶嶅埗鍒癈PU鍐呴儴4K鍐呭瓨涓紝
+	 * 瀵逛簬浠嶯OR Flash鍚姩鐨勬儏鍐碉紝NOR Flash鐨勫紑濮嬪湴鍧€鍗充负0銆?
+	 * 瀵逛簬NOR Flash锛屽繀椤婚€氳繃涓€瀹氱殑鍛戒护搴忓垪鎵嶈兘鍐欐暟鎹紝
+	 * 鎵€浠ュ彲浠ユ牴鎹繖鐐瑰樊鍒潵鍒嗚鲸鏄粠NAND Flash杩樻槸NOR Flash鍚姩:
+	 * 鍚戝湴鍧€0鍐欏叆涓€涓暟鎹紝鐒跺悗璇诲嚭鏉ワ紝濡傛灉娌℃湁鏀瑰彉鐨勮瘽灏辨槸NOR Flash
+	 */
+
+	dwVal = *pdw;       
+	*pdw = 0x12345678;
+	if (*pdw != 0x12345678)
+	{
+		return 1;
+	}
+	else
+	{
+		*pdw = dwVal;
+		return 0;
+	}
+}
 
 int board_init (void)
 {
