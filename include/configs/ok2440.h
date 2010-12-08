@@ -143,6 +143,10 @@
 #define CONFIG_CMD_USB
 /* USB Support*/
 
+#define CONFIG_CMD_MENU		1
+/*command menu surport */
+
+
 #define CONFIG_BOOTDELAY	1
 #define CONFIG_BOOTARGS		"noinitrd root=/dev/nfs rw nfsroot=192.168.1.101:/home/bamboo/work/ok2440/rootbox  ip=192.168.1.111:192.168.1.101::255.255.255.0 console=ttySAC0,115200 init=/linuxrc mem=64M"
 #define CONFIG_ETHADDR	        08:08:11:18:12:27
