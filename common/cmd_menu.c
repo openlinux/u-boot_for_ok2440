@@ -559,14 +559,14 @@ void main_menu_usage(void)
 	printf("[9] Format   the Nand Flash\r\n");
 	printf("[0] Set the  boot parameters\r\n");
 	printf("[a] Download User Program uCOS-II or Myapp to Nand Flash\r\n");
-//	printf("[b] Download LOGO Picture (.bin) to Nand  Flash \r\n");
+	printf("[b] Download LOGO Picture to Nand  Flash \r\n");
 //	printf("[l] Set LCD  Parameters \r\n");
 
 	if (bBootFrmNORFlash())
 		printf("[o] Download u-boot to Nor Flash\r\n");
-	printf("[r] Reboot u-boot\r\n");
-	printf("[t] Test Linux Image (zImage)\r\n");
-	printf("[q] quit from menu,return to u-boot command line.\r\n");
+	printf("[r] Reboot  u-boot\r\n");
+	printf("[t] Test    Linux  Image (zImage)\r\n");
+	printf("[q] Quit from menu,Return to u-boot command line.\r\n");
 	printf("Enter your selection: ");
 }
 
