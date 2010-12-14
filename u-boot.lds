@@ -8,8 +8,8 @@ SECTIONS
  .text :
  {
   cpu/arm920t/start.o (.text)
-  board/Embedded/ok2440/lowlevel_init.o (.text)
-  board/Embedded/ok2440/nand_read.o (.text)
+  board/Emboard/ok2440/lowlevel_init.o (.text)
+  board/Emboard/ok2440/nand_read.o (.text)
   *(.text)
  }
  . = ALIGN(4);
