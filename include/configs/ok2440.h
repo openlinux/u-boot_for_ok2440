@@ -148,16 +148,16 @@
 
 
 #define CONFIG_BOOTDELAY	1
-#define CONFIG_BOOTARGS		"noinitrd root=/dev/nfs rw nfsroot=192.168.1.101:/home/bamboo/work/ok2440/rootbox  ip=192.168.1.111:192.168.1.101::255.255.255.0 console=ttySAC0,115200 init=/linuxrc mem=64M"
+#define CONFIG_BOOTARGS		"noinitrd root=/dev/nfs rw nfsroot=192.168.1.102:/home/bamboo/work/ok2440/rootbox  ip=192.168.1.111:192.168.1.102::255.255.255.0 console=ttySAC0,115200 init=/linuxrc mem=64M"
 #define CONFIG_ETHADDR	        08:08:11:18:12:27
 #define CONFIG_NETMASK          255.255.255.0
 #define CONFIG_IPADDR		192.168.1.111
-#define CONFIG_SERVERIP		192.168.1.101
+#define CONFIG_SERVERIP		192.168.1.102
 #define CONFIG_GATEWAYIP	192.168.1.1
 #define CONFIG_OVERWRITE_ETHADDR_ONCE
 
 /*#define CONFIG_BOOTFILE	"elinos-lart" */
-#define CONFIG_BOOTCOMMAND	"nfs 0x30008000 192.168.1.101:/home/bamboo/work/ok2440/uImage.img;bootm"
+#define CONFIG_BOOTCOMMAND	"nfs 0x30008000 192.168.1.102:/home/bamboo/work/ok2440/uImage.img;bootm"
 #define	CONFIG_EXTRA_ENV_SETTINGS					\
 	"tekkaman=bmp d 70000\0 "				\
 	"stdin=serial\0"					\
